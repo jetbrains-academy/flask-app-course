@@ -1,0 +1,8 @@
+version: '2'
+services:
+    gateway:
+        build: gateway
+        ports:
+            - "5001:5001"
+    invsys:
+        build: invsys
