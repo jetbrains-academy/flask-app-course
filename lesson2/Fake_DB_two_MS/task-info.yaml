@@ -24,3 +24,5 @@ files:
   visible: true
 - name: gateway/__init__.py
   visible: true
+- name: runConfigurations/task3_test.run.xml
+  visible: false

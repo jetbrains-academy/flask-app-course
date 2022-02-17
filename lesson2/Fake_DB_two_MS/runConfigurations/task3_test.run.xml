@@ -1,0 +1,19 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="task3_test" type="tests" factoryName="Autodetect">
+    <module name="Flask_course_prototype" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <option name="SDK_HOME" value="$PROJECT_DIR$/.idea/VirtualEnvironment/bin/Python" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lesson2/Fake_DB_two_MS/tests" />
+    <option name="IS_MODULE_SDK" value="true" />
+    <option name="ADD_CONTENT_ROOTS" value="true" />
+    <option name="ADD_SOURCE_ROOTS" value="true" />
+    <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+    <option name="_new_additionalArguments" value="&quot;&quot;" />
+    <option name="_new_target" value="&quot;test_task3.TestCase.test_delete&quot;" />
+    <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Compose3" run_configuration_type="docker-deploy" />
+    </method>
+  </configuration>
+</component>
