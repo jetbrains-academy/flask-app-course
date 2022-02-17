@@ -3,6 +3,7 @@ from typing import List, Tuple
 import requests
 import json
 
+
 def create_application() -> Flask:
     app = Flask(__name__)
 
@@ -29,8 +30,9 @@ def create_application() -> Flask:
 
     return app
 
+
 def get_proxy_headers(response) -> List[Tuple]:
-	  # A function to get the needed headers from the requests response
+    # A function to get the needed headers from the requests response
     excluded_headers = ['content-encoding', 'content-length', 'transfer-encoding', 'connection']
     headers = [
         (name, value)
@@ -39,6 +41,7 @@ def get_proxy_headers(response) -> List[Tuple]:
     ]
     return headers
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     app = create_application()
     app.run("0.0.0.0", port=5001, debug=True)
