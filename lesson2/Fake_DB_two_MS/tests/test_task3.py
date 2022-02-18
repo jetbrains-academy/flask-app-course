@@ -2,7 +2,9 @@ import unittest
 import requests
 import random
 import string
+import time
 
+time.sleep(3)
 
 class TestCase(unittest.TestCase):
     def test_post(self):
