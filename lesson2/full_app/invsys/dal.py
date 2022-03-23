@@ -63,22 +63,22 @@ def delete_device(identifier):
 
 # A List of Dicts to define initial devices
 devices = [{
-    "id": "001abc",
-    "name": "Switch",
-    "device_type": "microcontroller",
-    "controller_gateway": 1111
+    "id": "001",
+    "name": "Light bulb",
+    "location": "hall",
+    "status": "off"
 },
     {
-        "id": "002def",
+        "id": "002",
         "name": "Humidity_sensor",
-        "device_type": "sensor",
-        "controller_gateway": 2222
+        "location": "bedroom",
+        "status": "on"
     },
     {
-        "id": "003ghi",
+        "id": "003",
         "name": "Humidifier",
-        "device_type": "appliance",
-        "controller_gateway": 3333
+        "location": "bedroom",
+        "status": "off"
     }
 ]
 

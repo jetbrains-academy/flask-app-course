@@ -14,8 +14,8 @@ class Device(Resource):
         self.reqparse = reqparse.RequestParser()
         self.reqparse.add_argument("id", type=str, location="json")
         self.reqparse.add_argument("name", type=str, location="json")
-        self.reqparse.add_argument("device_type", type=str, location="json")
-        self.reqparse.add_argument("controller_gateway", type=int, location="json")
+        self.reqparse.add_argument("location", type=str, location="json")
+        self.reqparse.add_argument("status", type=str, location="json")
 
         super(Device, self).__init__()
 
@@ -57,9 +57,9 @@ class DeviceInventory(Resource):
         self.reqparse.add_argument(
             "name", type=str, required=True, help="Device name must be provided", location="json")
         self.reqparse.add_argument(
-            "device_type", type=str, required=True, help="Device type must be provided", location="json")
-        self.reqparse.add_argument("controller_gateway", type=int, required=True,
-                                   help="Controller_gateway must be provided", location="json")
+            "location", type=str, required=True, help="Device location must be provided", location="json")
+        self.reqparse.add_argument("status", type=str, required=True,
+                                   help="Device status must be provided", location="json")
 
         super(DeviceInventory, self).__init__()
 

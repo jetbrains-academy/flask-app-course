@@ -11,8 +11,8 @@ class TestCase(unittest.TestCase):
         device_id = ''.join(random.choices(string.ascii_lowercase, k=10))
         response = requests.post('http://127.0.0.1:5001/items', json={"id": f"{device_id}",
                                                                       "name": "UPDATEDUPDATEDUPDATED",
-                                                                      "device_type": "UPDATEDUPDATEDUPDATED",
-                                                                      "controller_gateway": 1111})
+                                                                      "location": "location",
+                                                                      "status": "off"})
         print(response.status_code)
         print(response.text)
         self.assertEqual(response.status_code, 201, msg="Such a bad day :(")
@@ -24,11 +24,11 @@ class TestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200, msg=f"GET request resulted in an unexpected response code: {response.status_code}")
 
     def test_put(self):
-        device_id = ''.join(random.choices(string.ascii_lowercase, k=10))
-        response = requests.put('http://127.0.0.1:5001/items/002def', json={"id": f"{device_id}",
-                                                                            "name": f"Updated_name",
-                                                                            "device_type": "sensor",
-                                                                            "controller_gateway": 1111})
+        # device_id = ''.join(random.choices(string.ascii_lowercase, k=10))
+        response = requests.put('http://127.0.0.1:5001/items/002', json={"id": "002",
+                                                                            "name": "Humidity_sensor",
+                                                                            "location": "bedroom",
+                                                                            "status": "off"})
         print(response.status_code)
         print(response.text)
         self.assertEqual(response.status_code, 200, msg=f"PUT request resulted in an unexpected response code: {response.status_code}")
