@@ -1,0 +1,1 @@
+Discuss the need for a database, how and why we are going to substitute it with shelve, discuss shelve, DALs 

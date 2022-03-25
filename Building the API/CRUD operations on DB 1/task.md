@@ -1,0 +1,1 @@
+Define methods to GET all items from the database and to POST a new item to the database

@@ -1,0 +1,8 @@
+content:
+- Introduction
+- Project Structure
+- Define routes
+- Get Resource
+- Delete Resource
+- Update Resource
+- Add a Dockerfile and requirements.txt

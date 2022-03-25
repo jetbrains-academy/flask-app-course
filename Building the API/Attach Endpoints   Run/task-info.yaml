@@ -1,0 +1,13 @@
+type: edu
+custom_name: Attach Endpoints & Run
+files:
+- name: api.py
+  visible: true
+- name: tests/test_task.py
+  visible: false
+- name: __init__.py
+  visible: false
+- name: tests/__init__.py
+  visible: false
+- name: storage.db.db
+  visible: true

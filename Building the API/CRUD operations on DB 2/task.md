@@ -1,0 +1,1 @@
+Define methods to GET, DELETE or update an individual item in the database

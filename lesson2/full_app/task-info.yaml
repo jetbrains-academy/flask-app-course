@@ -1,7 +1,5 @@
 type: edu
 files:
-- name: task.py
-  visible: true
 - name: __init__.py
   visible: true
 - name: docker-compose.yaml
@@ -24,11 +22,9 @@ files:
   visible: true
 - name: invsys/dal.py
   visible: true
-- name: invsys/storage.db.db
-  visible: true
 - name: tests/__init__.py
-  visible: true
+  visible: false
 - name: tests/test_task_full.py
-  visible: true
+  visible: false
 - name: runConfigurations/test_task_full.run.xml
   visible: false

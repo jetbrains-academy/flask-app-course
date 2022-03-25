@@ -1,0 +1,20 @@
+type: edu
+files:
+- name: task.py
+  visible: true
+- name: tests/test_task.py
+  visible: false
+- name: __init__.py
+  visible: false
+- name: tests/__init__.py
+  visible: false
+- name: docker-compose.yaml
+  visible: true
+- name: gateway/__init__.py
+  visible: true
+- name: gateway/application.py
+  visible: true
+- name: gateway/Dockerfile
+  visible: true
+- name: gateway/requirements.txt
+  visible: true
