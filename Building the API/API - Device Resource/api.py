@@ -40,7 +40,7 @@ class Device(Resource):
 
     # GET - Returns a single device object given a matching id
     @staticmethod
-    def get(self, identifier):
+    def get(identifier):
         # device = dal.get_device(identifier)
         device = next((item for item in devices if item['id'] == identifier), None)
 
@@ -82,3 +82,9 @@ class Device(Resource):
             return {'message': 'Device not found', 'data': {}}, 404
 
         return {'message': f'{identifier} deleted'}, 201
+
+
+api.add_resource(Device, "/items/<string:identifier>")
+
+if __name__ == "__main__":
+    app.run("0.0.0.0", port=5000, debug=True)
