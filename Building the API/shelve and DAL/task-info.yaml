@@ -8,5 +8,3 @@ files:
   visible: false
 - name: tests/__init__.py
   visible: false
-- name: storage.db.db
-  visible: true

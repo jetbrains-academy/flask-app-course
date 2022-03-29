@@ -1,7 +1,7 @@
 content:
-- shelve database
-- CRUD operations on DB 1
-- CRUD operations on DB 2
 - API - Device Resource
 - API - DeviceInventory Resource
+- shelve and DAL
+- CRUD operations on DB 1
+- CRUD operations on DB 2
 - Attach Endpoints   Run
