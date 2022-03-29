@@ -1,6 +1,6 @@
 type: edu
 files:
-- name: task.py
+- name: dal.py
   visible: true
 - name: tests/test_task.py
   visible: false
