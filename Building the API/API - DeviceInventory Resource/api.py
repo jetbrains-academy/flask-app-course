@@ -1,10 +1,29 @@
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
-import dal
 
 # Initialize Flask
 app = Flask(__name__)
 api = Api(app)
+
+devices = [{
+    "id": "001",
+    "name": "Light bulb",
+    "location": "hall",
+    "status": "off"
+},
+    {
+        "id": "002",
+        "name": "Humidity_sensor",
+        "location": "bedroom",
+        "status": "on"
+    },
+    {
+        "id": "003",
+        "name": "Humidifier",
+        "location": "bedroom",
+        "status": "off"
+    }
+]
 
 
 # Resource: Individual Device Routes
@@ -20,8 +39,10 @@ class Device(Resource):
         super(Device, self).__init__()
 
     # GET - Returns a single device object given a matching id
-    def get(self, identifier):
-        device = dal.get_device(identifier)
+    @staticmethod
+    def get(identifier):
+        # device = dal.get_device(identifier)
+        device = next((item for item in devices if item['id'] == identifier), None)
 
         if not device:
             return {'message': 'Device not found', 'data': {}}, 404
@@ -31,22 +52,36 @@ class Device(Resource):
     # PUT - Given an id
     def put(self, identifier):
         args = self.reqparse.parse_args()
-        updated_device = dal.put_device(identifier, args)
-
-        if not updated_device:
+        # updated_device = dal.put_device(identifier, args)
+        for device in devices:
+            if device.get('id', 0) == identifier:
+                for k, v in args.items():
+                    if v is not None:
+                        device[k] = v
+                break
+        else:
+            # if not updated_device:
             return {'message': 'Device not found', 'data': {}}, 404
 
-        return {"updated device": updated_device}
+        # return {"updated device": updated_device}
+        return {"updated device": next((item for item in devices if item['id'] == identifier), None)}
 
     # Delete - Given an id
     @staticmethod
     def delete(identifier):
-        deleted = dal.delete_device(identifier)
+        # deleted = dal.delete_device(identifier)
+        #
+        # if not deleted:
+        #     return {'message': 'Device not found', 'data': {}}, 404
 
-        if not deleted:
+        for i in range(len(devices)):
+            if devices[i]['id'] == identifier:
+                del devices[i]
+                break
+        else:
             return {'message': 'Device not found', 'data': {}}, 404
 
-        return deleted, 201
+        return {'message': f'{identifier} deleted'}, 201
 
 
 class DeviceInventory(Resource):
@@ -65,12 +100,20 @@ class DeviceInventory(Resource):
 
     @staticmethod
     def get():
-        return dal.get()
+        # return dal.get()
+        return devices
 
     def post(self):
         args = self.reqparse.parse_args()
-        posted_device = dal.post(args)
-        if not posted_device:
-            return 404
-        return {"device": posted_device}, 201
+        devices.append(args)
+        # posted_device = dal.post(args)
+        # if not posted_device:
+        #     return 404
+        return {"device": args}, 201
 
+
+api.add_resource(DeviceInventory, "/items")
+api.add_resource(Device, "/items/<string:identifier>")
+
+if __name__ == "__main__":
+    app.run("0.0.0.0", port=5000, debug=True)
