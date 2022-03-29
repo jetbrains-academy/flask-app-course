@@ -33,16 +33,20 @@ def delete_resource(item_id):
 
 
 @app.route('/items', methods=['POST'])
-@app.route('/items/<string:item_id>', methods=['PUT'])
-def update_resource(item_id=None):
+def post_resource(item_id=None):
     # Get the payload from our incoming request
     payload = request.get_json(force=True)
+    response = requests.post('http://invsys:5000/items', json=payload)
 
-    if request.method == 'POST':
-        # Forward the payload to the relevant endpoint in invsys
-        response = requests.post('http://invsys:5000/items', json=payload)
-    else:
-        response = requests.put(f'http://invsys:5000/items/{item_id}', json=payload)
+    # Forward the response back to the client
+    return Response(response.content, response.status_code)
+
+
+@app.route('/items/<string:item_id>', methods=['PUT'])
+def put_resource(item_id=None):
+    # Get the payload from our incoming request
+    payload = request.get_json(force=True)
+    response = requests.put(f'http://invsys:5000/items/{item_id}', json=payload)
 
     # Forward the response back to the client
     return Response(response.content, response.status_code)
