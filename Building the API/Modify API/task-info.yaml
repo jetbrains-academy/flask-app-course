@@ -1,5 +1,4 @@
 type: edu
-custom_name: Attach Endpoints & Run
 files:
 - name: api.py
   visible: true
