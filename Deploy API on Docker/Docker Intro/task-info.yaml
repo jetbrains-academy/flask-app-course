@@ -4,13 +4,13 @@ files:
   visible: true
 - name: __init__.py
   visible: false
-- name: img.png
+- name: images/img.png
   visible: true
-- name: img_1.png
+- name: images/img_1.png
   visible: true
-- name: img_2.png
+- name: images/img_2.png
   visible: true
-- name: img_3.png
+- name: images/img_3.png
   visible: true
-- name: img_4.png
+- name: images/img_4.png
   visible: true

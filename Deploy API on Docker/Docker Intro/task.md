@@ -27,14 +27,14 @@ The connection settings depend on your Docker version and operating system. For 
 
 The **Connection successful** message should appear at the bottom of the dialog.
 
-![](img.png)
+![](images/img.png)
 
 3. Connect to the Docker daemon.
-   The configured Docker connection should appear in the Services tool window (**View | Tool Windows | Services** or ⌘8). Select the Docker node ![](img_2.png) and click ![](img_3.png), or select **Connect** from the context menu.
+   The configured Docker connection should appear in the Services tool window (**View | Tool Windows | Services** or ⌘8). Select the Docker node ![](images/img_2.png) and click ![](images/img_3.png), or select **Connect** from the context menu.
 
-![](img_1.png)
+![](images/img_1.png)
 
-To edit the Docker connection settings, select the Docker node and click ![](img_4.png) on the toolbar, or select **Edit Configuration** from the context menu.
+To edit the Docker connection settings, select the Docker node and click ![](images/img_4.png) on the toolbar, or select **Edit Configuration** from the context menu.
 
 <style>
 img {
