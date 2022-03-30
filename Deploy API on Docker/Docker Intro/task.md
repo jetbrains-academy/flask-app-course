@@ -35,3 +35,9 @@ The **Connection successful** message should appear at the bottom of the dialog.
 ![](img_1.png)
 
 To edit the Docker connection settings, select the Docker node and click ![](img_4.png) on the toolbar, or select **Edit Configuration** from the context menu.
+
+<style>
+img {
+  display: inline !important;
+}
+</style>
