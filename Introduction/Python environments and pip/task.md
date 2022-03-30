@@ -1,48 +1,40 @@
+### Virtual Environments
 
-This is a task description file.
-Its content will be displayed to a learner
-in the **Task Description** window.
+Python applications will often use packages and modules that don’t come as part of the standard library. 
+Applications will sometimes need a specific version of a library, because the application may require that 
+a particular bug has been fixed or the application may be written using an obsolete version of the library’s interface.
+Different applications might have conflicting requirements.
 
-It supports both Markdown and HTML.
-To toggle the format, you can rename **task.md**
-to **task.html**, or vice versa.
-The default task description format can be changed
-in **Preferences | Tools | Education**,
-but this will not affect any existing task description files.
+The solution for this problem is to create a virtual environment – a self-contained directory tree that contains 
+a particular version of Python, plus a number of additional packages. Different applications can then use different virtual environments. To resolve the problem of 
+conflicting requirements, applications can have their own virtual environments with compatible library versions installed. 
+If one application requires some library to be upgraded, this will not affect other applications.
 
-The following features are available in
-**task.md/task.html** which are specific to the EduTools plugin:
+The `venv` module provides support for creating lightweight virtual environments with their own site 
+directories, optionally isolated from system site directories. Each virtual environment has its own 
+Python binary (which matches the version of the binary that was used to create this environment) and 
+can have its own independent set of installed Python packages in its site directories.
 
-- Hints can be added anywhere in the task text.
-Type "hint" and press Tab.
-Hints should be added to an empty line in the task text.
-In hints you can use both HTML and Markdown.
-<div class="hint">
+IntelliJ IDEA makes it possible to use the [virtualenv](https://virtualenv.pypa.io/en/latest/index.html) tool to create a project-specific isolated virtual environment. This course already has one. 
+For each isolated application that you will build in this course, a new virtual environment will be created.
 
-Text of your hint
+### Managing Packages with pip
 
-</div>
+You can install, upgrade, and remove packages using a program called pip. By default pip will install packages from the Python Package Index, <https://pypi.org>. You can browse the Python Package Index by going to it in your web browser.
 
-- You may need to refer your learners to a particular lesson,
-task, or file. To achieve this, you can use the in-course links.
-Specify the path using the `[link_text](course://lesson1/task1/file1)` format.
+pip has a number of subcommands: “install”, “uninstall”, “freeze”, etc. 
 
-- You can insert shortcuts in the task description.
-While **task.html/task.md** is open, right-click anywhere
-on the **Editor** tab and choose the **Insert shortcut** option
-from the context menu.
-For example: &shortcut:FileStructurePopup;.
+You can install the latest version of a package by specifying a package’s name. 
+```text
+python -m pip install requests
+```
+You can also install a specific version of a package.
+```text
+python -m pip install requests==2.6.0
+```
 
-- Insert the &percnt;`IDE_NAME`&percnt; macro,
-which will be replaced by the actual IDE name.
-For example, **%IDE_NAME%**.
+`pip freeze` will produce a list of the installed packages, and the output uses the format that `pip install` expects. A common convention is to put this list in a `requirements.txt` file.
+The `requirements.txt` can then be committed to version control and shipped as part of an application. Users can then install all the necessary packages with `pip install -r requirements.txt`.
+We will use this and talk about it later in more detail.
 
-- Insert PSI elements, by using links like
-`[element_description](psi_element://link.to.element)`.
-To get such a link, right-click the class or method
-and select **Copy Reference**.
-Then press &shortcut:EditorPaste; to insert the link where appropriate.
-For example, a [link to the "contains" method](psi_element://java.lang.String#contains).
-
-- You can add link to file using **full path** like this:
-  `[file_link](file://lesson1/task1/file.txt)`.
+Read more about virtual environments and packages in [The Python Tutorial](https://docs.python.org/3/tutorial/venv.html) and [IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/creating-virtual-environment.html).
