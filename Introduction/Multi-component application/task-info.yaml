@@ -8,3 +8,7 @@ files:
   visible: false
 - name: tests/__init__.py
   visible: false
+- name: technical_flow.png
+  visible: false
+- name: UML.png
+  visible: false
