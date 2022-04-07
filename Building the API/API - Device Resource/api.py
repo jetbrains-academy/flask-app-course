@@ -5,25 +5,25 @@ from flask_restful import Resource, Api, reqparse
 app = Flask(__name__)
 api = Api(app)
 
-devices = [{
+devices = {"001": {
     "id": "001",
     "name": "Light bulb",
     "location": "hall",
     "status": "off"
 },
-    {
+    "002": {
         "id": "002",
         "name": "Humidity_sensor",
         "location": "bedroom",
         "status": "on"
     },
-    {
+    "003": {
         "id": "003",
         "name": "Humidifier",
         "location": "bedroom",
         "status": "off"
     }
-]
+}
 
 
 # Resource: Individual Device Routes
@@ -42,7 +42,7 @@ class Device(Resource):
     @staticmethod
     def get(identifier):
         # device = dal.get_device(identifier)
-        device = next((item for item in devices if item['id'] == identifier), None)
+        device = devices[identifier]
 
         if not device:
             return {'message': 'Device not found', 'data': {}}, 404
@@ -53,18 +53,18 @@ class Device(Resource):
     def put(self, identifier):
         args = self.reqparse.parse_args()
         # updated_device = dal.put_device(identifier, args)
-        for device in devices:
-            if device.get('id', 0) == identifier:
-                for k, v in args.items():
-                    if v is not None:
-                        device[k] = v
-                break
-        else:
-            # if not updated_device:
+        if identifier not in devices.keys():
             return {'message': 'Device not found', 'data': {}}, 404
 
+        # Loop Through all the passed arguments.
+        for k, v in args.items():
+            # Check if the passed value is not null.
+            if v is not None:
+                # If not, set the element in the devices dict with the 'k' object to the value provided in the request.
+                devices[identifier][k] = v
+
         # return {"updated device": updated_device}
-        return {"updated device": next((item for item in devices if item['id'] == identifier), None)}
+        return {"updated device": devices[identifier]}
 
     # Delete - Given an id
     @staticmethod
@@ -73,14 +73,9 @@ class Device(Resource):
         #
         # if not deleted:
         #     return {'message': 'Device not found', 'data': {}}, 404
-
-        for i in range(len(devices)):
-            if devices[i]['id'] == identifier:
-                del devices[i]
-                break
-        else:
+        if identifier not in devices.keys():
             return {'message': 'Device not found', 'data': {}}, 404
-
+        del devices[identifier]
         return {'message': f'{identifier} deleted'}, 201
 
 
