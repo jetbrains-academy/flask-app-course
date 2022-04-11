@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_restful import Resource, Api, reqparse
 import json
 
@@ -46,16 +46,16 @@ class Device(Resource):
         device = devices[identifier]
 
         if not device:
-            return {'message': 'Device not found', 'data': {}}, 404
+            return jsonify({'message': 'Device not found', 'data': {}}), 404
 
-        return {"device": device}
+        return jsonify({"device": device})
 
     # PUT - Given an id
     def put(self, identifier):
         args = self.reqparse.parse_args()
         # updated_device = dal.put_device(identifier, args)
         if identifier not in devices.keys():
-            return {'message': 'Device not found', 'data': {}}, 404
+            return jsonify({'message': 'Device not found', 'data': {}}), 404
 
         # Loop Through all the passed arguments.
         for k, v in args.items():
@@ -65,7 +65,7 @@ class Device(Resource):
                 devices[identifier][k] = v
 
         # return {"updated device": updated_device}
-        return {"updated device": devices[identifier]}
+        return jsonify({"updated device": devices[identifier]})
 
     # Delete - Given an id
     @staticmethod
@@ -75,9 +75,9 @@ class Device(Resource):
         # if not deleted:
         #     return {'message': 'Device not found', 'data': {}}, 404
         if identifier not in devices.keys():
-            return {'message': 'Device not found', 'data': {}}, 404
+            return jsonify({'message': 'Device not found', 'data': {}}), 404
         del devices[identifier]
-        return {'message': f'{identifier} deleted'}, 201
+        return jsonify({'message': f'{identifier} deleted'}), 201
 
 
 class DeviceInventory(Resource):
@@ -97,7 +97,7 @@ class DeviceInventory(Resource):
     @staticmethod
     def get():
         # return dal.get()
-        return {"devices": devices}
+        return jsonify({"devices": devices})
 
     def post(self):
         args = self.reqparse.parse_args()
@@ -106,7 +106,7 @@ class DeviceInventory(Resource):
         # posted_device = dal.post(args)
         # if not posted_device:
         #     return 404
-        return {"device": args}, 201
+        return jsonify({"device": args}), 201
 
 
 api.add_resource(DeviceInventory, "/items")
