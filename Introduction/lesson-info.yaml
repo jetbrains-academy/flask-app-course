@@ -2,5 +2,4 @@ content:
 - Getting Started
 - Multi-component application
 - Python environments and pip
-- Flask
-
+- Flask REST API
