@@ -42,19 +42,18 @@ class Device(Resource):
     @staticmethod
     def get(identifier):
         # device = dal.get_device(identifier)
-        device = devices[identifier]
+        if identifier not in devices.keys():
+            return {'message': 'Device not found', 'data': {}}, 404
 
-        if not device:
-            return jsonify({'message': 'Device not found', 'data': {}}), 404
+        return {"device": devices[identifier]}
 
-        return jsonify({"device": device})
 
     # PUT - Given an id
     def put(self, identifier):
         args = self.reqparse.parse_args()
         # updated_device = dal.put_device(identifier, args)
         if identifier not in devices.keys():
-            return jsonify({'message': 'Device not found', 'data': {}}), 404
+            return {'message': 'Device not found', 'data': {}}, 404
 
         # Loop Through all the passed arguments.
         for k, v in args.items():
@@ -64,7 +63,7 @@ class Device(Resource):
                 devices[identifier][k] = v
 
         # return {"updated device": updated_device}
-        return jsonify({"updated device": devices[identifier]})
+        return {"updated device": devices[identifier]}
 
     # Delete - Given an id
     @staticmethod
@@ -74,9 +73,9 @@ class Device(Resource):
         # if not deleted:
         #     return {'message': 'Device not found', 'data': {}}, 404
         if identifier not in devices.keys():
-            return jsonify({'message': 'Device not found', 'data': {}}), 404
+            return {'message': 'Device not found', 'data': {}}, 404
         del devices[identifier]
-        return jsonify({'message': f'{identifier} deleted'}), 201
+        return {'message': f'{identifier} deleted'}, 201
 
 
 api.add_resource(Device, "/items/<string:identifier>")
