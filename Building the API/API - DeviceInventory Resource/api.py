@@ -46,16 +46,16 @@ class Device(Resource):
         device = devices[identifier]
 
         if not device:
-            return jsonify({'message': 'Device not found', 'data': {}}), 404
+            return {'message': 'Device not found', 'data': {}}, 404
 
-        return jsonify({"device": device})
+        return {"device": device}
 
     # PUT - Given an id
     def put(self, identifier):
         args = self.reqparse.parse_args()
         # updated_device = dal.put_device(identifier, args)
         if identifier not in devices.keys():
-            return jsonify({'message': 'Device not found', 'data': {}}), 404
+            return {'message': 'Device not found', 'data': {}}, 404
 
         # Loop Through all the passed arguments.
         for k, v in args.items():
@@ -65,7 +65,7 @@ class Device(Resource):
                 devices[identifier][k] = v
 
         # return {"updated device": updated_device}
-        return jsonify({"updated device": devices[identifier]})
+        return {"updated device": devices[identifier]}
 
     # Delete - Given an id
     @staticmethod
@@ -75,9 +75,9 @@ class Device(Resource):
         # if not deleted:
         #     return {'message': 'Device not found', 'data': {}}, 404
         if identifier not in devices.keys():
-            return jsonify({'message': 'Device not found', 'data': {}}), 404
+            return {'message': 'Device not found', 'data': {}}, 404
         del devices[identifier]
-        return jsonify({'message': f'{identifier} deleted'}), 201
+        return {'message': f'{identifier} deleted'}, 201
 
 
 class DeviceInventory(Resource):
@@ -97,7 +97,7 @@ class DeviceInventory(Resource):
     @staticmethod
     def get():
         # return dal.get()
-        return jsonify({"devices": devices})
+        return {"devices": devices}
 
     def post(self):
         args = self.reqparse.parse_args()
@@ -106,7 +106,7 @@ class DeviceInventory(Resource):
         # posted_device = dal.post(args)
         # if not posted_device:
         #     return 404
-        return jsonify({"device": args}), 201
+        return {"device": args}, 201
 
 
 api.add_resource(DeviceInventory, "/items")
