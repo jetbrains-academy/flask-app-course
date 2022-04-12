@@ -9,6 +9,8 @@ to use a simple nested dictionary instead of a database. It can easily be swappe
 
 The Device Resource class contains the HTTP routes for accessing, modifying and deleting each individual device entity. 
 
+### Device Resource methods
+
 In the `init` method of the class, you initialize the [request parser](https://flask-restful.readthedocs.io/en/latest/api.html#module-reqparse). It'll allow you easy access to any variable on 
 the `flask.request` and also validates the response based on the arguments provided.
 
@@ -27,4 +29,15 @@ existing values with absent values).
 The `delete` method first checks if the element with a given id is present in the dictionary, an if not, it returns
 a message `{'message': 'Device not found', 'data': {}}` and a response code `404`.
 It then simply deletes the element with this id from the devices dict.
+
+### Endpoints
+
+Line 81 attaches the Resource class to an [endpoint](https://flask-restful.readthedocs.io/en/latest/quickstart.html?highlight=endpoints#endpoints).
+You can pass multiple URLs to the `add_resource()` method on the `Api` object. Each one will be routed to your `Resource`.
+You can also match parts of the path as variables to your resource methods.
+
+```python
+api.add_resource(Device, "/items/<string:identifier>")
+```
+
 
