@@ -52,6 +52,8 @@ class Device(Resource):
     def put(self, identifier):
         args = self.reqparse.parse_args()
         # updated_device = dal.put_device(identifier, args)
+        # Maybe this method should create a new device here if the id wasn't found, instead of returning a 404.
+        # In this case, however, we need to make all args required.
         if identifier not in devices.keys():
             return {'message': 'Device not found', 'data': {}}, 404
 
@@ -63,7 +65,7 @@ class Device(Resource):
                 devices[identifier][k] = v
 
         # return {"updated device": updated_device}
-        return {"updated device": devices[identifier]}
+        return {"updated device": devices[identifier]}, 200
 
     # Delete - Given an id
     @staticmethod
@@ -75,7 +77,7 @@ class Device(Resource):
         if identifier not in devices.keys():
             return {'message': 'Device not found', 'data': {}}, 404
         del devices[identifier]
-        return {'message': f'{identifier} deleted'}, 201
+        return {'message': f'{identifier} deleted'}, 200
 
 
 api.add_resource(Device, "/items/<string:identifier>")
