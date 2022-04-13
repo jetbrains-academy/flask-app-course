@@ -19,8 +19,15 @@ We could decouple the database by using a concept known as DAOs (data access obj
 A DAL is a layer of a computer program which provides simplified access to data stored in persistent storage of some kind, 
 such as an entity-relational database. The DAL hides the complexity of the underlying data store from the external world.
 For example, instead of using commands such as `insert`, `delete`, and `update` to access a specific table in a database, 
-a class and a few stored procedures could be created in the database. The procedures would be called from a method inside 
-the class, which would return an object containing the requested values. Or, the `insert`, `delete` and `update` commands could 
+a class and a few stored procedures could be created in the database or the commands could 
 be executed within simple functions stored within the data access layer.
 
-In our case, ......
+### Task
+
+We are going to write a DAL with simple functions performing CRUD operations on a shelve database. In this task 
+you only need to populate the database `db` with data from the dictionary. 
+
+<div class="hint">
+
+Remember that `db` is a dictionary-like object accessed by keys.
+</div>

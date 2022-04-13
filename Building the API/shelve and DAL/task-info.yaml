@@ -1,7 +1,11 @@
-type: theory
+type: output
 files:
 - name: task.py
   visible: true
+  placeholders:
+  - offset: 937
+    length: 59
+    placeholder_text: '# Populate the database db with data'
 - name: __init__.py
   visible: false
 - name: storage.db.db
