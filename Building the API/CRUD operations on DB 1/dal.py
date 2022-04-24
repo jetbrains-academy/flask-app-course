@@ -2,6 +2,8 @@ import shelve
 from flask import g
 
 
+# This function creates a database if none has yet been created,
+# or opens it if it's already there.
 def pull_db():
     db_ = getattr(g, '_database', None)
     if db_ is None:
@@ -12,9 +14,9 @@ def pull_db():
 def get():
     shelf = pull_db()
     keys = list(shelf.keys())
-    devices_ = []
+    devices_ = {}
     for key in keys:
-        devices_.append(shelf[key])
+        devices_[key] = shelf[key]
     return devices_
 
 
