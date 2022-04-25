@@ -10,7 +10,7 @@ work as CRUD operations. The standard ones are as follows:
 - DELETE: Deletes a resource
 
 In this task, we are going to add simple functions to our DAL, which will be retrieving and adding data to the shelve database. 
-These functions will be called from the API by `get` and `post` methods of the DeviceInventory Resource.
+These functions will be called from the API by `get` and `post` methods of the `DeviceInventory` Resource.
 
 1. Implement the get method that will take all the data from the shelf return a dictionary of devices (its structure should be the same as in the 
 first task of this lesson). Remember that shelve objects can be accessed like a dictionary.

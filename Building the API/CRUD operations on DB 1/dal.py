@@ -11,6 +11,7 @@ def pull_db():
     return db_
 
 
+# This function returns the entire dataset of devices as a dictionary
 def get():
     shelf = pull_db()
     keys = list(shelf.keys())
@@ -20,6 +21,7 @@ def get():
     return devices_
 
 
+# This function adds a new element to the datastore of devices
 def post(args):
     shelf = pull_db()
     shelf[args['id']] = args
