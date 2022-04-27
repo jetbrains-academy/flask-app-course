@@ -15,7 +15,7 @@ import flask_unittest
 from api import app
 
 
-class TestFoo(flask_unittest.ClientTestCase):
+class TestClient(flask_unittest.ClientTestCase):
     # Assign the flask app object
     app = app
 
@@ -25,8 +25,7 @@ class TestFoo(flask_unittest.ClientTestCase):
 
     def test_get_with_client(self, client):
         response = client.get('/items/001')
-        self.assertEqual(response.data, (b'{"device": {"id": "001", "name": "Light bulb", "location": "hall", "status":'
-                                         b' "off"}}\n'))
+        self.assertEqual(response.data, b'{"device": {"id": "001", "name": "Light bulb", "location": "hall", "status": "off"}}\n')
 
     def test_put_with_client(self, client):
         response = client.put('/items/003', data={'location': 'hall', 'status': 'off'})
