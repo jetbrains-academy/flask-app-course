@@ -6,6 +6,7 @@ import dal
 app = Flask(__name__)
 api = Api(app)
 
+# TODO
 
 # Resource: Individual Device Routes
 class Device(Resource):
@@ -20,7 +21,8 @@ class Device(Resource):
         super(Device, self).__init__()
 
     # GET - Returns a single device object given a matching id
-    def get(self, identifier):
+    @staticmethod
+    def get(identifier):
         device = dal.get_device(identifier)
 
         if not device:

@@ -2,6 +2,78 @@ type: edu
 files:
 - name: api.py
   visible: true
+  placeholders:
+  - offset: 83
+    length: 10
+    placeholder_text: '# import dal'
+  - offset: 152
+    length: 6
+    placeholder_text: |-
+      # Drop this:
+      devices = {"001": {
+          "id": "001",
+          "name": "Light bulb",
+          "location": "hall",
+          "status": "off"
+      },
+          "002": {
+              "id": "002",
+              "name": "Humidity_sensor",
+              "location": "bedroom",
+              "status": "on"
+          },
+          "003": {
+              "id": "003",
+              "name": "Humidifier",
+              "location": "bedroom",
+              "status": "off"
+          }
+      }
+  - offset: 823
+    length: 180
+    placeholder_text: |-
+      # Change the implementation to use dal functions
+              device = devices[identifier]
+
+              if not device:
+                  return {'message': 'Device not found', 'data': {}}, 404
+
+              return {"device": device}
+  - offset: 1110
+    length: 218
+    placeholder_text: |-
+      # Change the implementation to use dal functions
+              if identifier not in devices.keys():
+                  return {'message': 'Device not found', 'data': {}}, 404
+
+              # Loop Through all the passed arguments.
+              for k, v in args.items():
+                  # Check if the passed value is not null.
+                  if v is not None:
+                      # If not, set the element in the devices dict with the 'k' object to the value provided in the request.
+                      devices[identifier][k] = v
+
+              # return {"updated device": updated_device}
+              return {"updated device": devices[identifier]}
+  - offset: 1411
+    length: 179
+    placeholder_text: |-
+      # Change the implementation to use dal functions
+              if identifier not in devices.keys():
+                  return {'message': 'Device not found', 'data': {}}, 404
+              del devices[identifier]
+              return {'message': f'{identifier} deleted'}, 201
+  - offset: 2360
+    length: 25
+    placeholder_text: |-
+      # Change the implementation to use dal functions
+              return {"devices": devices}
+  - offset: 2457
+    length: 138
+    placeholder_text: |-
+      # Change the implementation to use dal functions
+              devices[args["id"]] = args
+              return {"device": args}, 201
 - name: tests/test_task.py
   visible: false
 - name: __init__.py
