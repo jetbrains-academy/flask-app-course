@@ -1,6 +1,6 @@
-type: output
+type: edu
 files:
-- name: task.py
+- name: dal.py
   visible: true
   placeholders:
   - offset: 937
@@ -9,4 +9,10 @@ files:
 - name: __init__.py
   visible: false
 - name: storage.db.db
+  visible: true
+- name: tests/__init__.py
+  visible: false
+- name: tests/test_task.py
+  visible: false
+- name: try.py
   visible: true
