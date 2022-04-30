@@ -8,3 +8,22 @@ files:
   visible: false
 - name: api.py
   visible: true
+  placeholders:
+  - offset: 810
+    length: 207
+    placeholder_text: '# TODO: add the remaining arguments'
+  - offset: 1514
+    length: 104
+    placeholder_text: '# TODO'
+  - offset: 1923
+    length: 98
+    placeholder_text: '# TODO'
+  - offset: 2246
+    length: 104
+    placeholder_text: '# TODO'
+  - offset: 2417
+    length: 23
+    placeholder_text: '# TODO'
+  - offset: 1305
+    length: 19
+    placeholder_text: '''Return the device object accessed by its id'''

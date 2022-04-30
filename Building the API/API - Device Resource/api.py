@@ -41,7 +41,6 @@ class Device(Resource):
     # GET - Returns a single device object given a matching id
     @staticmethod
     def get(identifier):
-        # device = dal.get_device(identifier)
         if identifier not in devices.keys():
             return {'message': 'Device not found', 'data': {}}, 404
 
@@ -51,35 +50,32 @@ class Device(Resource):
     # PUT - Given an id
     def put(self, identifier):
         args = self.reqparse.parse_args()
-        # updated_device = dal.put_device(identifier, args)
-        # Maybe this method should create a new device here if the id wasn't found, instead of returning a 404.
-        # In this case, however, we need to make all args required.
+        # Return an error message and a 404 code if the identifier wasn't found.
         if identifier not in devices.keys():
             return {'message': 'Device not found', 'data': {}}, 404
 
-        # Loop Through all the passed arguments.
+        # Loop through all the passed arguments and their values (it's like a dictionary).
+        # For each argument value, check if it is not empty (None).
+        # If not, update the corresponding argument value of the
+        # corresponding device with the value provided in the request.
         for k, v in args.items():
-            # Check if the passed value is not null.
             if v is not None:
-                # If not, set the element in the devices dict with the 'k' object to the value provided in the request.
                 devices[identifier][k] = v
 
-        # return {"updated device": updated_device}
         return {"updated device": devices[identifier]}, 200
 
     # Delete - Given an id
     @staticmethod
     def delete(identifier):
-        # deleted = dal.delete_device(identifier)
-        #
-        # if not deleted:
-        #     return {'message': 'Device not found', 'data': {}}, 404
+        # Return an error message and a 404 code if the identifier wasn't found:
         if identifier not in devices.keys():
             return {'message': 'Device not found', 'data': {}}, 404
+        # Delete the device with the provided identifier:
         del devices[identifier]
         return {'message': f'{identifier} deleted'}, 200
 
 
+# Now we add an endpoint and run the app.
 api.add_resource(Device, "/items/<string:identifier>")
 
 if __name__ == "__main__":
