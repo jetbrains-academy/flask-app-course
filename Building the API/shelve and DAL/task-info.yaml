@@ -8,11 +8,7 @@ files:
     placeholder_text: '# Populate the database db with data'
 - name: __init__.py
   visible: false
-- name: storage.db.db
-  visible: true
 - name: tests/__init__.py
   visible: false
 - name: tests/test_task.py
   visible: false
-- name: try.py
-  visible: true
