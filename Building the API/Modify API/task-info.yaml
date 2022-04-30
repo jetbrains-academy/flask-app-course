@@ -3,10 +3,10 @@ files:
 - name: api.py
   visible: true
   placeholders:
-  - offset: 83
+  - offset: 74
     length: 10
     placeholder_text: '# import dal'
-  - offset: 152
+  - offset: 143
     length: 6
     placeholder_text: |-
       # Drop this:
@@ -29,8 +29,8 @@ files:
               "status": "off"
           }
       }
-  - offset: 823
-    length: 180
+  - offset: 814
+    length: 162
     placeholder_text: |-
       # Change the implementation to use dal functions
               device = devices[identifier]
@@ -39,8 +39,8 @@ files:
                   return {'message': 'Device not found', 'data': {}}, 404
 
               return {"device": device}
-  - offset: 1110
-    length: 218
+  - offset: 1083
+    length: 200
     placeholder_text: |-
       # Change the implementation to use dal functions
               if identifier not in devices.keys():
@@ -55,21 +55,21 @@ files:
 
               # return {"updated device": updated_device}
               return {"updated device": devices[identifier]}
-  - offset: 1411
-    length: 179
+  - offset: 1366
+    length: 161
     placeholder_text: |-
       # Change the implementation to use dal functions
               if identifier not in devices.keys():
                   return {'message': 'Device not found', 'data': {}}, 404
               del devices[identifier]
               return {'message': f'{identifier} deleted'}, 201
-  - offset: 2360
-    length: 25
+  - offset: 2297
+    length: 16
     placeholder_text: |-
       # Change the implementation to use dal functions
               return {"devices": devices}
-  - offset: 2457
-    length: 138
+  - offset: 2385
+    length: 129
     placeholder_text: |-
       # Change the implementation to use dal functions
               devices[args["id"]] = args
@@ -80,7 +80,5 @@ files:
   visible: false
 - name: tests/__init__.py
   visible: false
-- name: storage.db.db
-  visible: true
 - name: dal.py
   visible: true
