@@ -3,7 +3,7 @@ files:
 - name: dal.py
   visible: true
   placeholders:
-  - offset: 937
+  - offset: 508
     length: 59
     placeholder_text: '# Populate the database db with data'
 - name: __init__.py

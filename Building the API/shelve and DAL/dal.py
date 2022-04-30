@@ -1,26 +1,5 @@
 import shelve
 
-# A List of Dicts to define initial devices
-# devices = [{
-#     "id": "001",
-#     "name": "Light bulb",
-#     "location": "hall",
-#     "status": "off"
-# },
-#     {
-#         "id": "002",
-#         "name": "Humidity_sensor",
-#         "location": "bedroom",
-#         "status": "on"
-#     },
-#     {
-#         "id": "003",
-#         "name": "Humidifier",
-#         "location": "bedroom",
-#         "status": "off"
-#     }
-# ]
-
 devices = {"001": {
     "id": "001",
     "name": "Light bulb",
