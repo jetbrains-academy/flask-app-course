@@ -24,12 +24,10 @@ class TestClient(flask_unittest.ClientTestCase):
         response = client.get('/items')
         self.assertEqual(response.status_code, 200)
 
-# This test is failing for some reason
     def test_post_with_client(self, client):
-        response = client.post('/items', data={"id": "100500", "name": "TestDevice", "location": "somewhere", "status": "off"})
+        response = client.post('/items', json={"id": "100500", "name": "TestDevice", "location": "somewhere", "status": "off"})
         self.assertEqual(response.status_code, 201)
-        self.assertEqual(response.data, (b'{"device": {"id": "100500", "name": "TestDevice", "location": "somewhere", "status":'
-                                                                              b' "off"}}\n'))
+        self.assertEqual(response.data, (b'{"device": {"id": "100500", "name": "TestDevice", "location": "somewhere", "status": "off"}}\n'))
 
     def test_get__with_client(self, client):
         response = client.get('/items/001')
