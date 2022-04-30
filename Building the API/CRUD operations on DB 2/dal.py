@@ -66,29 +66,29 @@ def delete_device(identifier):
     return {'message': f'{identifier} deleted'}
 
 
-# A List of Dicts to define initial devices
-devices = [{
+# A Dict of Dicts to define initial devices
+devices = {"001": {
     "id": "001",
     "name": "Light bulb",
     "location": "hall",
     "status": "off"
 },
-    {
+    "002": {
         "id": "002",
         "name": "Humidity_sensor",
         "location": "bedroom",
         "status": "on"
     },
-    {
+    "003": {
         "id": "003",
         "name": "Humidifier",
         "location": "bedroom",
         "status": "off"
     }
-]
+}
 
 # Initialize db with some data already in it
 with shelve.open('storage.db') as db:
-    for i, j in enumerate(devices):
-        db[devices[i]["id"]] = j
+    for key, value, in devices.items():
+        db[key] = value
 
