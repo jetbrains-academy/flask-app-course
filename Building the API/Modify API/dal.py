@@ -12,9 +12,9 @@ def pull_db():
 def get():
     shelf = pull_db()
     keys = list(shelf.keys())
-    devices_ = []
+    devices_ = {}
     for key in keys:
-        devices_.append(shelf[key])
+        devices_[key] = shelf[key]
     return devices_
 
 
@@ -49,36 +49,35 @@ def put_device(identifier, args):
 
 def delete_device(identifier):
     shelf = pull_db()
-    # if the key does not exist on the shelf, return a 404 error.
+    # If the key does not exist on the shelf, return None.
     if not (identifier in shelf):
         return None
     del shelf[identifier]
     return {'message': f'{identifier} deleted'}
 
 
-# A List of Dicts to define initial devices
-devices = [{
+# A Dict of Dicts to define initial devices
+devices = {"001": {
     "id": "001",
     "name": "Light bulb",
     "location": "hall",
     "status": "off"
 },
-    {
+    "002": {
         "id": "002",
         "name": "Humidity_sensor",
         "location": "bedroom",
         "status": "on"
     },
-    {
+    "003": {
         "id": "003",
         "name": "Humidifier",
         "location": "bedroom",
         "status": "off"
     }
-]
+}
 
 # Initialize db with some data already in it
 with shelve.open('storage.db') as db:
-    for i, j in enumerate(devices):
-        db[devices[i]["id"]] = j
-
+    for key, value, in devices.items():
+        db[key] = value
