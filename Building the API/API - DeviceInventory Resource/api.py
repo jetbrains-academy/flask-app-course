@@ -42,7 +42,6 @@ class Device(Resource):
     # GET - Returns a single device object given a matching id
     @staticmethod
     def get(identifier):
-        # device = dal.get_device(identifier)
         device = devices[identifier]
 
         if not device:
@@ -53,27 +52,23 @@ class Device(Resource):
     # PUT - Given an id
     def put(self, identifier):
         args = self.reqparse.parse_args()
-        # updated_device = dal.put_device(identifier, args)
+        # Return an error message and a 404 code if the identifier wasn't found.
         if identifier not in devices.keys():
             return {'message': 'Device not found', 'data': {}}, 404
 
-        # Loop Through all the passed arguments.
+        # Loop through all the passed arguments and their values (it's like a dictionary).
+        # For each argument value, check if it is not empty (None).
+        # If not, update the corresponding argument value of the
+        # corresponding device with the value provided in the request.
         for k, v in args.items():
-            # Check if the passed value is not null.
             if v is not None:
-                # If not, set the element in the devices dict with the 'k' object to the value provided in the request.
                 devices[identifier][k] = v
 
-        # return {"updated device": updated_device}
         return {"updated device": devices[identifier]}
 
     # Delete - Given an id
     @staticmethod
     def delete(identifier):
-        # deleted = dal.delete_device(identifier)
-        #
-        # if not deleted:
-        #     return {'message': 'Device not found', 'data': {}}, 404
         if identifier not in devices.keys():
             return {'message': 'Device not found', 'data': {}}, 404
         del devices[identifier]
@@ -96,19 +91,16 @@ class DeviceInventory(Resource):
 
     @staticmethod
     def get():
-        # return dal.get()
         return {"devices": devices}
 
     def post(self):
         args = self.reqparse.parse_args()
-        # devices.append(args)
         devices[args["id"]] = args
-        # posted_device = dal.post(args)
-        # if not posted_device:
-        #     return 404
+
         return {"device": args}, 201
 
 
+# Now we can add endpoints and run the app.
 api.add_resource(DeviceInventory, "/items")
 api.add_resource(Device, "/items/<string:identifier>")
 

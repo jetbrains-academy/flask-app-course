@@ -2,6 +2,19 @@ type: edu
 files:
 - name: api.py
   visible: true
+  placeholders:
+  - offset: 2476
+    length: 569
+    placeholder_text: '# TODO: add four required arguments'
+  - offset: 3156
+    length: 7
+    placeholder_text: '''Return all devices'''
+  - offset: 3194
+    length: 33
+    placeholder_text: '# TODO: parse the request arguments'
+  - offset: 3236
+    length: 26
+    placeholder_text: '# TODO: add a new device to devices'
 - name: tests/test_task.py
   visible: false
 - name: __init__.py
