@@ -14,8 +14,8 @@ def pull_db():
 # This function returns the entire dataset of devices as a dictionary
 def get():
     shelf = pull_db()
-    keys = list(shelf.keys())
     devices_ = {}
+    keys = list(shelf.keys())
     for key in keys:
         devices_[key] = shelf[key]
     return devices_
