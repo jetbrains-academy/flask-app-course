@@ -5,12 +5,12 @@ files:
 - name: __init__.py
   visible: false
 - name: images/img.png
-  visible: true
+  visible: false
 - name: images/img_1.png
-  visible: true
+  visible: false
 - name: images/img_2.png
-  visible: true
+  visible: false
 - name: images/img_3.png
-  visible: true
+  visible: false
 - name: images/img_4.png
-  visible: true
+  visible: false

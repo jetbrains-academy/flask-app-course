@@ -10,3 +10,5 @@ files:
   visible: true
 - name: dal.py
   visible: true
+- name: runConfigurations/Python tests in test_task.py.run.xml
+  visible: false
