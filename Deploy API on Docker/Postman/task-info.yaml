@@ -1,10 +1,18 @@
-type: edu
+type: theory
 files:
-- name: task.py
-  visible: true
-- name: tests/test_task.py
-  visible: false
 - name: __init__.py
   visible: false
-- name: tests/__init__.py
+- name: api.py
+  visible: true
+- name: dal.py
+  visible: true
+- name: Dockerfile
+  visible: true
+- name: requirements.txt
+  visible: true
+- name: runConfigurations/Postman_task_config.run.xml
+  visible: false
+- name: Postman1.png
+  visible: false
+- name: Postman2.png
   visible: false
