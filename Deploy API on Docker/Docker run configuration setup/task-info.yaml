@@ -1,8 +1,16 @@
-type: edu
+type: theory
 files:
-- name: tests/test_task.py
-  visible: false
 - name: __init__.py
   visible: false
-- name: tests/__init__.py
+- name: Dockerfile
+  visible: true
+- name: api.py
+  visible: true
+- name: dal.py
+  visible: true
+- name: requirements.txt
+  visible: true
+- name: config2.png
+  visible: false
+- name: config1.png
   visible: false
