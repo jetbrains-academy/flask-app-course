@@ -4,4 +4,5 @@ content:
 - Get Resource
 - Delete Resource
 - Post Resource
+- Put Resource
 - Add a Dockerfile and requirements.txt

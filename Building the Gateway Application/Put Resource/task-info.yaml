@@ -1,0 +1,28 @@
+type: edu
+files:
+- name: task.py
+  visible: true
+- name: tests/test_task.py
+  visible: false
+- name: __init__.py
+  visible: false
+- name: tests/__init__.py
+  visible: false
+- name: gateway/__init__.py
+  visible: true
+- name: gateway/application.py
+  visible: true
+  placeholders:
+  - offset: 1428
+    length: 274
+    placeholder_text: return 'Hello from PUT'
+- name: invsys/__init__.py
+  visible: true
+- name: invsys/api.py
+  visible: true
+- name: invsys/dal.py
+  visible: true
+- name: invsys/Dockerfile
+  visible: true
+- name: invsys/requirements.txt
+  visible: true
