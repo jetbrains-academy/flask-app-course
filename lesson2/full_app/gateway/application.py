@@ -33,7 +33,7 @@ def delete_resource(item_id):
 
 
 @app.route('/items', methods=['POST'])
-def post_resource(item_id=None):
+def post_resource():
     # Get the payload from our incoming request
     payload = request.get_json(force=True)
     response = requests.post('http://invsys:5000/items', json=payload)
@@ -43,7 +43,7 @@ def post_resource(item_id=None):
 
 
 @app.route('/items/<string:item_id>', methods=['PUT'])
-def put_resource(item_id=None):
+def put_resource(item_id):
     # Get the payload from our incoming request
     payload = request.get_json(force=True)
     response = requests.put(f'http://invsys:5000/items/{item_id}', json=payload)

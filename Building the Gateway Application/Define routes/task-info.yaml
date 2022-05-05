@@ -6,3 +6,20 @@ files:
   visible: false
 - name: tests/__init__.py
   visible: false
+- name: gateway/__init__.py
+  visible: true
+- name: gateway/application.py
+  visible: true
+  placeholders:
+  - offset: 186
+    length: 54
+    placeholder_text: '# TODO: add a route for GET with item id'
+  - offset: 304
+    length: 57
+    placeholder_text: '# TODO: add a route for DELETE'
+  - offset: 425
+    length: 38
+    placeholder_text: '# TODO: add a route for POST'
+  - offset: 516
+    length: 54
+    placeholder_text: '# TODO: add a route for PUT'
