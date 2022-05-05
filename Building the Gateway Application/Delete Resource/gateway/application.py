@@ -11,7 +11,7 @@ def index():
 
 @app.route('/items', methods=['GET'])
 @app.route('/items/<string:item_id>', methods=['GET'])
-def get_resources(item_id=None):
+def get_resource(item_id=None):
     # Forward the request to the relevant endpoint in invsys
     if item_id:
         response = requests.get(f'http://invsys:5000/items/{item_id}')
@@ -24,7 +24,7 @@ def get_resources(item_id=None):
 
 
 @app.route('/items/<string:item_id>', methods=['DELETE'])
-def delete_resource():
+def delete_resource(item_id):
     # Forward the delete request to the relevant endpoint in invsys
     response = requests.delete(f'http://invsys:5000/items/{item_id}')
 
@@ -33,9 +33,13 @@ def delete_resource():
 
 
 @app.route('/items', methods=['POST'])
+def post_resource():
+    return 'Hello from POST'
+
+
 @app.route('/items/<string:item_id>', methods=['PUT'])
-def update_resource():
-    pass
+def put_resource(item_id):
+    return 'Hello from PUT'
 
 
 if __name__ == "__main__":
