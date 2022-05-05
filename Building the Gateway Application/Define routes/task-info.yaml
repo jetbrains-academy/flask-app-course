@@ -23,3 +23,13 @@ files:
   - offset: 516
     length: 54
     placeholder_text: '# TODO: add a route for PUT'
+- name: invsys/__init__.py
+  visible: true
+- name: invsys/api.py
+  visible: true
+- name: invsys/dal.py
+  visible: true
+- name: invsys/Dockerfile
+  visible: true
+- name: invsys/requirements.txt
+  visible: true

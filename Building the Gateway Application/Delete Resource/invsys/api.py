@@ -20,7 +20,8 @@ class Device(Resource):
         super(Device, self).__init__()
 
     # GET - Returns a single device object given a matching id
-    def get(self, identifier):
+    @staticmethod
+    def get(identifier):
         device = dal.get_device(identifier)
 
         if not device:
