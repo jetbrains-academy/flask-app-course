@@ -6,3 +6,21 @@ files:
   visible: false
 - name: tests/__init__.py
   visible: false
+- name: gateway/__init__.py
+  visible: true
+- name: gateway/application.py
+  visible: true
+  placeholders:
+  - offset: 358
+    length: 62
+    placeholder_text: '# TODO: complete the function'
+- name: invsys/__init__.py
+  visible: true
+- name: invsys/api.py
+  visible: true
+- name: invsys/dal.py
+  visible: true
+- name: invsys/Dockerfile
+  visible: true
+- name: invsys/requirements.txt
+  visible: true
