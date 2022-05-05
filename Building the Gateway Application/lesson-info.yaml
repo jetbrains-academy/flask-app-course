@@ -3,5 +3,5 @@ content:
 - Define routes
 - Get Resource
 - Delete Resource
-- Update Resource
+- Post Resource
 - Add a Dockerfile and requirements.txt
