@@ -2,6 +2,9 @@ content:
 - API - Device Resource
 - API - DeviceInventory Resource
 - shelve and DAL
-- CRUD operations on DB 1
-- CRUD operations on DB 2
+- CRUD operations on DB - get
+- CRUD operations on DB - post
+- CRUD operations on DB - get device
+- CRUD operations on DB - put device
+- CRUD operations on DB - delete device
 - Modify API

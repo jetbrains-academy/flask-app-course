@@ -3,9 +3,6 @@ files:
 - name: dal.py
   visible: true
   placeholders:
-  - offset: 409
-    length: 81
-    placeholder_text: '# TODO: populate the dictionary with data from shelf'
   - offset: 596
     length: 17
     placeholder_text: '# TODO: create the database shelf object'
