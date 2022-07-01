@@ -13,7 +13,7 @@ Each component service in a microservice architecture can be developed, deployed
 
 What we intend to make is a backend application consisting of multiple micro-services.
 We'll be building a simple API that performs some basic CRUD operations on a database of smart home devices. For simplicity, we are going
-to be using a Python `shelf` object instead of a real database solution.
+to be using persistent data storage instead of a real database solution.
 The additional step will be an API gateway backend which is a sort of router and authoriser of the client requests.
 All of this means, our application will consist of two backend components, one being the inventory manager, and the other being the API gateway.
 The application will expose a RESTful interface.
