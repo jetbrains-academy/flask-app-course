@@ -1,0 +1,32 @@
+type: edu
+files:
+- name: dal.py
+  visible: true
+  placeholders:
+  - offset: 796
+    length: 49
+    placeholder_text: '# TODO: return None if the id is not found in the database'
+  - offset: 857
+    length: 17
+    placeholder_text: '''Return the device from the database accessed by the id'''
+  - offset: 1065
+    length: 49
+    placeholder_text: '# TODO: return None if the id is not found in the database'
+  - offset: 1430
+    length: 77
+    placeholder_text: '# TODO'
+  - offset: 1942
+    length: 21
+    placeholder_text: '# TODO: delete the device from the database'
+- name: __init__.py
+  visible: false
+- name: api.py
+  visible: true
+- name: tests/__init__.py
+  visible: false
+- name: tests/api_test.py
+  visible: false
+- name: tests/test_task.py
+  visible: false
+- name: storage.db.db
+  visible: true
