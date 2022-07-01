@@ -37,37 +37,6 @@ def get_device(identifier):
     return shelf[identifier]
 
 
-# # This function should update an item in the database, access the item by its id.
-# # Return None if the identifier is not found.
-# def put_device(identifier, args):
-#     shelf = pull_db()
-#     if not (identifier in shelf):
-#         return None
-#     device = shelf[identifier]
-#
-#     # Loop through all the passed arguments and their values (it's like a dictionary).
-#     # For each argument value, check if it is not empty (None).
-#     # If not, update the corresponding argument value of the
-#     # corresponding device with the value provided in the request.
-#     for k, v in args.items():
-#         if v is not None:
-#             device[k] = v
-#     # Re-assign the new value of device to the identifier in shelve to save changes.
-#     shelf[identifier] = device
-#     return shelf[identifier]
-#
-#
-# # This function should delete an item by its identifier.
-# # Return None if the identifier is not found.
-# def delete_device(identifier):
-#     shelf = pull_db()
-#     # If the key does not exist on the shelf, return None.
-#     if not (identifier in shelf):
-#         return None
-#     del shelf[identifier]
-#     return {'message': f'{identifier} deleted'}
-
-
 # A Dict of Dicts to define initial devices
 devices = {"001": {
     "id": "001",
