@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Python tests in test_task.py" type="tests" factoryName="Autodetect" nameIsGenerated="true">
+  <configuration default="false" name="Dockerfile_test1" type="tests" factoryName="Autodetect">
     <module name="Flask_course_prototype" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />

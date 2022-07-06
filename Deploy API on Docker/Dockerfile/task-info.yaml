@@ -10,5 +10,9 @@ files:
   visible: true
 - name: dal.py
   visible: true
-- name: runConfigurations/Python tests in test_task.py.run.xml
+- name: runConfigurations/Dockerfile_test1.run.xml
   visible: false
+- name: Dockerfile
+  visible: true
+- name: requirements.txt
+  visible: true
