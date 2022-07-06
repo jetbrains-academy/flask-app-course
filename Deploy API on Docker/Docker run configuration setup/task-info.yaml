@@ -14,5 +14,3 @@ files:
   visible: false
 - name: config1.png
   visible: false
-- name: runConfigurations/Deploy API on Docker_Docker run configuration setup_Dockerfile.run.xml
-  visible: false
