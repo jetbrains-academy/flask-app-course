@@ -3,7 +3,7 @@ files:
 - name: tests/test_task.py
   visible: false
 - name: __init__.py
-  visible: false
+  visible: true
 - name: tests/__init__.py
   visible: false
 - name: gateway/__init__.py
@@ -12,7 +12,7 @@ files:
   visible: true
   placeholders:
   - offset: 358
-    length: 62
+    length: 63
     placeholder_text: '# TODO: complete the function'
 - name: invsys/__init__.py
   visible: true
@@ -24,3 +24,15 @@ files:
   visible: true
 - name: invsys/requirements.txt
   visible: true
+- name: tests/test_invsys/__init__.py
+  visible: false
+- name: tests/test_invsys/api.py
+  visible: false
+- name: tests/test_invsys/dal.py
+  visible: false
+- name: tests/test_invsys/Dockerfile
+  visible: false
+- name: tests/test_invsys/requirements.txt
+  visible: false
+- name: runConfigurations/Gateway_get_resource_test.run.xml
+  visible: false

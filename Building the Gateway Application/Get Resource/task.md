@@ -15,8 +15,9 @@ invsys. If we deployed invsys on 127.0.0.1 then we could use:
 import requests
 
 data = ... # from request
-response = requests.get("http://127.0.0.1:5000/items")
+response = requests.get("http://0.0.0.0:5000/items/")
 ```
-
-However, by doing this, our application source code becomes coupled with how and where we deploy `invsys`.
-So instead, we can post to `http://invsys:5000/items` and ensure that our network is set up to route `invys` to whichever ip it is hosted on.
+Let's keep it that way for this task, but let's also keep in mind that
+by doing this, our application source code becomes coupled with how and where we deploy `invsys`.
+Instead, we can post to `http://invsys:5000/items` and ensure that our network is set up to route `invys` to whichever ip it is hosted on. 
+We will come back to this later on.
