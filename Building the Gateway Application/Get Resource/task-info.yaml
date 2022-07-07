@@ -24,15 +24,5 @@ files:
   visible: true
 - name: invsys/requirements.txt
   visible: true
-- name: tests/test_invsys/__init__.py
-  visible: false
-- name: tests/test_invsys/api.py
-  visible: false
-- name: tests/test_invsys/dal.py
-  visible: false
-- name: tests/test_invsys/Dockerfile
-  visible: false
-- name: tests/test_invsys/requirements.txt
-  visible: false
 - name: runConfigurations/Gateway_get_resource_test.run.xml
   visible: false
