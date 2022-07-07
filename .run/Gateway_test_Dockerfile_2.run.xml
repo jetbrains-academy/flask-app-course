@@ -11,7 +11,7 @@
             </DockerPortBindingImpl>
           </list>
         </option>
-        <option name="sourceFilePath" value="Composing the System/Docker-compose/invsys/Dockerfile" />
+        <option name="sourceFilePath" value="Building the Gateway Application/Delete Resource/invsys/Dockerfile" />
       </settings>
     </deployment>
     <method v="2" />
