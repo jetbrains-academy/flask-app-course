@@ -13,10 +13,10 @@ files:
 - name: gateway/application.py
   visible: true
   placeholders:
-  - offset: 1166
-    length: 66
+  - offset: 1169
+    length: 67
     placeholder_text: '# TODO: make the post request to invsys'
-  - offset: 1291
+  - offset: 1295
     length: 48
     placeholder_text: '# TODO'
 - name: invsys/__init__.py
@@ -29,3 +29,5 @@ files:
   visible: true
 - name: invsys/requirements.txt
   visible: true
+- name: runConfigurations/Gateway_post_resource_Test.run.xml
+  visible: false
