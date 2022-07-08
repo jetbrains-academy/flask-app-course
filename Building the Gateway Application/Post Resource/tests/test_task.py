@@ -100,29 +100,23 @@ time.sleep(3)
 
 class TestCase(unittest.TestCase):
     def test_post(self):
-        device_id = ''.join(random.choices(string.ascii_lowercase, k=10))
-        response = requests.post('http://127.0.0.1:5001/items', json={"id": f"{device_id}",
+        # device_id = ''.join(random.choices(string.ascii_lowercase, k=10))
+        response = requests.post('http://127.0.0.1:5001/items', json={"id": "New_device_ID",
                                                                       "name": "UPDATEDUPDATEDUPDATED",
                                                                       "location": "location",
                                                                       "status": "off"})
         print(response.status_code)
         print(response.text)
-        self.assertEqual(response.status_code, 201, msg="Such a bad day :(")
-        # self.assertEqual(response.text, b'''{
-        #                                 "device": {
-        #     "id": "ehhuygbkzv",
-        #     "location": "location",
-        #     "name": "UPDATEDUPDATEDUPDATED",
-        #     "status": "off"
-        # }
-        # }''', msg="Such a bad day :(")
+        self.assertEqual(response.status_code, 201, msg="POST request resulted in an unexpected response status code.")
+        self.assertEqual(response.content, (b'{\n  "device": {\n    "id": "New_device_ID", \n    "location": "location", \n  '
+                                            b'  "name": "UPDATEDUPDATEDUPDATED", \n    "status": "off"\n  }\n}\n'), msg="POST request resulted in an unexpected response content.")
 
 
-    def test_get(self):
-        response = requests.get('http://127.0.0.1:5001/items')
-        print(response.status_code)
-        print(response.text)
-        self.assertEqual(response.status_code, 200, msg=f"GET request resulted in an unexpected response code: {response.status_code}")
+    # def test_get(self):
+    #     response = requests.get('http://127.0.0.1:5001/items')
+    #     print(response.status_code)
+    #     print(response.text)
+    #     self.assertEqual(response.status_code, 200, msg=f"GET request resulted in an unexpected response code: {response.status_code}")
 
     # def test_put(self):
     #     # device_id = ''.join(random.choices(string.ascii_lowercase, k=10))
@@ -134,8 +128,8 @@ class TestCase(unittest.TestCase):
     #     print(response.text)
     #     self.assertEqual(response.status_code, 200, msg=f"PUT request resulted in an unexpected response code: {response.status_code}")
 
-    def test_delete(self):
-        response = requests.delete('http://127.0.0.1:5001/items/100')
-        print(response.status_code)
-        print(response.text)
-        self.assertEqual(response.status_code, 404, msg=f"DELETE request resulted in an unexpected response code: {response.status_code}")
+    # def test_delete(self):
+    #     response = requests.delete('http://127.0.0.1:5001/items/100')
+    #     print(response.status_code)
+    #     print(response.text)
+    #     self.assertEqual(response.status_code, 404, msg=f"DELETE request resulted in an unexpected response code: {response.status_code}")
