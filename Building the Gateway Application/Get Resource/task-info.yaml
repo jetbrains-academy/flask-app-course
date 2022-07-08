@@ -12,7 +12,7 @@ files:
   visible: true
   placeholders:
   - offset: 358
-    length: 63
+    length: 62
     placeholder_text: '# TODO: complete the function'
 - name: invsys/__init__.py
   visible: true
@@ -24,5 +24,11 @@ files:
   visible: true
 - name: invsys/requirements.txt
   visible: true
-- name: runConfigurations/Gateway_get_resource_test.run.xml
+- name: docker-compose.yaml
+  visible: false
+- name: gateway/Dockerfile
+  visible: false
+- name: gateway/requirements.txt
+  visible: false
+- name: runConfigurations/Get_Resource_Test.run.xml
   visible: false
