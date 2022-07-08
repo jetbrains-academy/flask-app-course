@@ -71,7 +71,6 @@ class TestCase(unittest.TestCase):
         response = requests.delete('http://127.0.0.1:5001/items/100')
         print(response.status_code)
         print(response.text)
-        print(type(response.text))
         self.assertEqual(response.status_code, 404, msg=f"DELETE request resulted in an unexpected response code: {response.status_code}")
         self.assertEqual(response.content, b'{\n  "data": {}, \n  "message": "Device not found"\n}\n', msg="DELETE request resulted in unexpected response content.")
 
@@ -79,6 +78,5 @@ class TestCase(unittest.TestCase):
         response = requests.delete('http://127.0.0.1:5001/items/002')
         print(response.status_code)
         print(response.text)
-        print(type(response.text))
         self.assertEqual(response.status_code, 201, msg=f"DELETE request resulted in an unexpected response code: {response.status_code}")
         self.assertEqual(response.content, b'{\n  "deleted device": "002"\n}\n', msg="DELETE request resulted in unexpected response content.")
