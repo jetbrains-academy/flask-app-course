@@ -1,0 +1,24 @@
+type: theory
+files:
+- name: task.py
+  visible: true
+- name: __init__.py
+  visible: false
+- name: requirements.txt
+  visible: true
+- name: Procfile
+  visible: true
+- name: invsys/__init__.py
+  visible: true
+- name: invsys/app.py
+  visible: true
+- name: invsys/dal.py
+  visible: true
+- name: invsys/requirements.txt
+  visible: true
+- name: gateway/__init__.py
+  visible: true
+- name: gateway/app.py
+  visible: true
+- name: gateway/requirements.txt
+  visible: true
