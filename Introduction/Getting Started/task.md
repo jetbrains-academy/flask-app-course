@@ -10,7 +10,7 @@ People with some basic knowledge of Flask apps, who want to learn about developi
 ### Prerequisites:
 - A foundational understanding of Python (critical), including topics such as data structures, functions, classes, modules and packages, errors, virtual environments etc.
 - Acquaintance with the Flask microframework (very beneficial): having a general idea about requests, responses, routing, REST APIs etc.
-- Some understanding of Docker and Docker container management (beneficial, but not critical).
+- Some understanding of Docker and Docker container management; Git (beneficial, but not critical).
 
 ### Stack:
 - Python
