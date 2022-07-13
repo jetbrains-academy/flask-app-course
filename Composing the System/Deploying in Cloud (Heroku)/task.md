@@ -5,14 +5,20 @@ and it makes the process really friendly for developers. Deploying your app on a
 
 <i>This description of the process is far from being thorough, it is instead intended to give you a general idea of what needs to be done.</i>
 
-To deploy your multiservice Flask application on Heroku, you can perform the following steps:
+To deploy your multiservice Flask application on Heroku, you can perform the following steps using the Terminal toolwindow in the IDE:
 
-1. **For each** of your microservices:
-- Create a directory for the application.
+- [Create a Heroku account](https://signup.heroku.com/) if you don't have one already. Install the Heroku Command-Line Interface (CLI):
+```shell
+$ curl https://cli-assets.heroku.com/install.sh | sh
+```
+
+ **For each** of the microservices (`invsys` and `gateway`):
+- `cd` into the app directory (`invsys` or `gateway`)
 - Create and activate a Python virtual environment (here `venv`).
-- Install dependencies and create a requirements.txt file listing the project’s dependencies.
-- Add the actual application code to the directory (for example, `app.py` and `dal.py`, depending on the app).
-<details>
+- Create a requirements.txt file listing the project’s dependencies (make sure to add all of them).
+
+<details id="upd_routes">
+    <summary>Update routes</summary>
 
 Since each of the two microservices will now be deployed independently in the cloud, you need to adjust the routes in the `gateway` to target `invsys` appropriately.
 For example, instead of 
@@ -26,7 +32,6 @@ response = requests.get('http://flask-tutorial-invsys.herokuapp.com/items')
 Here, the part `'flask-tutorial-invsys'` is the name of the app that you will specify yourself when creating the application in Heroku (see further).
 </details>
 
-2. **For each** of your microservices:
 - Initialize a Git repository for your project:
 ```shell
 $ git init
@@ -41,9 +46,9 @@ $ echo __pycache__ >> .gitignore
 $ git add app.py requirements.txt .gitignore 
 $ git commit -m "Initial Commit"
 ```
-- Now the project directory, for example `flask-tutorial-gateway/`, should look like this:
+- Now the project directory, for example `gateway`, should look like this:
 ```text
-flask-tutorial-gateway/
+gateway/
 │
 ├── .git/
 │
@@ -55,18 +60,12 @@ flask-tutorial-gateway/
 └── requirements.txt
 ```
 
-3. [Create a Heroku account](https://signup.heroku.com/) if you don't have one already.
-- Install the Heroku Command-Line Interface (CLI):
-```shell
-$ curl https://cli-assets.heroku.com/install.sh | sh
-```
 - Log in to Heroku by running the following command:
 ```shell
 $ heroku login
 ```
 This opens a web page to complete the login process. After logging in, you can start using the Heroku CLI to manage your applications.
 
-4. **For each** of your microservices:
 - Create a file named `Procfile` in the project’s root directory. This file tells Heroku how to run the app.
 ```shell
 $ echo "web: gunicorn app:app" > Procfile
@@ -78,7 +77,7 @@ The `web` label is used by Heroku to start the web server for your application. 
 `app:app` specifies the module and the name of application that will be started by gunicorn. The module name and application name can be any other.
 </details>
 
-- Make sure to install Gunicorn and update the requirements.txt file using pip:
+- Install Gunicorn and update the requirements.txt file using pip:
 ```shell
 $ python3 -m pip install gunicorn
 $ python3 -m pip freeze > requirements.txt
@@ -92,7 +91,8 @@ $ git commit -m "Added Heroku deployment files"
 ```shell
 $ heroku create flask-tutorial-invsys
 ```
-Here, `'flask-tutorial-invsys'` is the name you specify yourself and which you need to use in the routes as discussed in step 1.
+Here, `'flask-tutorial-invsys'` is the name you specify yourself and the one you need to use in the routes as discussed <a href="#upd_routes">above</a>.
+
 - Running the `heroku create` command initializes the Heroku application, creating a Git remote named `heroku`. You can now push your Git repository to this remote to trigger the build and deployment process:
 ```shell
 $ git push heroku master
