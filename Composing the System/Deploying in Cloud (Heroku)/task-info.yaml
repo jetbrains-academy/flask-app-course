@@ -1,12 +1,10 @@
 type: theory
 files:
-- name: task.py
+- name: invsys/app.py
   visible: true
 - name: __init__.py
   visible: false
 - name: invsys/__init__.py
-  visible: true
-- name: invsys/app.py
   visible: true
 - name: invsys/dal.py
   visible: true

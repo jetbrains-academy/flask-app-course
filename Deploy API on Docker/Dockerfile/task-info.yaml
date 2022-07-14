@@ -1,5 +1,11 @@
 type: edu
 files:
+- name: Dockerfile
+  visible: true
+  placeholders:
+    - offset: 0
+      length: 136
+      placeholder_text: '# TODO'
 - name: tests/test_task.py
   visible: false
 - name: __init__.py
@@ -12,7 +18,5 @@ files:
   visible: true
 - name: runConfigurations/Dockerfile_test1.run.xml
   visible: false
-- name: Dockerfile
-  visible: true
 - name: requirements.txt
   visible: true

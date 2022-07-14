@@ -1,7 +1,14 @@
 type: edu
 files:
-- name: task.py
+- name: gateway/application.py
   visible: true
+  placeholders:
+    - offset: 1166
+      length: 66
+      placeholder_text: '# TODO: make the post request to invsys'
+    - offset: 1291
+      length: 48
+      placeholder_text: '# TODO'
 - name: tests/test_task.py
   visible: false
 - name: __init__.py
@@ -10,15 +17,6 @@ files:
   visible: false
 - name: gateway/__init__.py
   visible: true
-- name: gateway/application.py
-  visible: true
-  placeholders:
-  - offset: 1166
-    length: 66
-    placeholder_text: '# TODO: make the post request to invsys'
-  - offset: 1291
-    length: 48
-    placeholder_text: '# TODO'
 - name: invsys/__init__.py
   visible: true
 - name: invsys/api.py

@@ -1,5 +1,14 @@
 type: edu
 files:
+- name: gateway/application.py
+  visible: true
+  placeholders:
+    - offset: 847
+      length: 54
+      placeholder_text: '# TODO'
+    - offset: 960
+      length: 48
+      placeholder_text: '# TODO'
 - name: tests/test_task.py
   visible: false
 - name: __init__.py
@@ -8,15 +17,6 @@ files:
   visible: false
 - name: gateway/__init__.py
   visible: true
-- name: gateway/application.py
-  visible: true
-  placeholders:
-  - offset: 847
-    length: 54
-    placeholder_text: '# TODO'
-  - offset: 960
-    length: 48
-    placeholder_text: '# TODO'
 - name: invsys/__init__.py
   visible: true
 - name: invsys/api.py
