@@ -5,6 +5,8 @@ from flask_restful import Resource, Api, reqparse
 app = Flask(__name__)
 api = Api(app)
 
+# This is the dictionary we will
+# use instead of a database in the beginning.
 devices = {"001": {
     "id": "001",
     "name": "Light bulb",

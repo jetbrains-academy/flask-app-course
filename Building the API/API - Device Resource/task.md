@@ -11,33 +11,46 @@ The Device Resource class contains the HTTP routes for accessing, modifying and 
 
 ### Device Resource methods
 
-In the `init` method of the class, you initialize the [request parser](https://flask-restful.readthedocs.io/en/latest/api.html#module-reqparse). It'll allow you easy access to any variable on 
+In the `init` method of the class, you initialize the [request parser](https://flask-restful.readthedocs.io/en/latest/api.html#module-reqparse). 
+It'll allow you easy access to any variable on 
 the `flask.request` and also validates the response based on the arguments provided.
 
-The `get` Method, takes an id and searches the dictionary for an element with such an id (key).
+The `get` method, takes an id and searches the dictionary for an element with such an id (key).
 If it's absent, the method returns a message `{'message': 'Device not found', 'data': {}}` and a response code `404`.
 If a match is found, it returns that device's dictionary. 
+
+<details>
+    <summary>@staticmethod</summary>
+
+[`@staticmethod`](https://docs.python.org/3/library/functions.html#staticmethod) is a built-in [decorator](https://docs.python.org/3/glossary.html#term-decorator) that defines a static method - method that doesn't 
+receive an implicit first argument (`self`) whether it is called by an instance of a class or by the class itself.
+</details>
 
 The `put` method is used to update the element with the specified id.
 First it checks if the element with such an id is present in the dictionary, and if not, it returns
 a message `{'message': 'Device not found', 'data': {}}` and a response code `404`.
 It then parses all arguments from the provided request and stores the results as a Namespace `args`.
-It loops through the parsed arguments (the same way you would parse a dictionary), and updates the fields in the corresponding device element.
+It loops through the parsed arguments (the same way you would parse a dictionary), 
+and updates the fields in the corresponding device element.
 It should also check for absent values in the request arguments and skip those (so that we so not update 
 existing values with absent values).
 
-The `delete` method first checks if the element with a given id is present in the dictionary, an if not, it returns
+The `delete` method checks if the element with a given id is in the dictionary, and if not, it returns
 a message `{'message': 'Device not found', 'data': {}}` and a response code `404`.
-It then simply deletes the element with this id from the devices dict.
+If the element is found, it simply deletes the element with this id from the `devices` dict.
 
 ### Endpoints
 
-Line 81 attaches the Resource class to an [endpoint](https://flask-restful.readthedocs.io/en/latest/quickstart.html?highlight=endpoints#endpoints).
-You can pass multiple URLs to the `add_resource()` method on the `Api` object. Each one will be routed to your `Resource`.
-You can also match parts of the path as variables to your resource methods.
+The line
 
 ```python
 api.add_resource(Device, "/items/<string:identifier>")
 ```
 
+attaches the `Device` class to an [endpoint](https://flask-restful.readthedocs.io/en/latest/quickstart.html?highlight=endpoints#endpoints).
+You can pass multiple URLs to the `add_resource()` method on the `Api` object. Each one will be routed to your `Resource`.
+You can also match parts of the path as variables to your `Device` methods.
 
+## Task
+
+Complete the implementation of the Device Resource.
