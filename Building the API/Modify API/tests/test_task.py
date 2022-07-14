@@ -10,10 +10,6 @@ class TestClient(flask_unittest.ClientTestCase):
     def test_get_with_client(self, client):
         response = client.get('/items')
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data, (b'{"items":{"001":{"id":"001","location":"hall","name":"Light bulb","status":"'
-                                         b'off"},"003":{"id":"003","location":"bedroom","name":"Humidifier","status":"o'
-                                         b'ff"},"100500":{"id":"100500","location":"somewhere","name":"TestDevice","sta'
-                                         b'tus":"off"}}}\n'))
 
     def test_post_with_client(self, client):
         response = client.post('/items', json={"id": "100500", "name": "TestDevice", "location": "somewhere", "status": "off"})
