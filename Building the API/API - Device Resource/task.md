@@ -17,14 +17,7 @@ the `flask.request` and also validates the response based on the arguments provi
 
 The `get` method, takes an id and searches the dictionary for an element with such an id (key).
 If it's absent, the method returns a message `{'message': 'Device not found', 'data': {}}` and a response code `404`.
-If a match is found, it returns that device's dictionary. 
-
-<details>
-    <summary>@staticmethod</summary>
-
-[`@staticmethod`](https://docs.python.org/3/library/functions.html#staticmethod) is a built-in [decorator](https://docs.python.org/3/glossary.html#term-decorator) that defines a static method - method that doesn't 
-receive an implicit first argument (`self`) whether it is called by an instance of a class or by the class itself.
-</details>
+If a match is found, it returns that device's dictionary.
 
 The `put` method is used to update the element with the specified id.
 First it checks if the element with such an id is present in the dictionary, and if not, it returns
