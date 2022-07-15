@@ -9,21 +9,22 @@ files:
 - name: api.py
   visible: true
   placeholders:
-  - offset: 889
+  - offset: 823
     length: 207
     placeholder_text: '# TODO: add the remaining arguments'
-  - offset: 1384
-    length: 19
-    placeholder_text: '''Return the device object accessed by its id'''
-  - offset: 1593
-    length: 104
-    placeholder_text: '# TODO'
-  - offset: 2002
+  - offset: 1326
+    length: 57
+    placeholder_text: '# TODO: return not_found_response in case there''sno such device'
+  - offset: 1651
+    length: 79
+    placeholder_text: '# TODO: if there''s no such id in our data, return the not
+      found response'
+  - offset: 2035
     length: 98
     placeholder_text: '# TODO'
-  - offset: 2325
-    length: 104
-    placeholder_text: '# TODO'
-  - offset: 2496
+  - offset: 2296
+    length: 79
+    placeholder_text: '# TODO: return the not found response if the id wasn''t found'
+  - offset: 2384
     length: 23
-    placeholder_text: '# TODO'
+    placeholder_text: '# TODO: delete the device with the provided identifier'

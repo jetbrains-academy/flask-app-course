@@ -1,3 +1,4 @@
+import flask
 from flask import Flask, jsonify
 from flask_restful import Resource, Api, reqparse
 
@@ -5,8 +6,6 @@ from flask_restful import Resource, Api, reqparse
 app = Flask(__name__)
 api = Api(app)
 
-# This is the dictionary we will
-# use instead of a database in the beginning.
 devices = {"001": {
     "id": "001",
     "name": "Light bulb",
@@ -37,47 +36,45 @@ class Device(Resource):
         self.reqparse.add_argument("name", type=str, location="json")
         self.reqparse.add_argument("location", type=str, location="json")
         self.reqparse.add_argument("status", type=str, location="json")
+        self.not_found_response = flask.make_response(jsonify({'message': 'Device not found', 'data': {}}), 404,)
 
         super(Device, self).__init__()
 
     # GET - Returns a single device object given a matching id
-    @staticmethod
-    def get(identifier):
-        if identifier not in devices.keys():
-            return {'message': 'Device not found', 'data': {}}, 404
+    def get(self, identifier):
+        device = devices[identifier]
 
-        return {"device": devices[identifier]}
+        if not device:
+            return self.not_found_response
 
+        # Construct a response object that consists of a json object and a response code:
+        return flask.make_response(jsonify({"device": device}), 200,)
 
     # PUT - Given an id
     def put(self, identifier):
         args = self.reqparse.parse_args()
-        # Return an error message and a 404 code if the identifier wasn't found.
         if identifier not in devices.keys():
-            return {'message': 'Device not found', 'data': {}}, 404
+            return self.not_found_response
 
         # Loop through all the passed arguments and their values (it's like a dictionary).
         # For each argument value, check if it is not empty (None).
         # If not, update the corresponding argument value of the
-        # corresponding device with the value provided in the request.
+        # corresponding device with the value provided in the request:
         for k, v in args.items():
             if v is not None:
                 devices[identifier][k] = v
 
-        return {"updated device": devices[identifier]}, 200
+        return flask.make_response(jsonify({"updated device": devices[identifier]}), 200,)
 
     # Delete - Given an id
-    @staticmethod
-    def delete(identifier):
-        # Return an error message and a 404 code if the identifier wasn't found:
+    def delete(self, identifier):
         if identifier not in devices.keys():
-            return {'message': 'Device not found', 'data': {}}, 404
-        # Delete the device with the provided identifier:
+            return self.not_found_response
         del devices[identifier]
-        return {'message': f'{identifier} deleted'}, 200
+        return flask.make_response(jsonify({"deleted device": identifier}), 201,)
 
 
-# Now we add an endpoint and run the app.
+# Now we can add endpoints and run the app.
 api.add_resource(Device, "/items/<string:identifier>")
 
 if __name__ == "__main__":
