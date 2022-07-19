@@ -24,13 +24,11 @@ class Device(Resource):
         super(Device, self).__init__()
 
     # GET - Returns a single device object given a matching id
-    # @staticmethod
     def get(self, identifier):
         device = dal.get_device(identifier)
 
         if not device:
             return self.not_found_response
-        # return {"device": device}
         return flask.make_response(jsonify({"device": device}), 200,)
 
     # PUT - Given an id
@@ -40,17 +38,14 @@ class Device(Resource):
 
         if not updated_device:
             return self.not_found_response
-        # return {"updated device": updated_device}
         return flask.make_response(jsonify({"updated device": updated_device}), 200,)
 
     # Delete - Given an id
-    # @staticmethod
     def delete(self, identifier):
         deleted = dal.delete_device(identifier)
 
         if not deleted:
             return self.not_found_response
-        # return deleted, 201
         return flask.make_response(jsonify({"deleted device": identifier}), 201,)
 
 
@@ -70,7 +65,6 @@ class DeviceInventory(Resource):
 
     @staticmethod
     def get():
-        # return dal.get()
         return flask.make_response(jsonify({"items": dal.get()}), 200,)
 
     def post(self):
@@ -78,7 +72,6 @@ class DeviceInventory(Resource):
         posted_device = dal.post(args)
         if not posted_device:
             return 404
-        #return {"device": posted_device}, 201
         return flask.make_response(jsonify({"device": posted_device}), 201,)
 
 
