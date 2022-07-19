@@ -1,6 +1,7 @@
-No tests so far :(
+## Add Dockerfile and requirements.txt
 
-Task: Add files necessary for running gateway app as a Docker container
+### Task 
+Add files necessary for running gateway app as a Docker container
 
 <div class="hint">
 

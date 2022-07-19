@@ -1,5 +1,3 @@
-No working tests so far
-
 ## Delete Resource
 
 In this task we will define the `delete_resource` function, which will:
