@@ -1,6 +1,5 @@
 ## Deploying on local without Docker
 
-(Need to elaborate on this)
 
 While this course is focused on deploying with Docker, you can deploy on local without it too. 
 

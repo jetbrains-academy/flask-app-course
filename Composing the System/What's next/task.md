@@ -1,6 +1,6 @@
-Maybe merge this with the previous one
+## What else to explore
 
-## What else to explore 
+Maybe add some text here
 
 [Flask by example: Part 1](https://realpython.com/flask-by-example-part-1-project-setup/) tutorial; 
 
