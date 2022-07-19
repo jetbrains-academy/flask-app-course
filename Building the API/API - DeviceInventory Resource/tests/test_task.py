@@ -21,6 +21,24 @@ class TestClient(flask_unittest.ClientTestCase):
         self.assertEqual(response.data, (b'{"Posted a device":{"id":"100500","location":"somewhere","name":"TestDevice"'
                                          b',"status":"off"}}\n'), msg="POST request resulted in unexpected response content.")
 
+    def test_post_err_id_with_client(self, client):
+        response = client.post('/items', json={"name": "TestDevice", "location": "somewhere", "status": "off"})
+        self.assertEqual(response.status_code, 400, msg="Argument 'id' must be required")
+
+    def test_post_err_name_with_client(self, client):
+        response = client.post('/items', json={"id": "100500", "location": "somewhere", "status": "off"})
+        self.assertEqual(response.status_code, 400, msg="Argument 'name' must be required")
+
+    def test_post_err_location_with_client(self, client):
+        response = client.post('/items', json={"id": "100500", "name": "TestDevice", "status": "off"})
+        self.assertEqual(response.status_code, 400, msg="Argument 'location' must be required")
+
+    def test_post_err_status_with_client(self, client):
+        response = client.post('/items', json={"id": "100500", "name": "TestDevice", "location": "somewhere"})
+        self.assertEqual(response.status_code, 400, msg="Argument 'status' must be required")
+
+
+
     # def test_get_id_with_client(self, client):
     #     response = client.get('/items/001')
     #     self.assertEqual(response.data, b'{"device": {"id": "001", "name": "Light bulb", "location": "hall", "status": "off"}}\n')
