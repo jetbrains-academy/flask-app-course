@@ -14,6 +14,8 @@ The Device Resource class contains the HTTP routes for accessing, modifying and 
 In the `init` method of the class, you initialize the [request parser](https://flask-restful.readthedocs.io/en/latest/api.html#module-reqparse). 
 It'll allow you easy access to any variable on 
 the `flask.request` and also validates the response based on the arguments provided.
+Request parser looks for arguments of a specified type (in our case, `str`) in the `flask.Request.values` dict.
+By default, arguments are not required. 
 
 The `get` method, takes an id and searches the dictionary for an element with such an id (key).
 If it's absent, the method returns a message `{'message': 'Device not found', 'data': {}}` and a response code `404`.
@@ -46,4 +48,4 @@ You can also match parts of the path as variables to your `Device` methods.
 
 ## Task
 
-Complete the implementation of the Device Resource.
+Complete the implementation of the `Device` Resource.
