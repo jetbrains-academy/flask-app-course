@@ -3,9 +3,9 @@ files:
 - name: Dockerfile
   visible: true
   placeholders:
-    - offset: 0
-      length: 136
-      placeholder_text: '# TODO'
+  - offset: 0
+    length: 136
+    placeholder_text: '# TODO'
 - name: tests/test_task.py
   visible: false
 - name: __init__.py
@@ -20,3 +20,5 @@ files:
   visible: false
 - name: requirements.txt
   visible: true
+- name: delete_image.png
+  visible: false
