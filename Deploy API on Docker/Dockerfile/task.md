@@ -34,3 +34,11 @@ Add these lines to the empty Dockerfile that already exists in the project.
 
 To run your app and see if it works, press Check.
 
+**Be careful**, a Docker image contains application code, libraries, tools, dependencies and other files needed to make your application run.
+When your application does not work as expected, you find an error and correct it in your project,
+this change will not be saved to the image you previously created and run. You should delete all old
+Docker container images and build them again after you fix the problem. 
+
+
+![img](delete_image.png)
+

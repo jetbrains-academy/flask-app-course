@@ -1,4 +1,5 @@
-from flask import Flask
+import flask
+from flask import Flask, jsonify
 from flask_restful import Resource, Api, reqparse
 import dal
 
@@ -6,7 +7,8 @@ import dal
 app = Flask(__name__)
 api = Api(app)
 
-# TODO
+
+# Nothing here
 
 # Resource: Individual Device Routes
 class Device(Resource):
@@ -17,18 +19,17 @@ class Device(Resource):
         self.reqparse.add_argument("name", type=str, location="json")
         self.reqparse.add_argument("location", type=str, location="json")
         self.reqparse.add_argument("status", type=str, location="json")
+        self.not_found_response = flask.make_response(jsonify({'message': 'Device not found', 'data': {}}), 404,)
 
         super(Device, self).__init__()
 
     # GET - Returns a single device object given a matching id
-    @staticmethod
-    def get(identifier):
+    def get(self, identifier):
         device = dal.get_device(identifier)
 
         if not device:
-            return {'message': 'Device not found', 'data': {}}, 404
-
-        return {"device": device}
+            return self.not_found_response
+        return flask.make_response(jsonify({"device": device}), 200,)
 
     # PUT - Given an id
     def put(self, identifier):
@@ -36,19 +37,16 @@ class Device(Resource):
         updated_device = dal.put_device(identifier, args)
 
         if not updated_device:
-            return {'message': 'Device not found', 'data': {}}, 404
-
-        return {"updated device": updated_device}
+            return self.not_found_response
+        return flask.make_response(jsonify({"updated device": updated_device}), 200,)
 
     # Delete - Given an id
-    @staticmethod
-    def delete(identifier):
+    def delete(self, identifier):
         deleted = dal.delete_device(identifier)
 
         if not deleted:
-            return {'message': 'Device not found', 'data': {}}, 404
-
-        return deleted, 201
+            return self.not_found_response
+        return flask.make_response(jsonify({"deleted device": identifier}), 201,)
 
 
 class DeviceInventory(Resource):
@@ -67,14 +65,14 @@ class DeviceInventory(Resource):
 
     @staticmethod
     def get():
-        return dal.get()
+        return flask.make_response(jsonify({"items": dal.get()}), 200,)
 
     def post(self):
         args = self.reqparse.parse_args()
         posted_device = dal.post(args)
         if not posted_device:
             return 404
-        return {"device": posted_device}, 201
+        return flask.make_response(jsonify({"device": posted_device}), 201,)
 
 
 api.add_resource(DeviceInventory, "/items")

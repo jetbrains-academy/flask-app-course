@@ -1,4 +1,5 @@
 content:
 - Docker-compose
 - Deploying without Docker
+- Deploying in Cloud (Heroku)
 - What's next

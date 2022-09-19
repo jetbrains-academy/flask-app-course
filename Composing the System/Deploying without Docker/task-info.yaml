@@ -1,6 +1,6 @@
 type: edu
 files:
-- name: task.py
+- name: invsys/app.py
   visible: true
 - name: tests/test_task.py
   visible: false
@@ -8,3 +8,17 @@ files:
   visible: false
 - name: tests/__init__.py
   visible: false
+- name: invsys/storage.db.db
+  visible: true
+- name: gateway/__init__.py
+  visible: true
+- name: gateway/app.py
+  visible: true
+- name: gateway/requirements.txt
+  visible: true
+- name: invsys/__init__.py
+  visible: true
+- name: invsys/dal.py
+  visible: true
+- name: invsys/requirements.txt
+  visible: true

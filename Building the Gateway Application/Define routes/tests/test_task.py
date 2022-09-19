@@ -7,6 +7,10 @@ class TestClient(flask_unittest.ClientTestCase):
     # Assign the flask app object
     app = app
 
+    def test_index(self, client):
+        response = client.get('/')
+        self.assertEqual(response.data, b'Hello from Gateway!')
+
     def test_get_with_client(self, client):
         response = client.get('/items')
         self.assertEqual(response.data, b'Hello from GET')

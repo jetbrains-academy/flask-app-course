@@ -8,9 +8,9 @@ You will also learn to deploy your application on Docker and target it with Post
 People with some basic knowledge of Flask apps, who want to learn about developing a backend application comprised of multiple intercommunicating micro-services and run them in a Docker container.
 
 ### Prerequisites:
-- A foundational understanding of Python (critical);
-- Acquaintance with the Flask microframework (very beneficial);
-- A primary understanding of Docker and Docker container management (beneficial, but not critical).
+- A foundational understanding of Python (critical), including topics such as data structures, functions, classes, modules and packages, errors, virtual environments etc.
+- Acquaintance with the Flask microframework (very beneficial): having a general idea about requests, responses, routing, REST APIs etc.
+- Some understanding of Docker and Docker container management; Git; command line (beneficial, but not critical).
 
 ### Stack:
 - Python

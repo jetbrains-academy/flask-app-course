@@ -1,0 +1,18 @@
+type: theory
+files:
+- name: invsys/app.py
+  visible: true
+- name: __init__.py
+  visible: false
+- name: invsys/__init__.py
+  visible: true
+- name: invsys/dal.py
+  visible: true
+- name: invsys/requirements.txt
+  visible: true
+- name: gateway/__init__.py
+  visible: true
+- name: gateway/app.py
+  visible: true
+- name: gateway/requirements.txt
+  visible: true

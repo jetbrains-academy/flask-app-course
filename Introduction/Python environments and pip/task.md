@@ -37,4 +37,10 @@ python -m pip install requests==2.6.0
 The `requirements.txt` can then be committed to version control and shipped as part of an application. Users can then install all the necessary packages with `pip install -r requirements.txt`.
 We will use this and talk about it later in more detail.
 
+### Managing Packages in the IDE
+
+IntelliJ IDEA provides methods for installing, uninstalling, and upgrading Python packages for a particular Python SDK. You can preview and manage packages in the **Python Packages** tool window and in the Python interpreter **Settings/Preferences**. 
+You can read more about managing Python packages in IntelliJ IDEA on [this help page](https://www.jetbrains.com/help/idea/installing-uninstalling-and-upgrading-packages.html).
+
+
 Read more about virtual environments and packages in [The Python Tutorial](https://docs.python.org/3/tutorial/venv.html) and [IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/creating-virtual-environment.html).

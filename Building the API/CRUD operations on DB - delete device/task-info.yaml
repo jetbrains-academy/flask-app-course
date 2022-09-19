@@ -6,6 +6,9 @@ files:
   - offset: 1928
     length: 21
     placeholder_text: '# TODO: delete the device from the database'
+  - offset: 1961
+    length: 36
+    placeholder_text: '''message'''
 - name: __init__.py
   visible: false
 - name: api.py

@@ -1,3 +1,8 @@
-# todo: replace this with an actual task
-def sum(a, b):
-    return a + b
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"

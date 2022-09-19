@@ -1,6 +1,3 @@
-No working tests so far
-
-
 ## Put Resource
 
 In this task we will define the `put_resource` function, which will:
