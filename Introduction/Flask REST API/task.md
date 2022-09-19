@@ -29,4 +29,11 @@ existing ORM/libraries. Flask-RESTful encourages best practices with minimal set
 A minimal Flask-RESTful API is shown in the code editor. Note that we’ve enabled [Flask debugging mode](http://flask.pocoo.org/docs/quickstart/#debug-mode) to provide code reloading and better error messages.
 Debug mode should never be used in a production environment!
 
-You can test the API using `curl` or by going to http://127.0.0.1:5000/ in your web browser.
+You can test the API using `curl` or by going to http://127.0.0.1:5000/ in your web browser. To terminate the application, press the stop ![img](run_stop.svg) button in the 
+[run tool window](https://www.jetbrains.com/help/idea/run-tool-window.html). Do not forget to terminate your app before running a new one or before going to a next task.
+
+<style>
+img {
+  display: inline !important;
+}
+</style>
