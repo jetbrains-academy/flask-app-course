@@ -49,3 +49,10 @@ You can also match parts of the path as variables to your `Device` methods.
 ## Task
 
 Complete the implementation of the `Device` Resource.
+
+1. In the `init` method, add the missing arguments.
+2. In the `get` method, after trying to get a device from the dictionary by its id, return the `not_found_response` in case there's no such id.
+3. In the `put` method, if there's no such id (key) in our data, return the `not_found_response`. Then loop through all the passed arguments and their values (it's like a dictionary).
+For each argument value, check if it is not empty (None). If not, update the corresponding argument value of the
+corresponding device with the value provided in the request.
+4. In the `delete` method, delete the device with the identifier provided. If there's no such id (key) in our data, return the `not_found_response`. 
