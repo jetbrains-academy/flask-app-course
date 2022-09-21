@@ -13,8 +13,7 @@ class TestClient(flask_unittest.ClientTestCase):
 
     def test_get_with_client_02(self, client):
         response = client.get('/items')
-        self.assertEqual((b'{"004": {"id": "004", "name": "TestDevice", "location": "somewhere", "status'
-                                         b'": "off"}, "002": {"id": "002", "name": "Humidity_sensor", "location": "bedr'
-                                         b'oom", "status": "on"}, "001": {"id": "001", "name": "Light bulb", "location"'
-                                         b': "hall", "status": "off"}, "003": {"id": "003", "name": "Humidifier", "loca'
-                                         b'tion": "bedroom", "status": "off"}}\n'), response.data, msg="GET request resulted in unexpected response content.")
+        self.assertEqual((b'{"002": {"id": "002", "name": "Humidity_sensor", "location": "bedroom", "sta'
+                          b'tus": "on"}, "001": {"id": "001", "name": "Light bulb", "location": "hall", '
+                          b'"status": "off"}, "003": {"id": "003", "name": "Humidifier", "location": "be'
+                          b'droom", "status": "off"}}\n'), response.data, msg="GET request resulted in unexpected response content.")
