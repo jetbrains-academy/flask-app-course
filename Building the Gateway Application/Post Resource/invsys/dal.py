@@ -13,58 +13,57 @@ def pull_db():
 
 # This function returns the entire dataset of devices as a dictionary
 def get():
-    shelf = pull_db()
-    keys = list(shelf.keys())
-    devices_ = {}
-    for key in keys:
-        devices_[key] = shelf[key]
+    with pull_db() as shelf:
+        keys = list(shelf.keys())
+        devices_ = {}
+        for key in keys:
+            devices_[key] = shelf[key]
     return devices_
 
 
 # This function adds a new element to the datastore of devices
 def post(args):
-    shelf = pull_db()
-    shelf[args['id']] = args
-    return shelf[args['id']]
+    with pull_db() as shelf:
+        shelf[args['id']] = args
+        return shelf[args['id']]
 
 
 # This function retrieves an item by its identifier and returns it
 def get_device(identifier):
-    shelf = pull_db()
-
-    if not (identifier in shelf):
-        return None
-    return shelf[identifier]
+    with pull_db() as shelf:
+        if not (identifier in shelf):
+            return None
+        return shelf[identifier]
 
 
 # This function should update an item in the database, access the item by its id.
 # Return None if the identifier is not found.
 def put_device(identifier, args):
-    shelf = pull_db()
-    if not (identifier in shelf):
-        return None
-    device = shelf[identifier]
+    with pull_db() as shelf:
+        if not (identifier in shelf):
+            return None
+        device = shelf[identifier]
 
-    # Loop through all the passed arguments and their values (it's like a dictionary).
-    # For each argument value, check if it is not empty (None).
-    # If not, update the corresponding argument value of the
-    # corresponding device with the value provided in the request.
-    for k, v in args.items():
-        if v is not None:
-            device[k] = v
-    # Re-assign the new value of device to the identifier in shelve to save changes.
-    shelf[identifier] = device
-    return shelf[identifier]
+        # Loop through all the passed arguments and their values (it's like a dictionary).
+        # For each argument value, check if it is not empty (None).
+        # If not, update the corresponding argument value of the
+        # corresponding device with the value provided in the request.
+        for k, v in args.items():
+            if v is not None:
+                device[k] = v
+        # Re-assign the new value of device to the identifier in shelve to save changes.
+        shelf[identifier] = device
+        return shelf[identifier]
 
 
 # This function should delete an item by its identifier.
 # Return None if the identifier is not found.
 def delete_device(identifier):
-    shelf = pull_db()
-    # If the key does not exist on the shelf, return None.
-    if not (identifier in shelf):
-        return None
-    del shelf[identifier]
+    with pull_db() as shelf:
+        # If the key does not exist on the shelf, return None.
+        if not (identifier in shelf):
+            return None
+        del shelf[identifier]
     return {'message': f'{identifier} deleted'}
 
 
@@ -93,4 +92,3 @@ devices = {"001": {
 with shelve.open('storage.db') as db:
     for key, value, in devices.items():
         db[key] = value
-
