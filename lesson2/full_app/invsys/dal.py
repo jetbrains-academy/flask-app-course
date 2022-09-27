@@ -86,7 +86,5 @@ devices = [{
 with shelve.open('storage.db') as db:
     for i, j in enumerate(devices):
         db[devices[i]["id"]] = j
-    #
-    # db[devices[0]["id"]] = devices[0]
-    # db[devices[1]["id"]] = devices[1]
+
 

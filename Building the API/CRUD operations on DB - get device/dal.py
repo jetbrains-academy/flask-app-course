@@ -13,28 +13,28 @@ def pull_db():
 
 # This function returns the entire dataset of devices as a dictionary
 def get():
-    shelf = pull_db()
-    keys = list(shelf.keys())
-    devices_ = {}
-    for key in keys:
-        devices_[key] = shelf[key]
+    with pull_db() as shelf:
+        keys = list(shelf.keys())
+        devices_ = {}
+        for key in keys:
+            devices_[key] = shelf[key]
     return devices_
 
 
 # This function adds a new element to the datastore of devices
 def post(args):
-    shelf = pull_db()
-    shelf[args['id']] = args
-    return shelf[args['id']]
+    with pull_db() as shelf:
+        shelf[args['id']] = args
+        return shelf[args['id']]
 
 
 # This function retrieves an item by its identifier and returns it
 def get_device(identifier):
-    shelf = pull_db()
+    with pull_db() as shelf:
 
-    if not (identifier in shelf):
-        return None
-    return shelf[identifier]
+        if not (identifier in shelf):
+            return None
+        return shelf[identifier]
 
 
 # A Dict of Dicts to define initial devices
