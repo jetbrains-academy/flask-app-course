@@ -15,13 +15,13 @@ class TestCase(unittest.TestCase):
                                                                       "status": "off"})
         print(response.status_code)
         print(response.text)
-        self.assertEqual(response.status_code, 201, msg="Such a bad day :(")
+        self.assertEqual(201, response.status_code, msg="Such a bad day :(")
 
     def test_get(self):
         response = requests.get('http://0.0.0.0:5000/items')
         print(response.status_code)
         print(response.text)
-        self.assertEqual(response.status_code, 200, msg=f"GET request resulted in an unexpected response code: {response.status_code}")
+        self.assertEqual(200, response.status_code, msg=f"GET request resulted in an unexpected response code: {response.status_code}")
 
     def test_put(self):
         # device_id = ''.join(random.choices(string.ascii_lowercase, k=10))
@@ -31,10 +31,10 @@ class TestCase(unittest.TestCase):
                                                                          "status": "off"})
         print(response.status_code)
         print(response.text)
-        self.assertEqual(response.status_code, 200, msg=f"PUT request resulted in an unexpected response code: {response.status_code}")
+        self.assertEqual(200, response.status_code, msg=f"PUT request resulted in an unexpected response code: {response.status_code}")
 
     def test_delete(self):
         response = requests.delete('http://0.0.0.0:5000/items/100')
         print(response.status_code)
         print(response.text)
-        self.assertEqual(response.status_code, 404, msg=f"DELETE request resulted in an unexpected response code: {response.status_code}")
+        self.assertEqual(404, response.status_code, msg=f"DELETE request resulted in an unexpected response code: {response.status_code}")
