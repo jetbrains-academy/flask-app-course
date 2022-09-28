@@ -3,7 +3,7 @@
     <module name="Flask_course_prototype" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
-    <option name="SDK_HOME" value="" />
+    <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/bin/python" />
     <option name="WORKING_DIRECTORY" value="" />
     <option name="IS_MODULE_SDK" value="true" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -13,6 +13,7 @@
     <option name="_new_target" value="&quot;$PROJECT_DIR$/Deploy API on Docker/Dockerfile/tests/test_task.py&quot;" />
     <option name="_new_targetType" value="&quot;PATH&quot;" />
     <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="rm_images_first_dockerfile_task" run_configuration_type="ShConfigurationType" />
       <option name="RunConfigurationTask" enabled="true" run_configuration_name="dockerfile1" run_configuration_type="docker-deploy" />
     </method>
   </configuration>

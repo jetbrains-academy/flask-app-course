@@ -22,3 +22,5 @@ files:
   visible: true
 - name: delete_image.png
   visible: false
+- name: runConfigurations/rm_images.sh
+  visible: false
