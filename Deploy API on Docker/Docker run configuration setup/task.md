@@ -12,6 +12,7 @@ To do it yourself, you need to:
 - In **Bind ports**, click the folder symbol and in the window that opens (Port Bindings), click + and add 
 the ports to be bound. In our case, add 5000 to both Host post and Container port. Leave everything else as is.
 ![](config2.png)
+- Add the name of the container and image tag. Please use "flask-app-invsys" and "flask-app-invsys-img" respectively
 - Click Ok two times.
 
 Now if you run the Dockerfile you should be able to access your app via `http://0.0.0.0:5000/items`. 

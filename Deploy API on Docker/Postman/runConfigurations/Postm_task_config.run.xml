@@ -2,7 +2,8 @@
   <configuration default="false" name="Postm_task_config" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
     <deployment type="dockerfile">
       <settings>
-        <option name="containerName" value="" />
+        <option name="imageTag" value="flask-app-invsys-img" />
+        <option name="containerName" value="flask-app-invsys" />
         <option name="portBindings">
           <list>
             <DockerPortBindingImpl>
@@ -14,6 +15,8 @@
         <option name="sourceFilePath" value="Deploy API on Docker/Postman/Dockerfile" />
       </settings>
     </deployment>
-    <method v="2" />
+    <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="rm_images_Postman1" run_configuration_type="ShConfigurationType" />
+    </method>
   </configuration>
 </component>
