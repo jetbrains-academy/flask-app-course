@@ -1,0 +1,12 @@
+version: '2'
+services:
+    gateway:
+        build: gateway
+        container_name: flask-app-gateway
+        image: flask-app-gateway-img
+        ports:
+            - "5001:5001"
+    invsys:
+        build: invsys
+        container_name: flask-app-invsys
+        image: flask-app-invsys-img
