@@ -1,15 +1,9 @@
-type: edu
+type: theory
 files:
 - name: invsys/app.py
   visible: true
-- name: tests/test_task.py
-  visible: false
 - name: __init__.py
   visible: false
-- name: tests/__init__.py
-  visible: false
-- name: invsys/storage.db.db
-  visible: true
 - name: gateway/__init__.py
   visible: true
 - name: gateway/app.py
