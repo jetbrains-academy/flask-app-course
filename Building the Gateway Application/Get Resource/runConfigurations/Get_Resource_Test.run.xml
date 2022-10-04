@@ -13,7 +13,7 @@
     <option name="_new_target" value="&quot;$PROJECT_DIR$/Building the Gateway Application/Get Resource/tests/test_task.py&quot;" />
     <option name="_new_targetType" value="&quot;PATH&quot;" />
     <method v="2">
-      <option name="RunConfigurationTask" enabled="true" run_configuration_name="rm_container_images_building_the_gateway_GET" run_configuration_type="ShConfigurationType" />
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="rm_container_images_building_the_gateway_get" run_configuration_type="ShConfigurationType" />
       <option name="RunConfigurationTask" enabled="true" run_configuration_name="Get_Resource_Compose" run_configuration_type="docker-deploy" />
     </method>
   </configuration>
