@@ -2,3 +2,4 @@ flask
 flask-restful
 requests
 flask-unittest
+aiodocker~=0.21.0

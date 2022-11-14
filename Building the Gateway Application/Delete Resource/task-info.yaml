@@ -1,5 +1,25 @@
 type: edu
 files:
+- name: __init__.py
+  visible: false
+- name: tests/__init__.py
+  visible: false
+- name: gateway/__init__.py
+  visible: true
+- name: invsys/requirements.txt
+  visible: true
+- name: gateway/requirements.txt
+  visible: false
+- name: runConfigurations/rm_images.sh
+  visible: false
+- name: invsys/dal.py
+  visible: true
+- name: docker-compose.yaml
+  visible: false
+- name: runConfigurations/Delete_Resource_Test.run.xml
+  visible: false
+- name: tests/test_task.py
+  visible: false
 - name: gateway/application.py
   visible: true
   placeholders:
@@ -9,31 +29,11 @@ files:
   - offset: 960
     length: 48
     placeholder_text: '# TODO'
-- name: tests/test_task.py
+- name: gateway/Dockerfile
   visible: false
-- name: __init__.py
-  visible: false
-- name: tests/__init__.py
-  visible: false
-- name: gateway/__init__.py
+- name: invsys/Dockerfile
   visible: true
 - name: invsys/__init__.py
   visible: true
 - name: invsys/api.py
   visible: true
-- name: invsys/dal.py
-  visible: true
-- name: invsys/Dockerfile
-  visible: true
-- name: invsys/requirements.txt
-  visible: true
-- name: gateway/Dockerfile
-  visible: false
-- name: gateway/requirements.txt
-  visible: false
-- name: docker-compose.yaml
-  visible: false
-- name: runConfigurations/Delete_Resource_Test.run.xml
-  visible: false
-- name: runConfigurations/rm_images.sh
-  visible: false
