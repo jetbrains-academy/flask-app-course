@@ -10,16 +10,8 @@ files:
   visible: true
 - name: gateway/requirements.txt
   visible: false
-- name: runConfigurations/rm_images.sh
-  visible: false
 - name: invsys/dal.py
   visible: true
-- name: docker-compose.yaml
-  visible: false
-- name: runConfigurations/Delete_Resource_Test.run.xml
-  visible: false
-- name: tests/test_task.py
-  visible: false
 - name: gateway/application.py
   visible: true
   placeholders:
@@ -37,3 +29,15 @@ files:
   visible: true
 - name: invsys/api.py
   visible: true
+- name: runConfigurations/Delete_Resource_Test.run.xml
+  visible: false
+- name: tests/test_task.py
+  visible: false
+- name: runConfigurations/Delete_Resource_Compose.run.xml
+  visible: false
+- name: docker-compose.yaml
+  visible: false
+- name: tests/setup_containers.py
+  visible: false
+- name: utils/runConfigurations/setup_containers.run.xml
+  visible: false
