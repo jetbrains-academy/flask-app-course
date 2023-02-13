@@ -16,15 +16,15 @@ files:
   visible: true
 - name: tests/__init__.py
   visible: false
-- name: tests/test_task_full.py
-  visible: false
-- name: runConfigurations/test_task_full.run.xml
-  visible: false
 - name: invsys/Dockerfile
   visible: true
 - name: invsys/api.py
   visible: true
-- name: invsys/dal.py
-  visible: true
 - name: docker-compose.yaml
   visible: true
+- name: invsys/dal.py
+  visible: true
+- name: runConfigurations/test_task_full.run.xml
+  visible: false
+- name: tests/test_task_full.py
+  visible: false

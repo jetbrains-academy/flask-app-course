@@ -5,7 +5,7 @@ files:
   placeholders:
   - offset: 2066
     length: 21
-    placeholder_text: '# TODO: delete the device from the database'
+    placeholder_text: "# TODO: delete the device from the database"
   - offset: 2099
     length: 36
     placeholder_text: '"message"'
@@ -19,3 +19,5 @@ files:
   visible: false
 - name: tests/test_task.py
   visible: false
+- name: storage.db.db
+  visible: true

@@ -5,7 +5,7 @@ files:
   placeholders:
   - offset: 1132
     length: 53
-    placeholder_text: '# TODO: return None if the id is not found in the database'
+    placeholder_text: "# TODO: return None if the id is not found in the database"
   - offset: 1525
     length: 85
     placeholder_text: '# TODO'
@@ -19,3 +19,5 @@ files:
   visible: false
 - name: tests/test_task.py
   visible: false
+- name: storage.db.db
+  visible: true

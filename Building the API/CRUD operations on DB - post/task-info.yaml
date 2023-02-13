@@ -5,10 +5,10 @@ files:
   placeholders:
   - offset: 619
     length: 24
-    placeholder_text: '# TODO: create the database shelf object'
+    placeholder_text: "# TODO: create the database shelf object"
   - offset: 652
     length: 24
-    placeholder_text: '# TODO: add the data about the new item from args to the shelf'
+    placeholder_text: "# TODO: add the data about the new item from args to the shelf"
 - name: tests/test_task.py
   visible: false
 - name: __init__.py
@@ -19,3 +19,5 @@ files:
   visible: true
 - name: tests/api_test.py
   visible: false
+- name: storage.db.db
+  visible: true

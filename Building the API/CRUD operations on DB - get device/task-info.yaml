@@ -5,7 +5,7 @@ files:
   placeholders:
   - offset: 845
     length: 53
-    placeholder_text: '# TODO: return None if the id is not found in the database'
+    placeholder_text: "# TODO: return None if the id is not found in the database"
   - offset: 914
     length: 17
     placeholder_text: '"Return the device from the database accessed by the id"'
@@ -19,3 +19,5 @@ files:
   visible: false
 - name: tests/test_task.py
   visible: false
+- name: storage.db.db
+  visible: true

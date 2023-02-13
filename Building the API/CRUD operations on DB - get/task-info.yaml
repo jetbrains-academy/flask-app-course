@@ -5,7 +5,7 @@ files:
   placeholders:
   - offset: 424
     length: 89
-    placeholder_text: '# TODO: populate the dictionary with data from shelf'
+    placeholder_text: "# TODO: populate the dictionary with data from shelf"
 - name: tests/test_task.py
   visible: false
 - name: __init__.py
@@ -16,3 +16,5 @@ files:
   visible: true
 - name: tests/api_test.py
   visible: false
+- name: storage.db.db
+  visible: true
