@@ -5,7 +5,7 @@ files:
   placeholders:
   - offset: 1166
     length: 66
-    placeholder_text: '# TODO: make the post request to invsys'
+    placeholder_text: "# TODO: make the post request to invsys"
   - offset: 1291
     length: 48
     placeholder_text: '# TODO'
@@ -33,7 +33,7 @@ files:
   visible: false
 - name: gateway/requirements.txt
   visible: false
-- name: runConfigurations/Post_Resource_Test.run.xml
-  visible: false
 - name: runConfigurations/rm_images.sh
+  visible: false
+- name: runConfigurations/Post_Resource_Test.run.xml
   visible: false

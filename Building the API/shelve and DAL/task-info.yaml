@@ -14,5 +14,3 @@ files:
   visible: false
 - name: api.py
   visible: true
-- name: storage.db.db
-  visible: true

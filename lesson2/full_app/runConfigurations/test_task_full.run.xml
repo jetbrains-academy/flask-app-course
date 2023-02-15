@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="test_task_full" type="tests" factoryName="Autodetect">
+  <configuration default="false" name="test_task_full" type="tests" factoryName="Autodetect" activateToolWindowBeforeRun="false">
     <module name="Flask_course_prototype" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />

@@ -19,5 +19,3 @@ files:
   visible: true
 - name: tests/api_test.py
   visible: false
-- name: storage.db.db
-  visible: true

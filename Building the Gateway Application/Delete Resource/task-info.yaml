@@ -33,7 +33,7 @@ files:
   visible: false
 - name: docker-compose.yaml
   visible: false
-- name: runConfigurations/Delete_Resource_Test.run.xml
-  visible: false
 - name: runConfigurations/rm_images.sh
+  visible: false
+- name: runConfigurations/Delete_Resource_Test.run.xml
   visible: false
