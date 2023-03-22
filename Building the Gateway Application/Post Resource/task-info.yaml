@@ -39,5 +39,3 @@ files:
   visible: false
 - name: utils/runConfigurations/setup_containers.run.xml
   visible: false
-- name: tests/setup_containers.py
-  visible: true

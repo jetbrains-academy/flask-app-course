@@ -4,7 +4,7 @@
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <option name="SDK_HOME" value="" />
-    <option name="SDK_NAME" value="" />
+    <option name="SDK_NAME" value="python3.10" />
     <option name="WORKING_DIRECTORY" value="" />
     <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -14,7 +14,6 @@
     <option name="_new_target" value="&quot;$PROJECT_DIR$/Building the Gateway Application/Delete Resource/tests/test_task.py&quot;" />
     <option name="_new_targetType" value="&quot;PATH&quot;" />
     <method v="2">
-      <option name="RunConfigurationTask" enabled="true" run_configuration_name="setup_containers" run_configuration_type="PythonConfigurationType" />
       <option name="RunConfigurationTask" enabled="true" run_configuration_name="Delete_Resource_Compose" run_configuration_type="docker-deploy" />
     </method>
   </configuration>

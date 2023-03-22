@@ -1,117 +1,50 @@
+import asyncio
 import unittest
 import requests
-import time
-import aiodocker
 import docker
 
+client = docker.from_env()
 
-async def run_containers():
-    async_docker = aiodocker.Docker()
-    docker_client = docker.client.from_env()
-    try:
-        container_to_restart_invsys = await async_docker.containers.get("flask-app-invsys")
-        await container_to_restart_invsys.restart(timeout=0)
-    except aiodocker.exceptions.DockerError as e:
-        docker_client.containers.run("flask-app-invsys-img", name="flask-app-invsys",  detach=True)
-    try:
-        container_to_restart_gateway = await async_docker.containers.get("flask-app-gateway")
-        await container_to_restart_gateway.restart(timeout=0)
-    except aiodocker.exceptions.DockerError as e:
-        docker_client.containers.run("flask-app-gateway-img", name="flask-app-gateway", detach=True)
+class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
+    containers = []
+    completed_tests = 0
+    total_tests = 1
 
-    # TODO the sleep time is arbitrary ATM, it should be adjusted somehow
-    time.sleep(0.5)
-    await async_docker.close()
-    docker_client.close()
+    async def async_setUp(self):
+        self.container_names = ["flask-app-invsys", "flask-app-gateway"]
+        self.image_names = ["flask-app-invsys-img", "flask-app-gateway-img"]
+        self.container_ports = [None, 5001]
+        self.host_ports = [None, 5001]
 
+        TestSuiteWithAsyncTeardown.containers = []
 
-async def delete_containers():
-    async_docker = aiodocker.Docker()
-    try:
-        container_to_kill_invsys = await async_docker.containers.get("flask-app-invsys")
-        await container_to_kill_invsys.kill(timeout=0)
-        await container_to_kill_invsys.delete(timeout=0)
-    except aiodocker.exceptions.DockerError as e:
-        print(e.message)
+        for idx, container_name in enumerate(self.container_names):
+            container_list = client.containers.list(filters={'name': container_name})
+            if container_list:
+                container = container_list[0]
+                if container.status != 'running':
+                    container.restart()
+            else:
+                if self.container_ports[idx] is not None:
+                    container = client.containers.run(self.image_names[idx], name=container_name,
+                                                      ports={f'{self.container_ports[idx]}/tcp': self.host_ports[idx]},
+                                                      detach=True)
+                else:
+                    container = client.containers.run(self.image_names[idx], name=container_name, detach=True)
+                await asyncio.sleep(5)  # Give some time for the container to start
+            print("len on setup is" + str(len(TestSuiteWithAsyncTeardown.containers)))
+            TestSuiteWithAsyncTeardown.containers.append(container)
 
-    try:
-        container_to_kill_gateway = await async_docker.containers.get("flask-app-gateway")
-        await container_to_kill_gateway.kill(timeout=0)
-        await container_to_kill_gateway.delete(timeout=0)
-    except aiodocker.exceptions.DockerError as e:
-        print(e.message)
-    # TODO the sleep time is arbitrary ATM, it should be adjusted somehow
-    time.sleep(0.5)
-    await async_docker.close()
+    async def async_tearDown(self):
+        TestSuiteWithAsyncTeardown.completed_tests += 1
+        if TestSuiteWithAsyncTeardown.completed_tests == TestSuiteWithAsyncTeardown.total_tests:
+            for container in self.containers:
+                container.stop()
+                container.remove()
+            client.close()
 
-
-class TestCase(unittest.IsolatedAsyncioTestCase):
-    container_invsys = None
-    container_gateway = None
-    async_docker = None
-    docker_client = None
-
-    async def run_containers(self):
-        if self.async_docker is None:
-            self.async_docker = aiodocker.Docker()
-        if self.docker_client is None:
-            self.docker_client = docker.client.from_env()
-        try:
-            self.container_invsys = await self.async_docker.containers.get("flask-app-invsys")
-            await self.container_invsys.restart(timeout=0)
-        except aiodocker.exceptions.DockerError as e:
-            self.container_invsys = self.docker_client.containers.run("flask-app-invsys-img", name="flask-app-invsys",  detach=True)
-            pass
-        try:
-            self.container_gateway = await self.async_docker.containers.get("flask-app-gateway")
-            await self.container_gateway.restart(timeout=0)
-        except aiodocker.exceptions.DockerError as e:
-            self.container_gateway = self.docker_client.containers.run("flask-app-gateway-img", name="flask-app-gateway", detach=True)
-            pass
-
-    async def delete_containers(self):
-        async_docker = self.async_docker
-
-        try:
-            self.container_invsys = await async_docker.containers.get("flask-app-invsys")
-            await self.container_invsys.delete(timeout=0)
-        except aiodocker.exceptions.DockerError as e:
-            print(e.message)
-
-        try:
-            self.container_gateway = await async_docker.containers.get("flask-app-gateway")
-            await self.container_gateway.delete(timeout=0)
-        except aiodocker.exceptions.DockerError as e:
-            print(e.message)
-        self.docker_client.close()
-        await async_docker.close()
-
-    async def stop_containers(self):
-        async_docker = self.async_docker
-        try:
-            self.container_invsys = await async_docker.containers.get("flask-app-invsys")
-            await self.container_invsys.kill(timeout=0)
-        except aiodocker.exceptions.DockerError as e:
-            print(e.message)
-        try:
-            self.container_gateway = await async_docker.containers.get("flask-app-gateway")
-            await self.container_gateway.kill(timeout=0)
-        except aiodocker.exceptions.DockerError as e:
-            print(e.message)
-
-    async def asyncSetUp(self):
-        await self.run_containers()
-        print("Running test instances")
-
-    async def asyncTearDown(self) -> None:
-        await self.stop_containers()
-        print("Stopped test instances")
-
-    async def on_cleanup(self):
-        await self.delete_containers()
-
-    def test_post(self):
-        # device_id = ''.join(random.choices(string.ascii_lowercase, k=10))
+    async def test_post(self):
+        await self.async_setUp()
         response = requests.post('http://127.0.0.1:5001/items', json={"id": "New_device_ID",
                                                                       "name": "UPDATE",
                                                                       "location": "location",
@@ -123,4 +56,4 @@ class TestCase(unittest.IsolatedAsyncioTestCase):
                           b'  "name": "UPDATE", \n    "status": "off"\n  }\n}\n').decode("utf-8").replace(" ", ""),
                          response.content.decode("utf-8").replace(" ", ""),
                          msg="POST request resulted in an unexpected response content.")
-        self.addCleanup(self.on_cleanup)
+        await self.async_tearDown()
