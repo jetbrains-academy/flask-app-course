@@ -11,6 +11,7 @@ class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
     total_tests = 1
 
     async def async_setUp(self):
+        # TODO investigate hardcoded values for names and ports
         self.container_names = ["flask-app-invsys", "flask-app-gateway"]
         self.image_names = ["flask-app-invsys-img", "flask-app-gateway-img"]
         self.container_ports = [None, 5001]
@@ -31,8 +32,7 @@ class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
                                                       detach=True)
                 else:
                     container = client.containers.run(self.image_names[idx], name=container_name, detach=True)
-                await asyncio.sleep(5)  # Give some time for the container to start
-            print("len on setup is" + str(len(TestSuiteWithAsyncTeardown.containers)))
+                await asyncio.sleep(5)
             TestSuiteWithAsyncTeardown.containers.append(container)
 
     async def async_tearDown(self):
