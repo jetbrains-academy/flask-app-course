@@ -32,7 +32,6 @@ class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
                                                       detach=True)
                 else:
                     container = client.containers.run(self.image_names[idx], name=container_name, detach=True)
-                await asyncio.sleep(5)
             TestSuiteWithAsyncTeardown.containers.append(container)
 
     async def async_tearDown(self):
