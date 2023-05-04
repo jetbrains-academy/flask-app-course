@@ -5,7 +5,7 @@ files:
   placeholders:
   - offset: 358
     length: 62
-    placeholder_text: '# TODO: complete the function'
+    placeholder_text: "# TODO: complete the function"
 - name: tests/test_task.py
   visible: false
 - name: __init__.py
@@ -32,5 +32,5 @@ files:
   visible: false
 - name: runConfigurations/Get_Resource_Test.run.xml
   visible: false
-- name: runConfigurations/rm_images.sh
+- name: runConfigurations/Get_Resource_Compose.run.xml
   visible: false
