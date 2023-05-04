@@ -32,5 +32,5 @@ files:
   visible: false
 - name: runConfigurations/Put_Resource_Test.run.xml
   visible: false
-- name: runConfigurations/rm_images.sh
+- name: runConfigurations/Put_resource_Compose.run.xml
   visible: false
