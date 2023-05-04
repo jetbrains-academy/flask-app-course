@@ -63,7 +63,7 @@ class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
         except Exception as e:
             if type(e) == AssertionError:
                 await self.async_tearDown()
-                self.fail(msg=f"{type(e)}, unexpected response, {str(e)}")
+                self.fail(msg=f"Unexpected response, {str(e)}")
             else:
                 await self.async_tearDown()
                 self.fail(msg='Something went wrong. Try restarting Docker')
@@ -87,7 +87,7 @@ class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
         except Exception as e:
             if isinstance(e, AssertionError):
                 await self.async_tearDown()
-                self.fail(msg=f"{type(e)}, unexpected response, {str(e)}")
+                self.fail(msg=f"Unexpected response, {str(e)}")
             else:
                 await self.async_tearDown()
                 self.fail(msg='Something went wrong. Try restarting Docker')
