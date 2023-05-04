@@ -5,6 +5,7 @@ import docker
 
 client = docker.from_env()
 
+
 class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
     containers = []
     completed_tests = 0
@@ -44,15 +45,23 @@ class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
 
     async def test_post(self):
         await self.async_setUp()
-        response = requests.post('http://127.0.0.1:5001/items', json={"id": "New_device_ID",
-                                                                      "name": "UPDATE",
-                                                                      "location": "location",
-                                                                      "status": "off"})
-        print(response.status_code)
-        print(response.text)
-        self.assertEqual(201, response.status_code, msg="POST request resulted in an unexpected response status code.")
-        self.assertEqual((b'{\n  "device": {\n    "id": "New_device_ID", \n    "location": "location", \n  '
-                          b'  "name": "UPDATE", \n    "status": "off"\n  }\n}\n').decode("utf-8").replace(" ", ""),
-                         response.content.decode("utf-8").replace(" ", ""),
-                         msg="POST request resulted in an unexpected response content.")
+        try:
+            response = requests.post('http://127.0.0.1:5001/items', json={"id": "New_device_ID",
+                                                                          "name": "UPDATE",
+                                                                          "location": "location",
+                                                                          "status": "off"})
+            print(response.status_code)
+            print(response.text)
+            self.assertEqual(201, response.status_code, msg="POST request resulted in an unexpected response status code.")
+            self.assertEqual((b'{\n  "device": {\n    "id": "New_device_ID", \n    "location": "location", \n  '
+                              b'  "name": "UPDATE", \n    "status": "off"\n  }\n}\n').decode("utf-8").replace(" ", ""),
+                             response.content.decode("utf-8").replace(" ", ""),
+                             msg="POST request resulted in an unexpected response content.")
+        except Exception as e:
+            if isinstance(e, AssertionError):
+                await self.async_tearDown()
+                self.fail(msg=f"Unexpected response, {str(e)}")
+            else:
+                await self.async_tearDown()
+                self.fail(msg='Something went wrong. Try restarting Docker')
         await self.async_tearDown()

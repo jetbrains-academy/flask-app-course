@@ -45,29 +45,45 @@ class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
 
     async def test_delete_404(self):
         await self.async_setUp()
-        response = requests.delete('http://127.0.0.1:5001/items/100')
+        try:
+            response = requests.delete('http://127.0.0.1:5001/items/100')
 
-        print(response.status_code)
-        # TODO this turns out really bad in case of 500 response - several screens of bs html in the console
-        print(response.text)
-        self.assertEqual(404, response.status_code,
-                         msg=f"DELETE request resulted in an unexpected response code: {response.status_code}")
-        self.assertEqual(b'{\n  "data": {}, \n  "message": "Device not found"\n}\n'.decode("utf-8").replace(" ", ""),
-                         response.content.decode("utf-8").replace(" ", ""),
-                         msg="DELETE request resulted in unexpected response content.")
+            print(response.status_code)
+            # TODO this turns out really bad in case of 500 response - several screens of bs html in the console
+            print(response.text)
+            self.assertEqual(404, response.status_code,
+                             msg=f"DELETE request resulted in an unexpected response code: {response.status_code}")
+            self.assertEqual(b'{\n  "data": {}, \n  "message": "Device not found"\n}\n'.decode("utf-8").replace(" ", ""),
+                             response.content.decode("utf-8").replace(" ", ""),
+                             msg="DELETE request resulted in unexpected response content.")
+        except Exception as e:
+            if isinstance(e, AssertionError):
+                await self.async_tearDown()
+                self.fail(msg=f"Unexpected response, {str(e)}")
+            else:
+                await self.async_tearDown()
+                self.fail(msg='Something went wrong. Try restarting Docker')
         await self.async_tearDown()
 
     async def test_delete(self):
         await self.async_setUp()
         # Here the asyncSetUp() takes place
-        response = requests.delete('http://127.0.0.1:5001/items/002')
+        try:
+            response = requests.delete('http://127.0.0.1:5001/items/002')
 
-        print(response.status_code)
-        # TODO this turns out really bad in case of 500 response - several screens of bs html in the console
-        print(response.text)
-        self.assertEqual(201, response.status_code,
-                         msg=f"DELETE request resulted in an unexpected response code: {response.status_code}")
-        self.assertEqual(b'{\n  "deleted device": "002"\n}\n'.decode("utf-8").replace(" ", ""),
-                         response.content.decode("utf-8").replace(" ", ""),
-                         msg="DELETE request resulted in unexpected response content.")
+            print(response.status_code)
+            # TODO this turns out really bad in case of 500 response - several screens of bs html in the console
+            print(response.text)
+            self.assertEqual(201, response.status_code,
+                             msg=f"DELETE request resulted in an unexpected response code: {response.status_code}")
+            self.assertEqual(b'{\n  "deleted device": "002"\n}\n'.decode("utf-8").replace(" ", ""),
+                             response.content.decode("utf-8").replace(" ", ""),
+                             msg="DELETE request resulted in unexpected response content.")
+        except Exception as e:
+            if isinstance(e, AssertionError):
+                await self.async_tearDown()
+                self.fail(msg=f"Unexpected response, {str(e)}")
+            else:
+                await self.async_tearDown()
+                self.fail(msg='Something went wrong. Try restarting Docker')
         await self.async_tearDown()
