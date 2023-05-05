@@ -15,8 +15,6 @@
         <option name="sourceFilePath" value="Deploy API on Docker/Postman/Dockerfile" />
       </settings>
     </deployment>
-    <method v="2">
-      <option name="RunConfigurationTask" enabled="true" run_configuration_name="rm_images_Postman1" run_configuration_type="ShConfigurationType" />
-    </method>
+    <method v="2" />
   </configuration>
 </component>

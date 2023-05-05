@@ -12,8 +12,6 @@
     <option name="_new_additionalArguments" value="&quot;&quot;" />
     <option name="_new_target" value="&quot;$PROJECT_DIR$/lesson2/full_app/tests/test_task_full.py&quot;" />
     <option name="_new_targetType" value="&quot;PATH&quot;" />
-    <method v="2">
-      <option name="RunConfigurationTask" enabled="true" run_configuration_name="full_app_Compose" run_configuration_type="docker-deploy" />
-    </method>
+    <method v="2" />
   </configuration>
 </component>

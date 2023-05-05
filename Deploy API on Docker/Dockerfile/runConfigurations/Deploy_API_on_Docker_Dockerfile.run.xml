@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="dockerfile1" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+  <configuration default="false" name="Deploy_API_on_Docker_Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
     <deployment type="dockerfile">
       <settings>
         <option name="imageTag" value="flask-app-invsys-img" />
@@ -12,7 +12,13 @@
             </DockerPortBindingImpl>
           </list>
         </option>
-        <option name="sourceFilePath" value="Deploy API on Docker/Dockerfile/Dockerfile" />
+        <option name="showCommandPreview" value="true" />
+        <option name="sourceFilePath" value="Building the Gateway Application/Delete Resource/gateway/Dockerfile" />
+        <option name="buildOptions">
+            <list>
+                <option value="--no-cache" />
+            </list>
+        </option>
       </settings>
     </deployment>
     <method v="2" />
