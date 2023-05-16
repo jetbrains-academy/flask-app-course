@@ -26,7 +26,7 @@ files:
   visible: true
 - name: invsys/requirements.txt
   visible: true
-- name: runConfigurations/rm_images.sh
-  visible: false
 - name: runConfigurations/Composing_system_docker-compose-test.run.xml
+  visible: false
+- name: runConfigurations/Composing_the_system_Docker_compose.run.xml
   visible: false
