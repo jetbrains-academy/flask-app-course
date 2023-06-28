@@ -22,5 +22,3 @@ files:
   visible: false
 - name: runConfigurations/Deploy_on_Docker_Dockerfile_Test.run.xml
   visible: false
-- name: runConfigurations/Deploy_API_on_Docker_Dockerfile.run.xml
-  visible: false

@@ -13,12 +13,7 @@
           </list>
         </option>
         <option name="showCommandPreview" value="true" />
-        <option name="sourceFilePath" value="Building the Gateway Application/Delete Resource/gateway/Dockerfile" />
-        <option name="buildOptions">
-            <list>
-                <option value="--no-cache" />
-            </list>
-        </option>
+        <option name="sourceFilePath" value="Deploy API on Docker/Docker run configuration setup/Dockerfile" />
       </settings>
     </deployment>
     <method v="2" />

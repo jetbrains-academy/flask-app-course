@@ -33,8 +33,6 @@ files:
   visible: false
 - name: tests/test_task.py
   visible: false
-- name: runConfigurations/Delete_Resource_Compose.run.xml
-  visible: false
 - name: docker-compose.yaml
   visible: false
 - name: utils/runConfigurations/setup_containers.run.xml

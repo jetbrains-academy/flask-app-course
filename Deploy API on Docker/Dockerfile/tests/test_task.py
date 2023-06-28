@@ -17,8 +17,8 @@ class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
 
     async def async_setUp(self):
         # TODO investigate hardcoded values for names and ports
-        self.container_names = ["flask-app-invsys", "flask-app-gateway"]
-        self.image_names = ["flask-app-invsys-img", "flask-app-gateway-img"]
+        self.container_names = ["flask-app-invsys"]
+        self.image_names = ["flask-app-invsys-img"]
         self.container_ports = [None, 5001]
         self.host_ports = [None, 5001]
 
