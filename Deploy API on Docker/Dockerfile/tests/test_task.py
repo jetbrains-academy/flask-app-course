@@ -45,7 +45,27 @@ class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
             for container in self.containers:
                 container.stop()
                 container.remove()
+            for image_name in self.image_names:
+                client.images.remove(image_name)
             client.close()
+
+# teardown to remove ALL images:
+    # async def async_tearDown(self):
+    #     TestSuiteWithAsyncTeardown.completed_tests += 1
+    #     if TestSuiteWithAsyncTeardown.completed_tests == TestSuiteWithAsyncTeardown.total_tests:
+    #         client = docker.from_env()
+    #
+    #         # Stop and remove all containers
+    #         for container in client.containers.list(all=True):
+    #             container.stop()
+    #             container.remove(force=True)
+    #
+    #         # Remove all images
+    #         for image in client.images.list():
+    #             client.images.remove(image.id, force=True)
+    #
+    #         client.close()
+
 
     async def test_post(self):
         await self.async_setUp()
@@ -122,46 +142,3 @@ class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
                 await self.async_tearDown()
                 self.fail(msg='Something went wrong. Try restarting Docker')
         await self.async_tearDown()
-
-#
-#
-# import unittest
-# import requests
-# import random
-# import string
-# import time
-#
-# time.sleep(3)
-#
-# class TestCase(unittest.TestCase):
-#     def test_post(self):
-#         device_id = ''.join(random.choices(string.ascii_lowercase, k=10))
-#         response = requests.post('http://127.0.0.1:5000/items', json={"id": f"{device_id}",
-#                                                                       "name": "UPDATEDUPDATEDUPDATED",
-#                                                                       "location": "location",
-#                                                                       "status": "off"})
-#         print(response.status_code)
-#         print(response.text)
-#         self.assertEqual(201, response.status_code, msg="Such a bad day :(")
-#
-#     def test_get(self):
-#         response = requests.get('http://127.0.0.1:5000/items')
-#         print(response.status_code)
-#         print(response.text)
-#         self.assertEqual(200, response.status_code, msg=f"GET request resulted in an unexpected response code: {response.status_code}")
-#
-#     def test_put(self):
-#         # device_id = ''.join(random.choices(string.ascii_lowercase, k=10))
-#         response = requests.put('http://127.0.0.1:5000/items/002', json={"id": "002",
-#                                                                          "name": "Humidity_sensor",
-#                                                                          "location": "bedroom",
-#                                                                          "status": "off"})
-#         print(response.status_code)
-#         print(response.text)
-#         self.assertEqual(200, response.status_code, msg=f"PUT request resulted in an unexpected response code: {response.status_code}")
-#
-#     def test_delete(self):
-#         response = requests.delete('http://127.0.0.1:5000/items/100')
-#         print(response.status_code)
-#         print(response.text)
-#         self.assertEqual(404, response.status_code, msg=f"DELETE request resulted in an unexpected response code: {response.status_code}")

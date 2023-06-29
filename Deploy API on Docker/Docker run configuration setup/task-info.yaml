@@ -14,3 +14,5 @@ files:
   visible: false
 - name: config1.png
   visible: false
+- name: runConfigurations/Docker-run-donfig-setup.xml
+  visible: false
