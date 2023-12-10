@@ -28,5 +28,3 @@ files:
   visible: true
 - name: runConfigurations/Composing_system_docker-compose-test.run.xml
   visible: false
-- name: runConfigurations/Composing_the_system_Docker_compose.run.xml
-  visible: false

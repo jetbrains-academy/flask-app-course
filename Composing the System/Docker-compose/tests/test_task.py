@@ -1,4 +1,7 @@
+import string
 import unittest
+import random
+
 import requests
 import docker
 
@@ -99,7 +102,7 @@ class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
                 self.fail(msg='Something went wrong. Try restarting Docker')
         await self.async_tearDown()
 
-    async def test_put(self):
+    async def test_delete(self):
         await self.async_setUp()
         try:
             response = requests.delete('http://127.0.0.1:5001/items/100')
