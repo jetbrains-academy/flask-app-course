@@ -2,7 +2,8 @@
   <configuration default="false" name="Postm_task_config" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
     <deployment type="dockerfile">
       <settings>
-        <option name="containerName" value="" />
+        <option name="imageTag" value="flask-app-invsys-img" />
+        <option name="containerName" value="flask-app-invsys" />
         <option name="portBindings">
           <list>
             <DockerPortBindingImpl>

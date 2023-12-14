@@ -1,8 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="dockerfile1" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+  <configuration default="false" name="Deploy_API_on_Docker_Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
     <deployment type="dockerfile">
       <settings>
-        <option name="containerName" value="" />
+        <option name="imageTag" value="flask-app-invsys-img" />
+        <option name="containerName" value="flask-app-invsys" />
         <option name="portBindings">
           <list>
             <DockerPortBindingImpl>
@@ -11,6 +12,7 @@
             </DockerPortBindingImpl>
           </list>
         </option>
+        <option name="showCommandPreview" value="true" />
         <option name="sourceFilePath" value="Deploy API on Docker/Dockerfile/Dockerfile" />
       </settings>
     </deployment>

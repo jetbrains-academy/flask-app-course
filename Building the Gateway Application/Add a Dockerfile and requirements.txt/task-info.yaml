@@ -24,3 +24,9 @@ files:
   visible: true
 - name: invsys/requirements.txt
   visible: true
+- name: docker-compose.yaml
+  visible: false
+- name: runConfigurations/Gateway_add_Dockerfile_Test.run.xml
+  visible: false
+- name: runConfigurations/Add_Dockerfile_requirements_Compose.run.xml
+  visible: false

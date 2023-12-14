@@ -42,9 +42,10 @@ class Device(Resource):
 
     # GET - Returns a single device object given a matching id
     def get(self, identifier):
-        device = devices[identifier]
+        try:
+            device = devices[identifier]
 
-        if not device:
+        except KeyError:
             return self.not_found_response
 
         # Construct a response object that consists of a json object and a response code:

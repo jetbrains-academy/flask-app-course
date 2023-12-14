@@ -8,8 +8,11 @@ class TestClient(flask_unittest.ClientTestCase):
     app = app
 
     def test_put_with_client(self, client):
-        response = client.put('/items/003', data={'location': 'hall', 'status': 'off'})
-        self.assertEqual(response.status_code, 200, msg=f"PUT request resulted in an unexpected response code {response.status_code}.")
-        self.assertEqual(response.data, (b'{"updated device": {"id": "003", "name": "Humidifier", "location": "bedroom"'
-                                         b', "status": "off"}}\n'), msg="PUT request resulted in unexpected response content.")
+        response = client.put('/items/003', json={'location': 'hall', 'status': 'off'})
+        self.assertEqual(200, response.status_code, msg=f"PUT request resulted in an unexpected response code {response.status_code}.")
+        self.assertEqual((b'{"updated device": {"id": "003", "name": "Humidifier", "location": "hall"'
+                                         b', "status": "off"}}\n'), response.data, msg="PUT request resulted in unexpected response content.")
 
+    def test_get(self, client):
+        response = client.get('/items')
+        self.assertEqual(200, response.status_code, msg="The app does not seem to be responding properly")

@@ -12,19 +12,18 @@ files:
   - offset: 823
     length: 207
     placeholder_text: '# TODO: add the remaining arguments'
-  - offset: 1326
-    length: 57
-    placeholder_text: '# TODO: return not_found_response in case there''sno such device'
-  - offset: 1651
+  - offset: 1343
+    length: 59
+    placeholder_text: '# TODO: return not_found_response in case there''s no such device'
+  - offset: 1670
     length: 79
-    placeholder_text: '# TODO: if there''s no such id in our data, return the not
-      found response'
-  - offset: 2035
+    placeholder_text: '# TODO: if there''s no such id in our data, return the not_found_response'
+  - offset: 2054
     length: 98
     placeholder_text: '# TODO'
-  - offset: 2296
+  - offset: 2315
     length: 79
-    placeholder_text: '# TODO: return the not found response if the id wasn''t found'
-  - offset: 2384
+    placeholder_text: '# TODO: return the not_found_response if the id wasn''t found'
+  - offset: 2403
     length: 23
     placeholder_text: '# TODO: delete the device with the provided identifier'

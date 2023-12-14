@@ -20,9 +20,9 @@ class TestClient(flask_unittest.ClientTestCase):
                          msg="GET request resulted in unexpected response content.")
 
     def test_put_with_client(self, client):
-        response = client.put('/items/003', data={'location': 'hall', 'status': 'off'})
+        response = client.put('/items/003', json={'location': 'hall', 'status': 'off'})
         self.assertEqual(response.status_code, 200, msg=f"PUT request resulted in an unexpected response code {response.status_code}.")
-        self.assertEqual(response.data, (b'{"updated device":{"id":"003","location":"bedroom","name":"Humidifier","stat'
+        self.assertEqual(response.data, (b'{"updated device":{"id":"003","location":"hall","name":"Humidifier","stat'
                                          b'us":"off"}}\n'),
                          msg="PUT request resulted in unexpected response content.")
 

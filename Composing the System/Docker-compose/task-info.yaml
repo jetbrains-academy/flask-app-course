@@ -16,8 +16,6 @@ files:
   visible: true
 - name: gateway/requirements.txt
   visible: true
-- name: runConfigurations/docker-compose-test.run.xml
-  visible: false
 - name: invsys/__init__.py
   visible: true
 - name: invsys/api.py
@@ -28,3 +26,5 @@ files:
   visible: true
 - name: invsys/requirements.txt
   visible: true
+- name: runConfigurations/Composing_system_docker-compose-test.run.xml
+  visible: false

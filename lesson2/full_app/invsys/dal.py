@@ -15,49 +15,49 @@ def pull_db():
 
 
 def get():
-    shelf = pull_db()
-    keys = list(shelf.keys())
-    devices_ = []
-    for key in keys:
-        devices_.append(shelf[key])
+    with pull_db() as shelf:
+        keys = list(shelf.keys())
+        devices_ = []
+        for key in keys:
+            devices_.append(shelf[key])
     return devices_
 
 
 def get_device(identifier):
-    shelf = pull_db()
-
-    if not (identifier in shelf):
-        return None
+    with pull_db() as shelf:
+        shelf = pull_db()
+        if not (identifier in shelf):
+            return None
     return shelf[identifier]
 
 
 def put_device(identifier, args):
-    shelf = pull_db()
-    if not (identifier in shelf):
-        return None
-    device = shelf[identifier]
-    # Loop Through all the passed arguments
-    for k, v in args.items():
-        # Check if the passed value is not null
-        if v is not None:
-            # if not, set the element in the devices dict with the 'k' object to the value provided in the request.
-            device[k] = v
-    shelf[identifier] = device
-    return shelf[identifier]
+    with pull_db() as shelf:
+        if not (identifier in shelf):
+            return None
+        device = shelf[identifier]
+        # Loop Through all the passed arguments
+        for k, v in args.items():
+            # Check if the passed value is not null
+            if v is not None:
+                # if not, set the element in the devices dict with the 'k' object to the value provided in the request.
+                device[k] = v
+        shelf[identifier] = device
+        return shelf[identifier]
 
 
 def post(args):
-    shelf = pull_db()
-    shelf[args['id']] = args
-    return shelf[args['id']]
+    with pull_db() as shelf:
+        shelf[args['id']] = args
+        return shelf[args['id']]
 
 
 def delete_device(identifier):
-    shelf = pull_db()
-    # if the key does not exist on the shelf, return a 404 error.
-    if not (identifier in shelf):
-        return None
-    del shelf[identifier]
+    with pull_db() as shelf:
+        # if the key does not exist on the shelf, return a 404 error.
+        if not (identifier in shelf):
+            return None
+        del shelf[identifier]
     return {'message': f'{identifier} deleted'}
 
 
@@ -86,7 +86,5 @@ devices = [{
 with shelve.open('storage.db') as db:
     for i, j in enumerate(devices):
         db[devices[i]["id"]] = j
-    #
-    # db[devices[0]["id"]] = devices[0]
-    # db[devices[1]["id"]] = devices[1]
+
 

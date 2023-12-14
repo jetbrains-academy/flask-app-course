@@ -2,8 +2,6 @@ type: edu
 files:
 - name: __init__.py
   visible: true
-- name: docker-compose.yaml
-  visible: true
 - name: gateway/__init__.py
   visible: true
 - name: gateway/application.py
@@ -14,13 +12,7 @@ files:
   visible: true
 - name: invsys/__init__.py
   visible: true
-- name: invsys/api.py
-  visible: true
-- name: invsys/Dockerfile
-  visible: true
 - name: invsys/requirements.txt
-  visible: true
-- name: invsys/dal.py
   visible: true
 - name: tests/__init__.py
   visible: false
@@ -28,3 +20,11 @@ files:
   visible: false
 - name: runConfigurations/test_task_full.run.xml
   visible: false
+- name: invsys/Dockerfile
+  visible: true
+- name: invsys/api.py
+  visible: true
+- name: invsys/dal.py
+  visible: true
+- name: docker-compose.yaml
+  visible: true

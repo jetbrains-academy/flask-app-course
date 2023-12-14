@@ -13,10 +13,14 @@ version: '2'
 services:
     gateway:
         build: gateway
+        container_name: flask-app-gateway
+        image: flask-app-gateway-img
         ports:
             - "5001:5001"
     invsys:
         build: invsys
+        container_name: flask-app-invsys
+        image: flask-app-invsys-img
 ```
 
 We have defined two services. One for Gateway and one for Invsys. The key we use as the name 
@@ -30,4 +34,4 @@ that we haven't added a port mapping for invsys and this is because we want to f
 to go through the gateway. If you wanted to be able to target invsys directly too, you would 
 just need to add ports: - `"5000:5000"`.
 
-Add contents to the `docker-compose.yaml` file and run the application. Test it with Postman like you did before.
+Add contents the `docker-compose.yaml` file and run the application. Test it with Postman like you did before.
