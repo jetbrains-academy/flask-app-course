@@ -36,7 +36,7 @@ def device(identifier):
             args = device_post_put_schema.load(request.json)
         except ValidationError as err:
             return jsonify(err.messages), 400
-        updated_device = dal.update_device(identifier, args)
+        updated_device = dal.put_device(identifier, args)
         if not updated_device:
             return jsonify({'message': 'Device not found'}), 404
         return device_schema.dump(updated_device)
@@ -50,7 +50,7 @@ def device(identifier):
 @app.route('/items', methods=['GET', 'POST'])
 def device_inventory():
     if request.method == 'GET':
-        devices = dal.get_all_devices()
+        devices = dal.get()
         return jsonify(devices_schema.dump(devices))
 
     elif request.method == 'POST':
@@ -58,10 +58,11 @@ def device_inventory():
             args = device_post_put_schema.load(request.json)
         except ValidationError as err:
             return jsonify(err.messages), 400
-        new_device = dal.add_device(args)
+        new_device = dal.post(args)
         if not new_device:
             return jsonify({'message': 'Device could not be added'}), 404
         return jsonify(device_schema.dump(new_device)), 201
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
