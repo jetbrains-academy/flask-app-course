@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from marshmallow import Schema, fields, ValidationError, EXCLUDE
+from marshmallow import Schema, fields, ValidationError
 
 app = Flask(__name__)
 
@@ -10,7 +10,8 @@ devices = {
     "003": {"id": "003", "name": "Humidifier", "location": "bedroom", "status": "off"}
 }
 
-# Marshmallow Schemas
+
+# Define Marshmallow Schema for request and response validation
 class DeviceSchema(Schema):
     id = fields.Str(required=True)
     name = fields.Str(required=True)
@@ -18,19 +19,7 @@ class DeviceSchema(Schema):
     status = fields.Str(required=True)
 
 
-# For PUT requests where some fields may be required
-class DeviceUpdateSchema(DeviceSchema):
-    name = fields.Str(required=False)
-    location = fields.Str(required=False)
-    status = fields.Str(required=False)
-    class Meta:
-        unknown = EXCLUDE
-
-
 device_schema = DeviceSchema()
-device_update_schema = DeviceUpdateSchema()
-
-
 
 @app.route('/items/<string:identifier>', methods=['GET', 'PUT', 'DELETE'])
 def device(identifier):
@@ -42,7 +31,7 @@ def device(identifier):
 
     elif request.method == 'PUT':
         try:
-            args = device_update_schema.load(request.json, partial=True)
+            args = device_schema.load(request.json, partial=True)
         except ValidationError as err:
             return jsonify(err.messages), 400
 
