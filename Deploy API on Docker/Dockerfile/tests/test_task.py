@@ -77,7 +77,7 @@ class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
                                                                           "status": "off"})
             print(response.status_code)
             print(response.text)
-            self.assertEqual(201, response.status_code, msg="Such a bad day :(")
+            self.assertEqual(201, response.status_code, msg=f"Unexpected response code {response.status_code}")
         except Exception as e:
             if type(e) == AssertionError:
                 await self.async_tearDown()

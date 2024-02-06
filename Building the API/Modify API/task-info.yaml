@@ -82,5 +82,3 @@ files:
     visible: false
   - name: dal.py
     visible: true
-  - name: storage.db.db
-    visible: true
