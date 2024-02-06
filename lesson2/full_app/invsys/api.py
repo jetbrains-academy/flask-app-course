@@ -14,7 +14,7 @@ class DeviceSchema(Schema):
 
 
 # For POST requests where all fields are required
-class DevicePostPutSchema(DeviceSchema):
+class DevicePostSchema(DeviceSchema):
     id = fields.Str(required=True)
     name = fields.Str(required=True)
     location = fields.Str(required=True)
@@ -34,7 +34,7 @@ class DeviceUpdateSchema(Schema):
 # Instantiate the schemas
 device_schema = DeviceSchema()
 devices_schema = DeviceSchema(many=True)  # For multiple devices
-device_post_schema = DevicePostPutSchema()
+device_post_schema = DevicePostSchema()
 device_update_schema = DeviceUpdateSchema()
 
 
