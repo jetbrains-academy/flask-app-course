@@ -1,18 +1,18 @@
 type: edu
 files:
-- name: dal.py
-  visible: true
-  placeholders:
-  - offset: 424
-    length: 89
-    placeholder_text: '# TODO: populate the dictionary with data from shelf'
-- name: tests/test_task.py
-  visible: false
-- name: __init__.py
-  visible: false
-- name: tests/__init__.py
-  visible: false
-- name: api.py
-  visible: true
-- name: tests/api_test.py
-  visible: false
+  - name: dal.py
+    visible: true
+    placeholders:
+      - offset: 424
+        length: 89
+        placeholder_text: "# TODO: populate the dictionary with data from shelf"
+  - name: tests/test_task.py
+    visible: false
+  - name: __init__.py
+    visible: false
+  - name: tests/__init__.py
+    visible: false
+  - name: api.py
+    visible: true
+  - name: tests/api_test.py
+    visible: false

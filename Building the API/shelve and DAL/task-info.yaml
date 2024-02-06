@@ -1,16 +1,16 @@
 type: edu
 files:
-- name: dal.py
-  visible: true
-  placeholders:
-  - offset: 508
-    length: 59
-    placeholder_text: '# Populate the database db with data'
-- name: __init__.py
-  visible: false
-- name: tests/__init__.py
-  visible: false
-- name: tests/test_task.py
-  visible: false
-- name: api.py
-  visible: true
+  - name: dal.py
+    visible: true
+    placeholders:
+      - offset: 508
+        length: 59
+        placeholder_text: '# Populate the database db with data'
+  - name: __init__.py
+    visible: false
+  - name: tests/__init__.py
+    visible: false
+  - name: tests/test_task.py
+    visible: false
+  - name: api.py
+    visible: true

@@ -71,7 +71,6 @@ def device(identifier):
         except ValidationError as err:
             return jsonify(err.messages), 400
 
-        # Since the 'id' field is now excluded from validation, it won't cause an error
         updated_device = dal.put_device(identifier, args)
         if not updated_device:
             return jsonify({'message': 'Device not found'}), 404
