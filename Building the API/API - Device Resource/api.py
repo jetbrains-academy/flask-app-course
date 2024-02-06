@@ -20,7 +20,6 @@ class DeviceSchema(Schema):
 
 # For PUT requests where some fields may be required
 class DeviceUpdateSchema(DeviceSchema):
-    id = fields.Str(required=False)
     name = fields.Str(required=False)
     location = fields.Str(required=False)
     status = fields.Str(required=False)
@@ -43,7 +42,7 @@ def device(identifier):
 
     elif request.method == 'PUT':
         try:
-            args = device_update_schema.load(request.json)
+            args = device_update_schema.load(request.json, partial=True)
         except ValidationError as err:
             return jsonify(err.messages), 400
 
