@@ -1,23 +1,23 @@
 type: edu
 files:
-- name: api.py
-  visible: true
-  placeholders:
-  - offset: 2637
-    length: 561
-    placeholder_text: '# TODO: add four required arguments'
-  - offset: 3297
-    length: 54
-    placeholder_text: '''a json object with all devices and a response code'''
-  - offset: 3381
-    length: 33
-    placeholder_text: '# TODO: parse request arguments'
-  - offset: 3423
-    length: 26
-    placeholder_text: '# TODO: add a new device to devices'
-- name: tests/test_task.py
-  visible: false
-- name: __init__.py
-  visible: false
-- name: tests/__init__.py
-  visible: false
+  - name: api.py
+    visible: true
+    placeholders:
+      - offset: 5539
+        length: 575
+        placeholder_text: "# TODO: add four required arguments"
+      - offset: 6223
+        length: 54
+        placeholder_text: '''a json object with all devices and a response code'''
+      - offset: 6312
+        length: 33
+        placeholder_text: "# TODO: parse request arguments"
+      - offset: 6356
+        length: 26
+        placeholder_text: "# TODO: add a new device to devices"
+  - name: tests/test_task.py
+    visible: false
+  - name: __init__.py
+    visible: false
+  - name: tests/__init__.py
+    visible: false
