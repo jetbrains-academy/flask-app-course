@@ -3,10 +3,10 @@ files:
   - name: api.py
     visible: true
     placeholders:
-      - offset: 2704
+      - offset: 2709
         length: 12
         placeholder_text: '# import dal'
-      - offset: 2785
+      - offset: 2790
         length: 16
         placeholder_text: |-
           # Drop this:
@@ -29,7 +29,7 @@ files:
                   "status": "off"
               }
           }
-      - offset: 3599
+      - offset: 3604
         length: 179
         placeholder_text: |-
           # Change the implementation to use dal functions
@@ -39,7 +39,7 @@ files:
                       return {'message': 'Device not found', 'data': {}}, 404
           
                   return {"device": device}
-      - offset: 3894
+      - offset: 3899
         length: 217
         placeholder_text: |-
           # Change the implementation to use dal functions
@@ -55,7 +55,7 @@ files:
           
                   # return {"updated device": updated_device}
                   return {"updated device": devices[identifier]}
-      - offset: 4189
+      - offset: 4194
         length: 196
         placeholder_text: |-
           # Change the implementation to use dal functions
@@ -63,12 +63,12 @@ files:
                       return {'message': 'Device not found', 'data': {}}, 404
                   del devices[identifier]
                   return {'message': f'{identifier} deleted'}, 201
-      - offset: 5179
+      - offset: 5184
         length: 73
         placeholder_text: |-
           # Change the implementation to use dal functions
                   return {"devices": devices}
-      - offset: 5331
+      - offset: 5336
         length: 166
         placeholder_text: |-
           # Change the implementation to use dal functions

@@ -56,8 +56,8 @@ def device(identifier):
 @app.route('/items', methods=['GET', 'POST'])
 def device_inventory():
     if request.method == 'GET':
-        devices = dal.get()
-        return jsonify(devices_schema.dump(devices))
+        devices_dict = dal.get()
+        return jsonify({"items": devices_dict}), 200
 
     elif request.method == 'POST':
         try:
