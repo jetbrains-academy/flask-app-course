@@ -11,6 +11,8 @@ class TestClient(flask_unittest.ClientTestCase):
         response = client.get('/items')
         self.assertEqual(200, response.status_code, msg=f"GET request resulted in an unexpected response code {response.status_code}.")
 
+    # Need to add a test for multiple devices returned!!!
+
     def test_post_with_client(self, client):
         response = client.post('/items', json={"id": "100500", "name": "TestDevice", "location": "somewhere", "status": "off"})
         self.assertEqual(201, response.status_code, msg=f"POST request resulted in an unexpected response code {response.status_code}.")
