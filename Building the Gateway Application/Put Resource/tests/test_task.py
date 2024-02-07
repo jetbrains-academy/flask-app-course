@@ -56,8 +56,7 @@ class TestSuiteWithAsyncTeardown(unittest.IsolatedAsyncioTestCase):
             print(response.text)
             self.assertEqual(200, response.status_code,
                              msg=f"PUT request resulted in an unexpected response code: {response.status_code}")
-            self.assertEqual((b'{\n  "updated device": {\n    "id": "002", \n    "location": "bedroom", \n  '
-                              b'  "name": "Humidity_sensor", \n    "status": "off"\n  }\n}\n').decode("utf-8").replace(" ", ""),
+            self.assertEqual((b'{"updated device": "002"}').decode("utf-8").replace(" ", ""),
                              response.content.decode("utf-8").replace(" ", ""),
                              msg="PUT request resulted in an unexpected response content.")
         except Exception as e:
