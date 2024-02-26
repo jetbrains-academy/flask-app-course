@@ -1,21 +1,21 @@
 type: edu
 files:
-- name: dal.py
-  visible: true
-  placeholders:
-  - offset: 619
-    length: 24
-    placeholder_text: '# TODO: create the database shelf object'
-  - offset: 652
-    length: 24
-    placeholder_text: '# TODO: add the data about the new item from args to the shelf'
-- name: tests/test_task.py
-  visible: false
-- name: __init__.py
-  visible: false
-- name: tests/__init__.py
-  visible: false
-- name: api.py
-  visible: true
-- name: tests/api_test.py
-  visible: false
+  - name: dal.py
+    visible: true
+    placeholders:
+      - offset: 619
+        length: 24
+        placeholder_text: "# TODO: create the database shelf object"
+      - offset: 652
+        length: 24
+        placeholder_text: "# TODO: add the data about the new item from args to the shelf"
+  - name: tests/test_task.py
+    visible: false
+  - name: __init__.py
+    visible: false
+  - name: tests/__init__.py
+    visible: false
+  - name: api.py
+    visible: true
+  - name: tests/api_test.py
+    visible: false

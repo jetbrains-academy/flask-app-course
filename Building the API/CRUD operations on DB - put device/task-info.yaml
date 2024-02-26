@@ -1,21 +1,21 @@
 type: edu
 files:
-- name: dal.py
-  visible: true
-  placeholders:
-  - offset: 1132
-    length: 53
-    placeholder_text: '# TODO: return None if the id is not found in the database'
-  - offset: 1525
-    length: 85
-    placeholder_text: '# TODO'
-- name: __init__.py
-  visible: false
-- name: api.py
-  visible: true
-- name: tests/__init__.py
-  visible: false
-- name: tests/api_test.py
-  visible: false
-- name: tests/test_task.py
-  visible: false
+  - name: dal.py
+    visible: true
+    placeholders:
+      - offset: 1132
+        length: 53
+        placeholder_text: "# TODO: return None if the id is not found in the database"
+      - offset: 1525
+        length: 85
+        placeholder_text: '# TODO'
+  - name: __init__.py
+    visible: false
+  - name: api.py
+    visible: true
+  - name: tests/__init__.py
+    visible: false
+  - name: tests/api_test.py
+    visible: false
+  - name: tests/test_task.py
+    visible: false

@@ -14,3 +14,7 @@ you would now need to do something like
 device = dal.get_device(identifier)
 ```
 Then you need to adjust the remaining code accordingly. Do this for all the methods in the api.
+
+
+ALSO: The devices_schema with many=True in Marshmallow is specifically designed for serializing and deserializing lists (or collections) of objects, rather than a single object. This is useful when you want to process multiple instances of a schema at once. 
+

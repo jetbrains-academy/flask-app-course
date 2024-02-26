@@ -1,21 +1,21 @@
 type: edu
 files:
-- name: dal.py
-  visible: true
-  placeholders:
-  - offset: 2066
-    length: 21
-    placeholder_text: '# TODO: delete the device from the database'
-  - offset: 2099
-    length: 36
-    placeholder_text: '"message"'
-- name: __init__.py
-  visible: false
-- name: api.py
-  visible: true
-- name: tests/__init__.py
-  visible: false
-- name: tests/api_test.py
-  visible: false
-- name: tests/test_task.py
-  visible: false
+  - name: dal.py
+    visible: true
+    placeholders:
+      - offset: 2066
+        length: 21
+        placeholder_text: "# TODO: delete the device from the database"
+      - offset: 2099
+        length: 36
+        placeholder_text: '"message"'
+  - name: __init__.py
+    visible: false
+  - name: api.py
+    visible: true
+  - name: tests/__init__.py
+    visible: false
+  - name: tests/api_test.py
+    visible: false
+  - name: tests/test_task.py
+    visible: false

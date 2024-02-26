@@ -1,29 +1,29 @@
 type: edu
 files:
-- name: tests/test_task.py
-  visible: false
-- name: __init__.py
-  visible: false
-- name: tests/__init__.py
-  visible: false
-- name: api.py
-  visible: true
-  placeholders:
-  - offset: 823
-    length: 207
-    placeholder_text: '# TODO: add the remaining arguments'
-  - offset: 1343
-    length: 59
-    placeholder_text: '# TODO: return not_found_response in case there''s no such device'
-  - offset: 1670
-    length: 79
-    placeholder_text: '# TODO: if there''s no such id in our data, return the not_found_response'
-  - offset: 2054
-    length: 98
-    placeholder_text: '# TODO'
-  - offset: 2315
-    length: 79
-    placeholder_text: '# TODO: return the not_found_response if the id wasn''t found'
-  - offset: 2403
-    length: 23
-    placeholder_text: '# TODO: delete the device with the provided identifier'
+  - name: tests/test_task.py
+    visible: false
+  - name: __init__.py
+    visible: false
+  - name: tests/__init__.py
+    visible: false
+  - name: api.py
+    visible: true
+    placeholders:
+      - offset: 2615
+        length: 211
+        placeholder_text: "# TODO: add the remaining arguments"
+      - offset: 3156
+        length: 61
+        placeholder_text: "# TODO: return not_found_response in case there's no such device"
+      - offset: 3499
+        length: 81
+        placeholder_text: "# TODO: if there's no such id in our data, return the not_found_response"
+      - offset: 3896
+        length: 102
+        placeholder_text: '# TODO'
+      - offset: 4171
+        length: 81
+        placeholder_text: "# TODO: return the not_found_response if the id wasn't found"
+      - offset: 4263
+        length: 23
+        placeholder_text: "# TODO: delete the device with the provided identifier"

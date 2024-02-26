@@ -1,18 +1,18 @@
 type: theory
 files:
-- name: __init__.py
-  visible: false
-- name: Dockerfile
-  visible: true
-- name: api.py
-  visible: true
-- name: dal.py
-  visible: true
-- name: requirements.txt
-  visible: true
-- name: config2.png
-  visible: false
-- name: config1.png
-  visible: false
-- name: runConfigurations/Docker-run-donfig-setup.xml
-  visible: false
+  - name: __init__.py
+    visible: false
+  - name: Dockerfile
+    visible: true
+  - name: api.py
+    visible: true
+  - name: dal.py
+    visible: true
+  - name: requirements.txt
+    visible: true
+  - name: config2.png
+    visible: false
+  - name: config1.png
+    visible: false
+  - name: runConfigurations/Docker-run-donfig-setup.xml
+    visible: false

@@ -25,8 +25,7 @@ class TestCase(unittest.TestCase):
 
     def test_put(self):
         # device_id = ''.join(random.choices(string.ascii_lowercase, k=10))
-        response = requests.put('http://127.0.0.1:5001/items/002', json={"id": "002",
-                                                                            "name": "Humidity_sensor",
+        response = requests.put('http://127.0.0.1:5001/items/002', json={"name": "Humidity_sensor",
                                                                             "location": "bedroom",
                                                                             "status": "off"})
         print(response.status_code)

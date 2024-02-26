@@ -22,11 +22,16 @@ REST API is a way of accessing web services in a simple and flexible way without
 REST technology is generally preferred to the Simple Object Access Protocol (SOAP) technology because REST uses less bandwidth, 
 while its simplicity and flexibility makes it more suitable for internet usage. REST API is used to fetch or send some information to a web service, and the communication uses only HTTP requests.
 
-### Flask-RESTful
 
-Flask-RESTful is an extension for Flask that adds support for quickly building REST APIs. It is a lightweight abstraction that works with your 
-existing ORM/libraries. Flask-RESTful encourages best practices with minimal setup. If you are familiar with Flask, Flask-RESTful should be easy to pick up.
-A minimal Flask-RESTful API is shown in the code editor. Note that we’ve enabled [Flask debugging mode](http://flask.pocoo.org/docs/quickstart/#debug-mode) to provide code reloading and better error messages.
+### Marshmallow 
+Marshmallow is a powerful library for object serialization and deserialization, often referred to as marshaling, 
+within Flask applications. It provides an additional layer for data validation and transformation, making it a 
+great companion to your existing ORM/libraries. Unlike Flask-RESTful, which is primarily focused on creating 
+REST APIs, Marshmallow gives developers more granular control over how data is validated and outputted, 
+making it especially useful for ensuring the integrity and format of API input and output. In this 
+course, we will leverage Marshmallow to handle our data serialization needs. The code editor 
+shows a basic example of a Flask application with Marshmallow handling a GET request.
+Note that we’ve enabled [Flask debugging mode](http://flask.pocoo.org/docs/quickstart/#debug-mode) to provide code reloading and better error messages.
 Debug mode should never be used in a production environment!
 
 You can test the API using `curl` or by going to http://127.0.0.1:5000/ in your web browser. To terminate the application, press the stop ![img](run_stop.svg) button in the 

@@ -19,8 +19,13 @@ You can then open two terminal windows in the IDE.
 
 In the first, `cd` to `invsys` and then run 
 ```shell
+$ python3 api.py
+```
+
+In the other terminal window, do the same but in the `gateway` directory: 
+```shell
 $ python3 app.py
 ```
 
-In the other terminal window, do the same but in the `gateway` directory. Both microservices are now up and 
+Both microservices are now up and 
 using Postman you can target either backend on `127.0.0.1` (or `0.0.0.0`). 
