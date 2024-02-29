@@ -1,24 +1,28 @@
 type: edu
 files:
-- name: Dockerfile
-  visible: true
-  placeholders:
-  - offset: 0
-    length: 141
-    placeholder_text: '# TODO'
-- name: tests/test_task.py
-  visible: false
-- name: __init__.py
-  visible: false
-- name: tests/__init__.py
-  visible: false
-- name: api.py
-  visible: true
-- name: dal.py
-  visible: true
-- name: requirements.txt
-  visible: true
-- name: delete_image.png
-  visible: false
-- name: runConfigurations/Deploy_on_Docker_Dockerfile_Test.run.xml
-  visible: false
+  - name: Dockerfile
+    visible: true
+    placeholders:
+      - offset: 0
+        length: 141
+        placeholder_text: '# TODO'
+  - name: tests/test_task.py
+    visible: false
+  - name: __init__.py
+    visible: false
+  - name: tests/__init__.py
+    visible: false
+  - name: api.py
+    visible: true
+  - name: dal.py
+    visible: true
+  - name: requirements.txt
+    visible: true
+  - name: delete_image.png
+    visible: false
+  - name: runConfigurations/Deploy_on_Docker_Dockerfile_Test.run.xml
+    visible: false
+  - name: docker-compose.yml
+    visible: false
+  - name: buildConfigurations/Deploy_on_Docker_Dockerfile_Build.run.xml
+    visible: false

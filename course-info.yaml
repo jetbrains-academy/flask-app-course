@@ -6,9 +6,8 @@ summary: |
 programming_language: Python
 environment: unittest
 content:
-- lesson2
-- Introduction
-- Building the API
-- Deploy API on Docker
-- Building the Gateway Application
-- Composing the System
+  - Introduction
+  - Building the API
+  - Deploy API on Docker
+  - Building the Gateway Application
+  - Composing the System
