@@ -9,21 +9,24 @@ files:
   - name: api.py
     visible: true
     placeholders:
-      - offset: 2615
-        length: 211
-        placeholder_text: "# TODO: add the remaining arguments"
-      - offset: 3156
-        length: 61
-        placeholder_text: "# TODO: return not_found_response in case there's no such device"
-      - offset: 3499
-        length: 81
-        placeholder_text: "# TODO: if there's no such id in our data, return the not_found_response"
-      - offset: 3896
-        length: 102
-        placeholder_text: '# TODO'
-      - offset: 4171
-        length: 81
-        placeholder_text: "# TODO: return the not_found_response if the id wasn't found"
-      - offset: 4263
-        length: 23
-        placeholder_text: "# TODO: delete the device with the provided identifier"
+      - offset: 605
+        length: 36
+        placeholder_text: "# TODO: add another required field"
+      - offset: 646
+        length: 34
+        placeholder_text: "# TODO: add another required field"
+      - offset: 855
+        length: 32
+        placeholder_text: "# TODO: get the device from the dictionary by its identifier"
+      - offset: 1220
+        length: 94
+        placeholder_text: "# TODO: if there's no such identifier in our data,  return\
+      \ a device not found message and a 404 response code"
+      - offset: 1463
+        length: 94
+        placeholder_text: "# TODO: if there's no such identifier in our data, return the\
+      \ device not found message and a 404 response code"
+      - offset: 1566
+        length: 82
+        placeholder_text: "# TODO: delete the device with the identifier provided, return\
+      \ a device deleted message and a response code 200"
