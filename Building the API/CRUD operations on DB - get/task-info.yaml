@@ -14,5 +14,14 @@ files:
     visible: false
   - name: api.py
     visible: true
+    placeholders:
+      - offset: 116
+        length: 10
+        placeholder_text: "# TODO: import dal"
+      - offset: 2219
+        length: 77
+        placeholder_text: "return jsonify({\"items\": devices}), 200"
   - name: tests/api_test.py
     visible: false
+  - name: storage.db.db
+    visible: true
