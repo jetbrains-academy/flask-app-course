@@ -1,6 +1,6 @@
 ## API - Device Inventory Resource
 
-Here we are going to define the `DeviceInventory` Class. It contains the routes dealing with operations on the entire database
+Here we are going to define the `device_inventory` endpoint. It contains the routes dealing with operations on the entire database
 instead of individual items.
 
 The `init` method initializes the request parser like in the previous task. It parses the `request` JSON Object and validates it based on the arguments provided.
