@@ -1,33 +1,62 @@
-## API - Device Inventory Resource
+## API - Device Inventory Endpoint
+In this task, we're extending our API to include the device_inventory endpoint. Unlike the 
+previous device endpoint, this endpoint handles operations on the entire database of 
+devices rather than individual items. It is designed to handle operations that affect the 
+entire device dataset, rather than individual entries. 
 
-Here we are going to define the `device_inventory` endpoint. It contains the routes dealing with operations on the entire database
-instead of individual items.
+### Field validation
+Custom validation logic is crucial to ensure the integrity and correctness of data 
+being sent to an API. In the context of our device inventory system, each device must 
+have certain fields provided for the system to function properly; these fields are 
+'id', 'name', 'location', and 'status'.
 
-The `init` method initializes the request parser like in the previous task. It parses the `request` JSON Object and validates it based on the arguments provided.
-As we mentioned before, by default, arguments are not required. 
-Arguments supplied in the request that are not part of the RequestParser will be ignored.
-To require a value be passed for an argument, just add `required=True` to the call to `add_argument()`.
-Here we are going to make all arguments required (`"id"`, `"name"`, `"location"` and `"status"`) since we are going to need all of them in the 
-`post` method to add a new item to the database.
-Error messages for each field may be customized using the `help` parameter to `.add_argument()`. For example:
-```python
-reqparse.add_argument("id", type=str, required=True, help="Device id must be provided", location="json")
-```
-When you complete this task, use custom help messages for each argument.
+The `@validates_schema` decorator is used to define a method that is 
+invoked automatically by Marshmallow to perform additional validations 
+that aren't covered by field-level validators. The method `validate_required_fields` 
+should ensure that every required field is included in the POST request's JSON payload. 
+If any of these fields are missing, a `ValidationError` is raised, which results 
+in an error response to the client with appropriate messaging.
 
-The `get` method should simply return a response (use `flask.make_response` to create it) all the elements in the datastore of devices in a form of a JSON object (build it using
-`jsonify`), as well as code 200. The JSON part of the response should be something like this:
 
-`{"items":{"001":{"id":"001","location":"hall","name":"Light bulb","status":"off"}, ... ... ,"003":{"id":"003","location":"bedroom","name":"Humidifier","status":"off"}}}`
+### `device_inventory`
+The `device_inventory` endpoint is responsible for managing operations on the entire 
+datastore of devices. Here's what you need to implement:
 
-<details>
-    <summary>@staticmethod</summary>
+1. GET Method: This method should return a JSON response containing all the devices in the datastore. 
+The response should have a HTTP status code of 200. The JSON response body should have the following structure:
+    ```json
+    {"items": {
+    "001": {"id": "001", "location": "hall", "name": "Light bulb", "status": "off"},
+    "002": {"id": "002", "location": "bedroom", "name": "Humidity sensor", "status": "on"},
+    "003": {"id": "003", "location": "bedroom", "name": "Humidifier", "status": "off"}
+    }}
+    ```
 
-[`@staticmethod`](https://docs.python.org/3/library/functions.html#staticmethod) is a built-in [decorator](https://docs.python.org/3/glossary.html#term-decorator) that defines a static method - method that doesn't
-receive an implicit first argument (`self`) whether it is called by an instance of a class or by the class itself.
-</details>
+2. POST Method: When a JSON object representing a new device is sent via a POST request, 
+this method should parse the object, validate it using the device_schema, and add a new key-value 
+pair to the devices dictionary. If the device ID already exists in the database, 
+return an appropriate error message `{ "message": "Device with this ID already exists" }` with a status code of 400. If the operation is successful, 
+return a JSON response indicating that the device has been added (example below) with a status code 201.
+   ```json
+   {"Posted a device": {
+   "id": "00111",
+   "location": "bedroom",
+   "name": "Humidity_sensor",
+   "status": "off"} }
+   ```
 
-The `post` method takes a JSON Object, parses it, and adds a new key:value pair ("id": args) to the `devices` dictionary.
+## Task
 
-Add an endpoint for `DeviceInventory` Resource. This one is even more simple than the previous one,
-the path does not contain any variables.
+1. Define a method called `validate_required_fields` using the `@validates_schema` decorator within the `DeviceSchema` class.
+
+2. Complete the implementation of `device_inventory` endpoint for methods GET and POST.
+
+<div class="hint">
+
+  In the method `validate_required_fields`, declare a list of required_fields which contains the keys 'id', 'name', 'location', and 'status'.
+Check if the current request method is POST (prevent unnecessary validation on other HTTP methods). If it is, iterate over the required_fields list.
+For each field, check if the field is present in the original_data dictionary which contains the data submitted by the user.
+If any field is not present, raise a `ValidationError` with a custom message indicating which field is missing (`raise ValidationError(f'{field} is required.', field)`).
+
+</div>
+
