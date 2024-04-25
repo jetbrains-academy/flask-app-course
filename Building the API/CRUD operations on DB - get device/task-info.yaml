@@ -13,9 +13,15 @@ files:
     visible: false
   - name: api.py
     visible: true
+    placeholders:
+      - offset: 1314
+        length: 35
+        placeholder_text: device = devices.get(identifier)
   - name: tests/__init__.py
     visible: false
   - name: tests/api_test.py
     visible: false
   - name: tests/test_task.py
     visible: false
+  - name: storage.db.db
+    visible: true
