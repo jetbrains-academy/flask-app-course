@@ -14,4 +14,4 @@ This function will be called from the API by the `get` method of the `DeviceInve
 
 1. Implement the `get` method that will take all the data from the shelf and return a dictionary of devices (its structure should be the same as in the 
 first task of this lesson). Remember that shelve objects can be accessed like a dictionary.
-2. In `api.py`, import the data access layer and update the GET endpoint in the `device` to work with `dal`.
+2. In `api.py`, import the data access layer and update the GET endpoint in the `device_inventory` to work with `dal`.
