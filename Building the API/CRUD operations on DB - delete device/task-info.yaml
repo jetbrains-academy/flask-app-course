@@ -13,9 +13,19 @@ files:
     visible: false
   - name: api.py
     visible: true
+    placeholders:
+      - offset: 1652
+        length: 187
+        placeholder_text: |-
+          if identifier not in devices:
+                      return jsonify({'message': 'Device not found'}), 404
+                  del devices[identifier]
+                  return jsonify({'message': 'Device deleted'}), 200
   - name: tests/__init__.py
     visible: false
   - name: tests/api_test.py
     visible: false
   - name: tests/test_task.py
     visible: false
+  - name: storage.db.db
+    visible: true
