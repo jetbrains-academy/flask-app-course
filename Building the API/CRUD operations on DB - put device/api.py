@@ -41,19 +41,6 @@ def device(identifier):
 
     elif request.method == 'PUT':
         try:
-            args = device_schema.load(request.json, partial=True)
-        except ValidationError as err:
-            return jsonify(err.messages), 400
-
-        if identifier not in devices:
-            return jsonify({'message': 'Device not found'}), 404
-
-        devices[identifier].update(args)
-        return jsonify({"updated device": identifier}), 200
-
-
-    elif request.method == 'PUT':
-        try:
             args = device_schema.load(request.json, partial=True)  # Allow partial updates
         except ValidationError as err:
             return jsonify(err.messages), 400

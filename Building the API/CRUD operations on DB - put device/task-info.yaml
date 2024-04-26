@@ -14,7 +14,7 @@ files:
   - name: api.py
     visible: true
     placeholders:
-      - offset: 2119
+      - offset: 1713
         length: 206
         placeholder_text: |-
           # TODO: update the code to use dal.
