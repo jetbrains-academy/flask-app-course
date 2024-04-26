@@ -13,9 +13,21 @@ files:
     visible: false
   - name: api.py
     visible: true
+    placeholders:
+      - offset: 2119
+        length: 206
+        placeholder_text: |-
+          # TODO: update the code to use dal.
+                  if identifier not in devices:
+                      return jsonify({'message': 'Device not found'}), 404
+          
+                  devices[identifier].update(args)
+                  return jsonify({"updated device": identifier}), 200
   - name: tests/__init__.py
     visible: false
   - name: tests/api_test.py
     visible: false
   - name: tests/test_task.py
     visible: false
+  - name: storage.db.db
+    visible: true
