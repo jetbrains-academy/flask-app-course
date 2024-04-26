@@ -4,12 +4,6 @@ import dal
 
 app = Flask(__name__)
 
-# Dictionary to mimic the database
-devices = {
-    "001": {"id": "001", "name": "Light bulb", "location": "hall", "status": "off"},
-    "002": {"id": "002", "name": "Humidity sensor", "location": "bedroom", "status": "on"},
-    "003": {"id": "003", "name": "Humidifier", "location": "bedroom", "status": "off"}
-}
 
 # Define Marshmallow Schema for request and response validation
 class DeviceSchema(Schema):

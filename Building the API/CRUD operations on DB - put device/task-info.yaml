@@ -14,10 +14,10 @@ files:
   - name: api.py
     visible: true
     placeholders:
-      - offset: 1713
+      - offset: 1399
         length: 206
         placeholder_text: |-
-          # TODO: update the code to use dal.
+          # TODO: update the code to use dal. Return the same messages.
                   if identifier not in devices:
                       return jsonify({'message': 'Device not found'}), 404
           

@@ -22,14 +22,14 @@ files:
   - name: api.py
     visible: true
     placeholders:
-      - offset: 2342
+      - offset: 2028
         length: 162
         placeholder_text: |-
           try:
                       new_device = device_schema.load(request.json)
                   except ValidationError as err:
                       return jsonify(err.messages), 400
-      - offset: 2514
+      - offset: 2200
         length: 209
         placeholder_text: |-
           if new_device["id"] in devices:
