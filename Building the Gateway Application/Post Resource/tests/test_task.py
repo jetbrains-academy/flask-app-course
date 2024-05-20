@@ -28,4 +28,4 @@ class TestTask(TestWithDockerCompose):
             if isinstance(e, AssertionError):
                 self.fail(msg=f"Unexpected response, {str(e)}")
             else:
-                self.fail(msg=f'Something went wrong. T')
+                self.fail(msg=f'Something went wrong. Maybe your app is crashed: {str(e)}')

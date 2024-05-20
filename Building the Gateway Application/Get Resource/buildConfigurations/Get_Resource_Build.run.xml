@@ -5,7 +5,9 @@
         <option name="envFilePath" value="" />
         <option name="removeImagesOnComposeDown" value="LOCAL" />
         <option name="removeVolumesOnComposeDown" value="true" />
+        <option name="commandLineOptions" value="--build" />
         <option name="sourceFilePath" value="Building the Gateway Application/Get Resource/docker-compose.yaml" />
+        <option name="upForceRecreate" value="true" />
       </settings>
     </deployment>
     <method v="2" />
