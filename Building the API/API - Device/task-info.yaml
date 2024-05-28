@@ -10,11 +10,8 @@ files:
     visible: true
     placeholders:
       - offset: 605
-        length: 36
-        placeholder_text: "# TODO: add another required field"
-      - offset: 646
-        length: 34
-        placeholder_text: "# TODO: add another required field"
+        length: 75
+        placeholder_text: "# TODO: add another two required fields"
       - offset: 855
         length: 32
         placeholder_text: "# TODO: get the device from the dictionary by its identifier"
@@ -30,3 +27,5 @@ files:
         length: 82
         placeholder_text: "# TODO: delete the device with the identifier provided, return\
       \ a device deleted message and a response code 200"
+  - name: "try.,py.py"
+    visible: true
