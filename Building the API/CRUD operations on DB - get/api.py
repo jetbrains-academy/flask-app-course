@@ -1,14 +1,8 @@
 from flask import Flask, request, jsonify
 from marshmallow import Schema, fields, ValidationError, validates_schema
+import dal
 
 app = Flask(__name__)
-
-# Dictionary to mimic the database
-devices = {
-    "001": {"id": "001", "name": "Light bulb", "location": "hall", "status": "off"},
-    "002": {"id": "002", "name": "Humidity sensor", "location": "bedroom", "status": "on"},
-    "003": {"id": "003", "name": "Humidifier", "location": "bedroom", "status": "off"}
-}
 
 
 # Define Marshmallow Schema for request and response validation
@@ -60,7 +54,8 @@ def device(identifier):
 @app.route('/items', methods=['GET', 'POST'])
 def device_inventory():
     if request.method == 'GET':
-        return jsonify({"items": devices}), 200
+        devices_dict = dal.get()
+        return jsonify({"items": devices_dict}), 200
 
     elif request.method == 'POST':
         try:
