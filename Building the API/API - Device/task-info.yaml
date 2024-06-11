@@ -27,5 +27,3 @@ files:
         length: 82
         placeholder_text: "# TODO: delete the device with the identifier provided, return\
       \ a device deleted message and a response code 200"
-  - name: "try.,py.py"
-    visible: true

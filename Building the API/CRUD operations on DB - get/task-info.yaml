@@ -23,5 +23,3 @@ files:
         placeholder_text: "return jsonify({\"items\": devices}), 200"
   - name: tests/api_test.py
     visible: false
-  - name: storage.db.db
-    visible: true
