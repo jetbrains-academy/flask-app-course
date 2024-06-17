@@ -1,20 +1,20 @@
 ## API - Device Inventory Endpoint
-In this task, we're extending our API to include the device_inventory endpoint. Unlike the 
+In this task, we're extending our API to include the `device_inventory` endpoint. Unlike the 
 previous device endpoint, this endpoint handles operations on the entire database of 
 devices rather than individual items. It is designed to handle operations that affect the 
 entire device dataset, rather than individual entries. 
 
 ### Field validation
 Custom validation logic is crucial to ensure the integrity and correctness of data 
-being sent to an API. In the context of our device inventory system, each device must 
-have certain fields provided for the system to function properly; these fields are 
+sent to an API. In the context of our device inventory system, each device must 
+have certain fields provided for the system to function properly: 
 'id', 'name', 'location', and 'status'.
 
 The `@validates_schema` decorator is used to define a method that is 
-invoked automatically by Marshmallow to perform additional validations 
-that aren't covered by field-level validators. The method `validate_required_fields` 
+automatically invoked by Marshmallow to perform additional validations 
+not covered by field-level validators. The method `validate_required_fields` 
 should ensure that every required field is included in the POST request's JSON payload. 
-If any of these fields are missing, a `ValidationError` is raised, which results 
+If any of these fields are missing, a `ValidationError` is raised, resulting 
 in an error response to the client with appropriate messaging.
 
 
@@ -23,7 +23,7 @@ The `device_inventory` endpoint is responsible for managing operations on the en
 datastore of devices. Here's what you need to implement:
 
 1. GET Method: This method should return a JSON response containing all the devices in the datastore. 
-The response should have a HTTP status code of 200. The JSON response body should have the following structure:
+The response should have an HTTP status code of 200. The JSON response body should have the following structure:
     ```json
     {"items": {
     "001": {"id": "001", "location": "hall", "name": "Light bulb", "status": "off"},
@@ -49,13 +49,13 @@ return a JSON response indicating that the device has been added (example below)
 
 1. Define a method called `validate_required_fields` using the `@validates_schema` decorator within the `DeviceSchema` class.
 
-2. Complete the implementation of `device_inventory` endpoint for methods GET and POST.
+2. Complete the implementation of the `device_inventory` endpoint for the methods GET and POST.
 
 <div class="hint">
 
-  In the method `validate_required_fields`, declare a list of required_fields which contains the keys 'id', 'name', 'location', and 'status'.
-Check if the current request method is POST (prevent unnecessary validation on other HTTP methods). If it is, iterate over the required_fields list.
-For each field, check if the field is present in the original_data dictionary which contains the data submitted by the user.
+  In the method `validate_required_fields`, declare a list of `required_fields` containing the keys 'id', 'name', 'location', and 'status'.
+Check if the current request method is POST (prevent unnecessary validation on other HTTP methods). If it is, iterate over the `required_fields` list.
+For each field, check if the field is present in the `original_data` dictionary, which contains the data submitted by the user.
 If any field is not present, raise a `ValidationError` with a custom message indicating which field is missing (`raise ValidationError(f'{field} is required.', field)`).
 
 </div>
