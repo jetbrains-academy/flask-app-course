@@ -1,13 +1,13 @@
 ## Get Resource
 
-In this task we will define the `get_resource` function, which will:
-- Forward the request to the relevant endpoint in invsys (depending on the url: if the item id is provided,
-it needs to be added to the route, and the in the invsys it will result in calling the `get` method of the Device Resource)
-- Forward the response back to the client. Create a Response object by deconstructing our response from above
+In this task, we will define the `get_resource` function, which will:
+- Forward the request to the relevant endpoint in `invsys` (depending on the URL: if the item ID is provided,
+it needs to be added to the route, which in `invsys` will result in calling the `get` method of the Device Resource)
+- Forward the response back to the client. Create a `Response` object from the response received.
 
 
-Looking at our `get_resource` function at first we might want to take the incoming request and forward it to the instance of our
-invsys. If we deployed invsys on 127.0.0.1 then we could use:
+Looking at our `get_resource` function, at first, we might want to take the incoming request and forward it to the instance of our
+`invsys`. If we deployed `invsys` on 127.0.0.1, then we could use:
 
 ```python
 import requests
@@ -17,5 +17,5 @@ response = requests.get("http://0.0.0.0:5000/items/")
 ```
 Let's keep it that way for this task, but let's also keep in mind that
 by doing this, our application source code becomes coupled with how and where we deploy `invsys`.
-Instead, we can post to `http://invsys:5000/items` and ensure that our network is set up to route `invys` to whichever ip it is hosted on. 
+Instead, we can post to `http://invsys:5000/items` and ensure that our network is set up to route `invsys` to whichever IP it is hosted on. 
 We will come back to this later on.
