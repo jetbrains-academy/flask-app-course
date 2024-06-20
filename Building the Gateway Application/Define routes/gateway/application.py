@@ -11,22 +11,22 @@ def index():
 
 @app.route('/items', methods=['GET'])
 @app.route('/items/<string:item_id>', methods=['GET'])
-def get_resources(item_id=None):
+def get_devicess(item_id=None):
     return 'Hello from GET'
 
 
 @app.route('/items/<string:item_id>', methods=['DELETE'])
-def delete_resource(item_id):
+def delete_device(item_id):
     return 'Hello from DELETE'
 
 
 @app.route('/items', methods=['POST'])
-def post_resource():
+def post_device():
     return 'Hello from POST'
 
 
 @app.route('/items/<string:item_id>', methods=['PUT'])
-def put_resource(item_id):
+def put_device(item_id):
     return 'Hello from PUT'
 
 

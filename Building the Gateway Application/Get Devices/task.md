@@ -1,12 +1,12 @@
-## Get Resource
+## Get Devices
 
-In this task, we will define the `get_resource` function, which will:
+In this task, we will define the `get_devices` function, which will:
 - Forward the request to the relevant endpoint in `invsys` (depending on the URL: if the item ID is provided,
-it needs to be added to the route, which in `invsys` will result in calling the `get` method of the Device Resource)
+it needs to be added to the route, which in `invsys` will result in calling the `get` endpoint in the function `device`)
 - Forward the response back to the client. Create a `Response` object from the response received.
 
 
-Looking at our `get_resource` function, at first, we might want to take the incoming request and forward it to the instance of our
+Looking at our `get_devices` function, at first, we might want to take the incoming request and forward it to the instance of our
 `invsys`. If we deployed `invsys` on 127.0.0.1, then we could use:
 
 ```python
