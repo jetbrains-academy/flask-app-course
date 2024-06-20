@@ -1,5 +1,5 @@
 ## Composing our system
-Now we have two flask apps: Invsys and Gateway. 
+Now we have two Flask apps: Invsys and Gateway. 
 We want them both to be deployed, and we want Gateway to be able to send 
 requests to Invsys using `invsys` instead of a specific IP.
 
@@ -23,15 +23,15 @@ services:
         image: flask-app-invsys-img
 ```
 
-We have defined two services. One for Gateway and one for Invsys. The key we use as the name 
-of the service is the name used to target that service in the network. As we are naming our 
-Invsys service as invsys, any requests from our application that target invsys will be routed 
-to the correct ip for that service. We are using the `build` flag in each case, which means the 
-tool will search for the gateway and invsys subdirectories and use their Dockerfiles to build 
-the image. The `ports` flag is the same as the one used in the docker run command, it routes the 
-external docker machine port to the internally exposed port of our containers. You'll notice 
-that we haven't added a port mapping for invsys and this is because we want to force requests 
-to go through the gateway. If you wanted to be able to target invsys directly too, you would 
-just need to add ports: - `"5000:5000"`.
+We have defined two services: one for Gateway and one for Invsys. The key we use as the name 
+of the service is what we use to target that service in the network. Since we are naming our 
+Invsys service as `invsys`, any requests from our application targeting `invsys` will be routed 
+to the correct IP for that service. We are using the `build` flag in each case, which instructs the 
+tool to search for the `gateway` and `invsys` subdirectories and use their Dockerfiles to build 
+the image. The `ports` flag is the same as the one used in the `docker run` command: it routes the 
+external Docker machine port to the internally exposed port of our containers. You'll notice 
+that we haven't added a port mapping for `invsys`. This is intentional because we want to ensure that requests 
+go through the gateway. If you want to allow direct targeting of `invsys` as well, you would 
+just need to add `ports: - "5000:5000"`.
 
-Add contents the `docker-compose.yaml` file and run the application. Test it with Postman like you did before.
+Now, add the contents to the `docker-compose.yaml` file and run the application. Test it with Postman like you did before.

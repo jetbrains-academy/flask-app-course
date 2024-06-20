@@ -4,10 +4,10 @@ Running the app as described before works just fine, but it assumes you have the
 
 Docker containers provide code isolation, independence, and portability. Docker is essentially needed 
 if one intends to deploy their application into production. Docker containers have fully prescribed 
-dependencies with which they can be created. These dependencies as well as the instruction on how 
-specifically to create the container are stored in the container’s **image**.
+dependencies with which they can be created. These dependencies, as well as the instructions on how 
+to create the container, are stored in the container’s **image**.
 
-A **Dockerfile** is basically a set of instructions for building a container image, which is a blueprint that your container will run off of.
+A **Dockerfile** is basically a set of instructions for building a container image, which is a blueprint that your container will run from.
 
 Read more about Docker in [Docker docs](https://docs.docker.com/).
 

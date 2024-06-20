@@ -1,7 +1,7 @@
 ## Add Dockerfile and requirements.txt
 
 ### Task 
-Add files necessary for running gateway app as a Docker container
+Add the files necessary to run the gateway app as a Docker container.
 
 <div class="hint">
 
@@ -16,4 +16,4 @@ CMD [ "python", "application.py" ]
 ```
 </div>
 
-<div class="hint">See what you are importing in the application.py and add those packages to requirements.txt</div>
+<div class="hint">Review the imports in `application.py` and add those packages to `requirements.txt`.</div>
