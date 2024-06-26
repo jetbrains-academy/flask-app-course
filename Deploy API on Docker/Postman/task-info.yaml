@@ -1,20 +1,16 @@
 type: theory
 files:
-- name: __init__.py
-  visible: false
-- name: api.py
-  visible: true
-- name: dal.py
-  visible: true
-- name: Dockerfile
-  visible: true
-- name: requirements.txt
-  visible: true
-- name: Postman1.png
-  visible: false
-- name: Postman2.png
-  visible: false
-- name: runConfigurations/rm_images.sh
-  visible: false
-- name: runConfigurations/Postm_task_config.run.xml
-  visible: false
+  - name: __init__.py
+    visible: false
+  - name: api.py
+    visible: true
+  - name: dal.py
+    visible: true
+  - name: Dockerfile
+    visible: true
+  - name: requirements.txt
+    visible: true
+  - name: Postman1.png
+    visible: false
+  - name: Postman2.png
+    visible: false

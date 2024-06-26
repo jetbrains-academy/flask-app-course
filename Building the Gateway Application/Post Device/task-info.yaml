@@ -33,5 +33,7 @@ files:
     visible: false
   - name: tests/test_task.py
     visible: false
-  - name: runConfigurations/Post_Resource_Test.run.xml
+  - name: runConfigurations/Post_Device_Test.run.xml
+    visible: false
+  - name: buildConfigurations/Post_Device_Build.run.xml
     visible: false

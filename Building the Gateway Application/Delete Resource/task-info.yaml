@@ -1,4 +1,0 @@
-type: edu
-files:
-  - name: buildConfigurations/Delete_Resource_Build.run.xml
-    visible: false

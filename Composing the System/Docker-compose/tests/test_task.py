@@ -10,7 +10,7 @@ client = docker.from_env()
 
 
 class TestTask(TestWithDockerCompose):
-    healthcheck_url = 'http://127.0.0.1:5000/items'
+    healthcheck_url = 'http://127.0.0.1:5001/items'
 
     async def test_get(self):
         try:

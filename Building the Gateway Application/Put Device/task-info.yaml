@@ -30,5 +30,7 @@ files:
     visible: false
   - name: docker-compose.yaml
     visible: false
-  - name: runConfigurations/Put_Resource_Test.run.xml
+  - name: runConfigurations/Put_Device_Test.run.xml
+    visible: false
+  - name: buildConfigurations/Put_Device_Build.run.xml
     visible: false

@@ -6,7 +6,3 @@ content:
   - Post Device
   - Put Device
   - Add a Dockerfile and requirements.txt
-  - Get Resource
-  - Put Resource
-  - Post Resource
-  - Delete Resource

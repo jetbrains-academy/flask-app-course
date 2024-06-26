@@ -12,6 +12,7 @@ class TestWithDockerCompose(unittest.IsolatedAsyncioTestCase):
         retry_interval = 1
         for retry in range(max_retries):
             try:
+                print(f"Checking App on {cls.healthcheck_url} healthcheck_url. Attempt {retry}.")
                 response = requests.get(cls.healthcheck_url)
                 response.raise_for_status()
                 break
@@ -19,7 +20,8 @@ class TestWithDockerCompose(unittest.IsolatedAsyncioTestCase):
                 time.sleep(retry_interval)
         else:
             print(f"App on {cls.healthcheck_url} did not wake up after {max_retries} attempts.")
+        time.sleep(0.5)
 
     @classmethod
     def tearDownClass(cls):
-        subprocess.run(['docker', 'compose', 'down', '--volumes', '--rmi', 'all'], check=False)
+        subprocess.run(['docker', 'compose', '--project-name', 'flask-course', 'down', '--volumes', '--rmi', 'all'], check=False)

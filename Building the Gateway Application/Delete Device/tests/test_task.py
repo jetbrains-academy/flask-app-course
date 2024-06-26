@@ -26,7 +26,6 @@ class TestTask(TestWithDockerCompose):
             if isinstance(e, AssertionError):
                 self.fail(msg=f"Unexpected response for DELETE /items/100, {str(e)}")
             else:
-                await self.async_tearDown()
                 self.fail(msg=f'Something went wrong. Maybe your app is crashed: {str(e)}')
 
     async def test_delete(self):
