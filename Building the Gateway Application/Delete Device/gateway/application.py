@@ -34,22 +34,12 @@ def delete_device(item_id):
 
 @app.route('/items', methods=['POST'])
 def post_device():
-    # Get the payload from our incoming request
-    payload = request.get_json(force=True)
-    response = requests.post('http://invsys:5000/items', json=payload)
-
-    # Forward the response back to the client
-    return Response(response.content, response.status_code)
+    return 'Hello from POST'
 
 
 @app.route('/items/<string:item_id>', methods=['PUT'])
 def put_device(item_id):
-    # Get the payload from our incoming request
-    payload = request.get_json(force=True)
-    response = requests.put(f'http://invsys:5000/items/{item_id}', json=payload)
-
-    # Forward the response back to the client
-    return Response(response.content, response.status_code)
+    return 'Hello from PUT'
 
 
 if __name__ == "__main__":

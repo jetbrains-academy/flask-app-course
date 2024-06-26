@@ -24,7 +24,7 @@ $ python3 api.py
 
 In the other terminal window, do the same but in the `gateway` directory: 
 ```shell
-$ python3 app.py
+$ python3 application.py
 ```
 
 Both microservices are now running, and 
