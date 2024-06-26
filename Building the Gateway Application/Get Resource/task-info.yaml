@@ -1,0 +1,4 @@
+type: edu
+files:
+  - name: buildConfigurations/Get_Resource_Build.run.xml
+    visible: false

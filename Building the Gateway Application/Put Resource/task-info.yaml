@@ -1,0 +1,4 @@
+type: edu
+files:
+  - name: buildConfigurations/Put_Resource_Build.run.xml
+    visible: false

@@ -1,0 +1,37 @@
+type: edu
+files:
+  - name: gateway/application.py
+    visible: true
+    placeholders:
+      - offset: 1161
+        length: 66
+        placeholder_text: "# TODO: make the post request to invsys"
+      - offset: 1286
+        length: 48
+        placeholder_text: '# TODO'
+  - name: __init__.py
+    visible: false
+  - name: tests/__init__.py
+    visible: false
+  - name: gateway/__init__.py
+    visible: true
+  - name: invsys/__init__.py
+    visible: true
+  - name: invsys/api.py
+    visible: true
+  - name: invsys/dal.py
+    visible: true
+  - name: invsys/Dockerfile
+    visible: true
+  - name: invsys/requirements.txt
+    visible: true
+  - name: docker-compose.yaml
+    visible: false
+  - name: gateway/Dockerfile
+    visible: false
+  - name: gateway/requirements.txt
+    visible: false
+  - name: tests/test_task.py
+    visible: false
+  - name: runConfigurations/Post_Resource_Test.run.xml
+    visible: false
