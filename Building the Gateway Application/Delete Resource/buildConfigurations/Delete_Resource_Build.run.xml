@@ -1,5 +1,9 @@
 <component name="ProjectRunConfigurationManager">
+<<<<<<<< HEAD:Building the Gateway Application/Delete Resource/buildConfigurations/Delete_Resource_Build.run.xml
   <configuration default="false" name="Delete_Resource_Build" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+========
+  <configuration default="false" name="post_device_Compose" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+>>>>>>>> refs/heads/master:Building the Gateway Application/Post Device/runConfigurations/Post_Resource_Compose.run.xml
     <deployment type="docker-compose.yml">
       <settings>
         <option name="envFilePath" value="" />

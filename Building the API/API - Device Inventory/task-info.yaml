@@ -1,0 +1,35 @@
+type: edu
+files:
+  - name: api.py
+    visible: true
+    placeholders:
+      - offset: 875
+        length: 54
+        placeholder_text: "# TODO: declare a list of required_fields"
+      - offset: 938
+        length: 191
+        placeholder_text: "# TODO: check if the method is POST, iterate over required\
+      \ fields, if any of them are absent in the provided data, raise ValidationError\
+      \ with a custom message indicating which filed is missing."
+      - offset: 2209
+        length: 39
+        placeholder_text: "# TODO: return the list of devices in the required format"
+      - offset: 2293
+        length: 147
+        placeholder_text: "# TODO: try to initialize a new device using the method device_schema.load()\
+      \ with json data from the request, return the error message from validation\
+      \ in case it returns an error, with a reponse code 400"
+      - offset: 2450
+        length: 114
+        placeholder_text: "# TODO: check it the new device id is already present in our\
+      \ data and if so, return an error message and code 400"
+      - offset: 2574
+        length: 99
+        placeholder_text: "# TODO: add a new device to devices and return a success message\
+      \ in the required format"
+  - name: tests/test_task.py
+    visible: false
+  - name: __init__.py
+    visible: false
+  - name: tests/__init__.py
+    visible: false

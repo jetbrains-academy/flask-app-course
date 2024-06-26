@@ -1,7 +1,7 @@
-## Deploying on local without Docker
+## Deploying locally without Docker
 
 
-While this course is focused on deploying with Docker, you can deploy on local without it too. 
+While this course is focused on deploying with Docker, you can also deploy locally without it. 
 
 You will need to change the routes in the `gateway`:
 instead of 
@@ -17,15 +17,15 @@ use
 
 You can then open two terminal windows in the IDE. 
 
-In the first, `cd` to `invsys` and then run 
+In the first one, navigate to `invsys` using `cd` and then run 
 ```shell
 $ python3 api.py
 ```
 
 In the other terminal window, do the same but in the `gateway` directory: 
 ```shell
-$ python3 app.py
+$ python3 application.py
 ```
 
-Both microservices are now up and 
-using Postman you can target either backend on `127.0.0.1` (or `0.0.0.0`). 
+Both microservices are now running, and 
+you can target either backend using Postman at `127.0.0.1` (or `0.0.0.0`). 

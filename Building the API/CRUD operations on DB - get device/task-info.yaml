@@ -13,6 +13,10 @@ files:
     visible: false
   - name: api.py
     visible: true
+    placeholders:
+      - offset: 1000
+        length: 35
+        placeholder_text: device = devices.get(identifier)
   - name: tests/__init__.py
     visible: false
   - name: tests/api_test.py

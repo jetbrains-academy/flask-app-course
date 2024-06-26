@@ -7,7 +7,11 @@ files:
         length: 24
         placeholder_text: "# TODO: create the database shelf object"
       - offset: 652
-        length: 24
+        length: 91
+        placeholder_text: "# TODO: Check if the id already exists in the shelf, and if\
+      \ so--returnin an error message"
+      - offset: 808
+        length: 57
         placeholder_text: "# TODO: add the data about the new item from args to the shelf"
   - name: tests/test_task.py
     visible: false
@@ -17,5 +21,21 @@ files:
     visible: false
   - name: api.py
     visible: true
+    placeholders:
+      - offset: 2028
+        length: 162
+        placeholder_text: |-
+          try:
+                      new_device = device_schema.load(request.json)
+                  except ValidationError as err:
+                      return jsonify(err.messages), 400
+      - offset: 2200
+        length: 209
+        placeholder_text: |-
+          if new_device["id"] in devices:
+                      return jsonify({'message': 'Device with this ID already exists'}), 400
+          
+                  devices[new_device["id"]] = new_device
+                  return jsonify({"Posted a device": new_device}), 201
   - name: tests/api_test.py
     visible: false

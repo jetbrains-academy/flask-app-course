@@ -1,0 +1,29 @@
+type: edu
+files:
+  - name: tests/test_task.py
+    visible: false
+  - name: __init__.py
+    visible: false
+  - name: tests/__init__.py
+    visible: false
+  - name: api.py
+    visible: true
+    placeholders:
+      - offset: 605
+        length: 75
+        placeholder_text: "# TODO: add another two required fields"
+      - offset: 855
+        length: 32
+        placeholder_text: "# TODO: get the device from the dictionary by its identifier"
+      - offset: 1220
+        length: 94
+        placeholder_text: "# TODO: if there's no such identifier in our data,  return\
+      \ a device not found message and a 404 response code"
+      - offset: 1463
+        length: 94
+        placeholder_text: "# TODO: if there's no such identifier in our data, return the\
+      \ device not found message and a 404 response code"
+      - offset: 1566
+        length: 82
+        placeholder_text: "# TODO: delete the device with the identifier provided, return\
+      \ a device deleted message and a response code 200"

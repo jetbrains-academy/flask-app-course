@@ -1,6 +1,6 @@
 import flask_unittest
 
-from .api_test import app
+from api import app
 
 
 class TestClient(flask_unittest.ClientTestCase):
@@ -10,8 +10,7 @@ class TestClient(flask_unittest.ClientTestCase):
     def test_put_with_client(self, client):
         response = client.put('/items/003', json={'location': 'hall', 'status': 'off'})
         self.assertEqual(200, response.status_code, msg=f"PUT request resulted in an unexpected response code {response.status_code}.")
-        self.assertEqual((b'{"updated device": {"id": "003", "name": "Humidifier", "location": "hall"'
-                                         b', "status": "off"}}\n'), response.data, msg="PUT request resulted in unexpected response content.")
+        self.assertEqual(b'{"updated device":"003"}\n', response.data, msg="PUT request resulted in unexpected response content.")
 
     def test_get(self, client):
         response = client.get('/items')
