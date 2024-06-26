@@ -30,5 +30,7 @@ files:
     visible: false
   - name: gateway/requirements.txt
     visible: false
-  - name: runConfigurations/Get_Resource_Test.run.xml
+  - name: buildConfigurations/Get_Devices_Build.run.xml
+    visible: false
+  - name: runConfigurations/Get_devices_Test.run.xml
     visible: false

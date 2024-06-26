@@ -1,32 +1,40 @@
 type: edu
 files:
-- name: gateway/application.py
-  visible: true
-- name: tests/test_task.py
-  visible: false
-- name: __init__.py
-  visible: false
-- name: tests/__init__.py
-  visible: false
-- name: gateway/__init__.py
-  visible: true
-- name: gateway/Dockerfile
-  visible: true
-- name: gateway/requirements.txt
-  visible: true
-- name: invsys/__init__.py
-  visible: true
-- name: invsys/api.py
-  visible: true
-- name: invsys/dal.py
-  visible: true
-- name: invsys/Dockerfile
-  visible: true
-- name: invsys/requirements.txt
-  visible: true
-- name: docker-compose.yaml
-  visible: false
-- name: runConfigurations/Gateway_add_Dockerfile_Test.run.xml
-  visible: false
-- name: runConfigurations/Add_Dockerfile_requirements_Compose.run.xml
-  visible: false
+  - name: gateway/Dockerfile
+    visible: true
+    placeholders:
+      - offset: 0
+        length: 149
+        placeholder_text: '# Add content of Dockerfile'
+  - name: gateway/requirements.txt
+    visible: true
+    placeholders:
+      - offset: 0
+        length: 14
+        placeholder_text: '# Add requirements here'
+  - name: gateway/application.py
+    visible: true
+  - name: tests/test_task.py
+    visible: false
+  - name: __init__.py
+    visible: false
+  - name: tests/__init__.py
+    visible: false
+  - name: gateway/__init__.py
+    visible: true
+  - name: invsys/__init__.py
+    visible: true
+  - name: invsys/api.py
+    visible: true
+  - name: invsys/dal.py
+    visible: true
+  - name: invsys/Dockerfile
+    visible: true
+  - name: invsys/requirements.txt
+    visible: true
+  - name: docker-compose.yaml
+    visible: false
+  - name: runConfigurations/Gateway_add_Dockerfile_Test.run.xml
+    visible: false
+  - name: buildConfigurations/Gateway_add_Dockerfile_Build.run.xml
+    visible: false

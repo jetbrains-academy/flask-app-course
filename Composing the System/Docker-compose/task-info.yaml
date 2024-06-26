@@ -1,30 +1,36 @@
 type: edu
 files:
-- name: tests/test_task.py
-  visible: false
-- name: __init__.py
-  visible: false
-- name: tests/__init__.py
-  visible: false
-- name: docker-compose.yaml
-  visible: true
-- name: gateway/__init__.py
-  visible: true
-- name: gateway/application.py
-  visible: true
-- name: gateway/Dockerfile
-  visible: true
-- name: gateway/requirements.txt
-  visible: true
-- name: invsys/__init__.py
-  visible: true
-- name: invsys/api.py
-  visible: true
-- name: invsys/dal.py
-  visible: true
-- name: invsys/Dockerfile
-  visible: true
-- name: invsys/requirements.txt
-  visible: true
-- name: runConfigurations/Composing_system_docker-compose-test.run.xml
-  visible: false
+  - name: tests/test_task.py
+    visible: false
+  - name: __init__.py
+    visible: false
+  - name: tests/__init__.py
+    visible: false
+  - name: docker-compose.yaml
+    visible: true
+    placeholders:
+      - offset: 0
+        length: 289
+        placeholder_text: '# Add here contents from the task description'
+  - name: gateway/__init__.py
+    visible: true
+  - name: gateway/application.py
+    visible: true
+  - name: gateway/Dockerfile
+    visible: true
+  - name: gateway/requirements.txt
+    visible: true
+  - name: invsys/__init__.py
+    visible: true
+  - name: invsys/api.py
+    visible: true
+  - name: invsys/dal.py
+    visible: true
+  - name: invsys/Dockerfile
+    visible: true
+  - name: invsys/requirements.txt
+    visible: true
+  - name: runConfigurations/Composing_system_docker-compose_Test.run.xml
+    visible: false
+  - name: buildConfigurations/Composing_system_docker-compose_Build.run.xml
+    visible: false
