@@ -10,7 +10,35 @@ files:
     visible: true
   - name: requirements.txt
     visible: true
-  - name: config2.png
+  - name: images/add.svg
     visible: false
-  - name: config1.png
+  - name: images/add_dark.svg
+    visible: false
+  - name: images/browse_dark.svg
+    visible: false
+  - name: images/browse.svg
+    visible: false
+  - name: images/port_bindings_dark.png
+    visible: false
+  - name: images/port_bindings.png
+    visible: false
+  - name: images/add_configuration.png
+    visible: false
+  - name: images/add_configuration_dark.png
+    visible: false
+  - name: images/run.svg
+    visible: false
+  - name: images/run_dark.svg
+    visible: false
+  - name: images/run_myrunconfig_dark.png
+    visible: false
+  - name: images/run_myrunconfig.png
+    visible: false
+  - name: images/stop_container_dark.png
+    visible: false
+  - name: images/stop_container.png
+    visible: false
+  - name: images/delete_image.png
+    visible: false
+  - name: images/delete_image_dark.png
     visible: false

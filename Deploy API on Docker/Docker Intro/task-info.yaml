@@ -1,16 +1,28 @@
 type: theory
 files:
-- name: main.py
-  visible: true
-- name: __init__.py
-  visible: false
-- name: images/img.png
-  visible: false
-- name: images/img_1.png
-  visible: false
-- name: images/img_2.png
-  visible: false
-- name: images/img_3.png
-  visible: false
-- name: images/img_4.png
-  visible: false
+  - name: main.py
+    visible: true
+  - name: __init__.py
+    visible: false
+  - name: images/docker.png
+    visible: false
+  - name: images/edit_dark.svg
+    visible: false
+  - name: images/edit.svg
+    visible: false
+  - name: images/run.svg
+    visible: false
+  - name: images/run_dark.svg
+    visible: false
+  - name: images/add_dark.svg
+    visible: false
+  - name: images/add.svg
+    visible: false
+  - name: images/settings_docker_dark.png
+    visible: false
+  - name: images/settings_docker.png
+    visible: false
+  - name: images/services.png
+    visible: false
+  - name: images/services_dark.png
+    visible: false

@@ -1,7 +1,6 @@
 Running the app as described before works just fine, but it assumes you have the Python environment set up correctly. We can avoid this issue by running the application in a **Docker container**.
 
 ### Docker Containers
-
 Docker containers provide code isolation, independence, and portability. Docker is essentially needed 
 if one intends to deploy their application into production. Docker containers have fully prescribed 
 dependencies with which they can be created. These dependencies, as well as the instructions on how 
@@ -11,30 +10,26 @@ A **Dockerfile** is basically a set of instructions for building a container ima
 
 Read more about Docker in [Docker docs](https://docs.docker.com/).
 
-### Enable Docker support in IntelliJ IDEA
+### Docker support in JetBrains IDEs
+JetBrains IDEs allow you to manage docker containers using a graphical interface. Only a few simple steps are required to set it up.
 
-1. Install and run Docker. For more information, see the Docker documentation.
+### 1. Install and run Docker
+For more information, see the [Docker documentation](https://docs.docker.com/engine/install/) for your operating system.
 
-2. Configure the Docker daemon connection settings:
+### 2. Configure the Docker daemon connection settings
 
+1. Open the IDE settings (you can use shortcut &shortcut:ShowSettings;) and select **Build, Execution, Deployment | Docker**.
+2. Click ![](images/add.svg) to add a Docker configuration and specify how to connect to the Docker daemon.  
+    The connection settings depend on your Docker version and operating system. For more information, see [Docker configuration](https://www.jetbrains.com/help/pycharm/settings-docker.html).  
+    The **Connection successful** message should appear at the bottom of the dialog.  
+    
+![](images/settings_docker.png)
 
-a) Press ⌘, to open the IDE settings and select **Build, Execution, Deployment | Docker**.
+### 3. Connect to the Docker daemon.
+The configured Docker connection should appear in the Services tool window (**View | Tool Windows | Services** or &shortcut:ActivateServicesToolWindow;). Select the Docker node ![](images/docker.png) and click ![](images/run.svg), or select **Connect** from the context menu. Once connected, it will look like this:
+<div style="text-align:center;"><img src="images/services.png" style="width:70%;" alt="Run MyRunConfig"></div>
 
-
-b) Click **+** to add a Docker configuration and specify how to connect to the Docker daemon.
-
-The connection settings depend on your Docker version and operating system. For more information, see [Docker configuration](https://www.jetbrains.com/help/idea/docker-connection-settings.html).
-
-The **Connection successful** message should appear at the bottom of the dialog.
-
-![](images/img.png)
-
-3. Connect to the Docker daemon.
-   The configured Docker connection should appear in the Services tool window (**View | Tool Windows | Services** or ⌘8). Select the Docker node ![](images/img_2.png) and click ![](images/img_3.png), or select **Connect** from the context menu.
-
-![](images/img_1.png)
-
-To edit the Docker connection settings, select the Docker node and click ![](images/img_4.png) on the toolbar, or select **Edit Configuration** from the context menu.
+To edit the Docker connection settings, select the Docker node and click ![](images/edit.svg) on the toolbar, or select **Edit Configuration** from the context menu.
 
 <style>
 img {
