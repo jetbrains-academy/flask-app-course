@@ -2,4 +2,4 @@ content:
   - Docker Intro
   - Dockerfile
   - Docker run configuration setup
-  - Postman
+  - API Testing
