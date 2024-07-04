@@ -37,6 +37,4 @@ $ python3 application.py
 </details>
 
 Both microservices are now running, and 
-you can target either backend using Postman at `127.0.0.1` (or `0.0.0.0`). 
-
-Do not hit the Check button
+you can target either backend using Postman at `127.0.0.1` (or `0.0.0.0`).
