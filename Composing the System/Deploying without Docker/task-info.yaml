@@ -3,7 +3,7 @@ files:
   - name: __init__.py
     visible: false
   - name: gateway/__init__.py
-    visible: true
+    visible: false
   - name: gateway/application.py
     visible: true
   - name: gateway/requirements.txt
