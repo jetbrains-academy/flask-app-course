@@ -32,5 +32,5 @@ files:
     visible: false
   - name: buildConfigurations/Get_Devices_Build.run.xml
     visible: false
-  - name: runConfigurations/Get_devices_Test.run.xml
+  - name: runConfigurations/Get_Devices_Test.run.xml
     visible: false
