@@ -25,7 +25,7 @@ For more information, see the [Docker documentation](https://docs.docker.com/eng
     
 ![](images/settings_docker.png)
 
-### 3. Connect to the Docker daemon.
+### 3. Connect to the Docker daemon
 The configured Docker connection should appear in the Services tool window (**View | Tool Windows | Services** or &shortcut:ActivateServicesToolWindow;). Select the Docker node ![](images/docker.png) and click ![](images/run.svg), or select **Connect** from the context menu. Once connected, it will look like this:
 <div style="text-align:center;"><img src="images/services.png" style="width:70%;" alt="Run MyRunConfig"></div>
 

@@ -40,7 +40,7 @@ To stop your Docker container, just open the panel [Services](tool_window://Serv
 ### Don't forget
 A Docker image contains application code, libraries, tools, dependencies, and other files needed to run your application.
 When your application does not work as expected and you find an error, correcting it in your project 
-this change will not be saved to the image you previously created and ran. You should delete an old
+this change will not save this change to the image you previously created and ran. You should delete an old
 Docker image and rebuild it after fixing the problem.
 You can also delete your image from the [Services](tool_window://Services) panel:
 <div style="text-align:center;"><img src="images/delete_image.png" style="width:60%;" alt="Run MyRunConfig"></div>

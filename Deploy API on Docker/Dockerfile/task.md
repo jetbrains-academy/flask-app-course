@@ -26,7 +26,7 @@ CMD [ "python", "api.py" ]
 - Then, we install it using `RUN pip install -r /requirements.txt`.
 - We then copy the rest of our source code into a subdirectory called `app` with `COPY . /app`.
 - Using `WORKDIR /app` ensures that the next commands will be executed in that directory.
-- The `EXPOSE 5000` instruction informs Docker that the container listens on port `5000` at runtime. We specified this port in `api.py` The `EXPOSE` instruction doesn't publish the port to your host machine; it simply declares that this port is intended to be published.
+- The `EXPOSE 5000` instruction informs Docker that the container listens on port `5000` at runtime. We specified this port in `api.py`. The `EXPOSE` instruction doesn't publish the port to your host machine; it simply declares that this port is intended to be published.
 - Finally, we state the command to run the application, which is `CMD [ "python", "api.py" ]`.
 
 ### Course testing system
