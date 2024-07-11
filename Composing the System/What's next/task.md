@@ -12,7 +12,7 @@ Here are some recommended resources for further reading:
 
 [Real Python Tutorials on Flask](https://realpython.com/tutorials/flask/) - Real Python offers an extensive set of intermediate to advanced tutorials focusing on real-world applications, such as building scalable projects and utilizing design patterns like the application factory and blueprints. These tutorials are great for hands-on learning and applying Flask in more sophisticated projects.
 
-[The Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) by Miguel Grinberg - This tutorial is now a classic and has been updated for 2024. It spans multiple parts and dives deep into building a microblogging application from scratch, covering detailed aspects of Flask including background tasks, user notifications, and API design.
+[The Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) by Miguel Grinberg - This tutorial is now a classic and has been updated for 2024. It spans multiple parts and dives deep into building a microblogging application from scratch, covering detailed aspects of Flask, including background tasks, user notifications, and API design.
 
 
 [Awesome Flask](https://github.com/humiaozuzu/awesome-flask) GitHub Repository - For those looking to integrate various functionalities, this curated list of Flask resources and plugins covers everything from data validation with Flask-WTF to full-text searching and task queues. It’s an excellent resource for discovering new libraries to extend your Flask applications. 

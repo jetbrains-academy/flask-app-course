@@ -19,7 +19,7 @@ You can then run both applications directly in the IDE.
 
 
 <details>
-<summary><i>Running the apps from terminal</i></summary>
+<summary><i>Running the apps from the terminal</i></summary>
 You can also open two terminal windows in the IDE. 
 
 
