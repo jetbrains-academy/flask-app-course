@@ -9,7 +9,7 @@ files:
   - name: gateway/requirements.txt
     visible: true
   - name: invsys/__init__.py
-    visible: true
+    visible: false
   - name: invsys/dal.py
     visible: true
   - name: invsys/requirements.txt

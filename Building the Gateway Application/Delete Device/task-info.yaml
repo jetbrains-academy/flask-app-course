@@ -14,7 +14,7 @@ files:
   - name: tests/__init__.py
     visible: false
   - name: gateway/__init__.py
-    visible: true
+    visible: false
   - name: invsys/requirements.txt
     visible: true
   - name: gateway/requirements.txt
@@ -26,7 +26,7 @@ files:
   - name: invsys/Dockerfile
     visible: true
   - name: invsys/__init__.py
-    visible: true
+    visible: false
   - name: invsys/api.py
     visible: true
   - name: runConfigurations/Delete_Device_Test.run.xml
