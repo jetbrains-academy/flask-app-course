@@ -5,7 +5,9 @@ files:
     placeholders:
       - offset: 0
         length: 141
-        placeholder_text: '# TODO'
+        placeholder_text: '# Add the contents of the Dockerfile from the task description'
+  - name: requirements.txt
+    visible: true
   - name: tests/test_task.py
     visible: false
   - name: __init__.py
@@ -16,10 +18,6 @@ files:
     visible: true
   - name: dal.py
     visible: true
-  - name: requirements.txt
-    visible: true
-  - name: delete_image.png
-    visible: false
   - name: runConfigurations/Deploy_on_Docker_Dockerfile_Test.run.xml
     visible: false
   - name: docker-compose.yml

@@ -10,7 +10,7 @@ files:
     visible: true
   - name: requirements.txt
     visible: true
-  - name: Postman1.png
+  - name: images/httpie_post.png
     visible: false
-  - name: Postman2.png
+  - name: images/httpie_get.png
     visible: false
