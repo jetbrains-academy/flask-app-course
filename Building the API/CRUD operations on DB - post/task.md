@@ -1,5 +1,3 @@
-## DAL: POST
-
 In this task, we are going to add a simple function to our DAL, which will handle adding data to the shelve database. 
 This function will be called from the API when the `device_inventory` endpoint receives a `post` request.
 

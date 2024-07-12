@@ -3,14 +3,14 @@ files:
   - name: dal.py
     visible: true
     placeholders:
-      - offset: 619
+      - offset: 616
         length: 24
         placeholder_text: "# TODO: create the database shelf object"
-      - offset: 652
+      - offset: 649
         length: 91
         placeholder_text: "# TODO: Check if the id already exists in the shelf, and if\
       \ so--returnin an error message"
-      - offset: 808
+      - offset: 805
         length: 57
         placeholder_text: "# TODO: add the data about the new item from args to the shelf"
   - name: tests/test_task.py

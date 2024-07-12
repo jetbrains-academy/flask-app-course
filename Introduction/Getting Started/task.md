@@ -2,7 +2,7 @@
 
 This course will guide you step by step through the process of building a backend application consisting of multiple microservices with Flask.
 Our application will consist of two backend components: a simple API that performs basic CRUD operations on a database and an API gateway backend that routs client requests. 
-You will also learn to deploy your application on Docker and test it with Postman.
+You will also learn to deploy your application on Docker and test it with HTTPie.
 
 ### Target Audience
 People with some basic knowledge of Flask apps who want to learn about developing a backend application comprised of multiple intercommunicating microservices and running them in a Docker container.
@@ -15,8 +15,8 @@ People with some basic knowledge of Flask apps who want to learn about developin
 ### Stack:
 - Python
 - Flask backends
-- Flask Restful
+- Flask Marshmallow
 - Python shelve
 - Docker
-- Docker-compose
-- Postman
+- Docker Compose
+- HTTPie

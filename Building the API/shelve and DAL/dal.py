@@ -21,12 +21,12 @@ devices = {"001": {
 }
 
 # Initialize db with some data already in it
-with shelve.open('storage.db') as db:
+with shelve.open('storage') as db:
     # for i, j in enumerate(devices):
     for key, value, in devices.items():
         db[key] = value
 
 if __name__ == '__main__':
-    with shelve.open('storage.db') as db:
+    with shelve.open('storage') as db:
         for item in db.items():
             print(item)
