@@ -10,8 +10,9 @@ Here are some recommended resources for further reading:
 
 [Part 4](https://realpython.com/blog/python/flask-by-example-implementing-a-redis-task-queue/) — shows how to build a task queue with Flask and Redis.
 
-[How to Structure Large Flask Applications](https://www.digitalocean.com/community/articles/how-to-structure-large-flask-applications) — covers a topic that becomes relevant as your Flask application grows in complexity.
+[Real Python Tutorials on Flask](https://realpython.com/tutorials/flask/) - Real Python offers an extensive set of intermediate to advanced tutorials focusing on real-world applications, such as building scalable projects and utilizing design patterns like the application factory and blueprints. These tutorials are great for hands-on learning and applying Flask in more sophisticated projects.
 
-[Explore Flask](https://exploreflask.com/en/latest/) — a book.
+[The Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) by Miguel Grinberg - This tutorial is now a classic and has been updated for 2024. It spans multiple parts and dives deep into building a microblogging application from scratch, covering detailed aspects of Flask, including background tasks, user notifications, and API design.
 
-[Flask Blueprint templates](http://fewstreet.com/2015/01/16/flask-blueprint-templates.html) — shows how to structure your `__init__.py` file using blueprints to organize expanding projects into multiple files and modules.
+
+[Awesome Flask](https://github.com/humiaozuzu/awesome-flask) GitHub Repository - For those looking to integrate various functionalities, this curated list of Flask resources and plugins covers everything from data validation with Flask-WTF to full-text searching and task queues. It’s an excellent resource for discovering new libraries to extend your Flask applications. 

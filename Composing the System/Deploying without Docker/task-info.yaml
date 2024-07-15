@@ -3,13 +3,13 @@ files:
   - name: __init__.py
     visible: false
   - name: gateway/__init__.py
-    visible: true
+    visible: false
   - name: gateway/application.py
     visible: true
   - name: gateway/requirements.txt
     visible: true
   - name: invsys/__init__.py
-    visible: true
+    visible: false
   - name: invsys/dal.py
     visible: true
   - name: invsys/requirements.txt

@@ -9,13 +9,13 @@ files:
   - name: tests/test_task.py
     visible: false
   - name: __init__.py
-    visible: true
+    visible: false
   - name: tests/__init__.py
     visible: false
   - name: gateway/__init__.py
-    visible: true
+    visible: false
   - name: invsys/__init__.py
-    visible: true
+    visible: false
   - name: invsys/api.py
     visible: true
   - name: invsys/dal.py

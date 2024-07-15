@@ -13,7 +13,7 @@ files:
         length: 289
         placeholder_text: '# Add here contents from the task description'
   - name: gateway/__init__.py
-    visible: true
+    visible: false
   - name: gateway/application.py
     visible: true
   - name: gateway/Dockerfile
@@ -21,7 +21,7 @@ files:
   - name: gateway/requirements.txt
     visible: true
   - name: invsys/__init__.py
-    visible: true
+    visible: false
   - name: invsys/api.py
     visible: true
   - name: invsys/dal.py
