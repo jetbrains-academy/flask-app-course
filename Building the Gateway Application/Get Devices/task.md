@@ -1,5 +1,3 @@
-## Get Devices
-
 In this task, we will define the `get_devices` function, which will:
 - Forward the request to the relevant endpoint in `invsys` (depending on the URL: if the item ID is provided,
 it needs to be added to the route, which in `invsys` will result in calling the `get` endpoint in the function `device`)

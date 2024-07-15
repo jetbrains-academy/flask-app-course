@@ -1,5 +1,3 @@
-## What else to explore
-
 Here are some recommended resources for further reading:
 
 [Flask by example: Part 1](https://realpython.com/flask-by-example-part-1-project-setup/) — a tutorial. 

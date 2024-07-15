@@ -1,5 +1,3 @@
-## Put Resource
-
 In this task we will define the `put_device` function, which will:
 - Get the payload from our incoming request.
 - Forward the PUT request to the relevant endpoint in `invsys`. Do not forget the payload!

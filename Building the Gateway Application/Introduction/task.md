@@ -1,5 +1,3 @@
-# Gateway Application
-
 The next step will be creating an API gateway backend, which acts as a router for client requests.
 This means our final application will consist of two backend components: the inventory
 manager and the API gateway.

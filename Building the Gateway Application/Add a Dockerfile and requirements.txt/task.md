@@ -1,5 +1,3 @@
-## Add Dockerfile and requirements.txt
-
 ### Task 
 Add the files necessary to run the gateway app as a Docker container.
 

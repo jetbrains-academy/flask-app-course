@@ -1,4 +1,3 @@
-## Composing our system
 Now we have two Flask apps: Invsys and Gateway. 
 We want them both to be deployed, and we want Gateway to be able to send 
 requests to Invsys using `invsys` instead of a specific IP.
