@@ -1,8 +1,8 @@
 # Flask course [![official JetBrains project](http://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 
-This is a course for beginners who want to learn how to build a backend application consisting of multiple microservices with [Flask](https://flask.palletsprojects.com/). In course you will create the application consisting of two backend components: 
+This is a course for beginners who want to learn how to build a backend application consisting of multiple microservices with [Flask](https://flask.palletsprojects.com/). In this course, you will create an application consisting of two backend components: 
 1. A simple API that performs basic CRUD (Create, Read/Retrieve, Update, and Delete) operations on a database.
-2. An API gateway backend that routs client requests.
+2. An API gateway backend that routes client requests.
    
 You will also learn how to deploy your application on [Docker](https://www.docker.com/) using the [Docker Compose](https://docs.docker.com/compose/) tool and test it with [HTTPie](https://httpie.io/).
 
