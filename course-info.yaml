@@ -1,9 +1,17 @@
 type: marketplace
-title: Flask_course_prototype
+title: Flask course
 language: English
-summary: |
-  This is a Flask course.
+summary: " <p>This is a course for beginners who want to learn how to build a backend\
+  \ application consisting of multiple microservices with <a href=\"https://flask.palletsprojects.com\"\
+  >Flask</a>. In this course, you will create an application consisting of two backend\
+  \ components:</p> <ol> <li>A simple API that performs basic CRUD (Create, Read/Retrieve,\
+  \ Update, and Delete) operations on a database.</li> <li>An API gateway backend\
+  \ that routes client requests.</li> </ol> <p>You will also learn how to deploy your\
+  \ application on <a href=\"https://www.docker.com\">Docker</a> using the <a href=\"\
+  https://docs.docker.com/compose/\">Docker Compose</a> tool and test it with <a href=\"\
+  https://httpie.io/\">HTTPie</a>.</p> "
 programming_language: Python
+#programming_language_version: 3.10
 environment: unittest
 content:
   - Introduction

@@ -1,5 +1,3 @@
-## Flask REST API
-
 Flask is a micro web framework written in Python. The “micro” in microframework means 
 Flask aims to keep the core simple but extensible. Flask won’t make many decisions for you, such as what database to use.
 By default, Flask does not include a database abstraction layer, form validation, or anything else where different libraries 

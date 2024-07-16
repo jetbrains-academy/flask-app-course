@@ -3,10 +3,10 @@ files:
   - name: dal.py
     visible: true
     placeholders:
-      - offset: 1132
+      - offset: 1129
         length: 53
         placeholder_text: "# TODO: return None if the id is not found in the database"
-      - offset: 1525
+      - offset: 1522
         length: 85
         placeholder_text: '# TODO'
   - name: __init__.py

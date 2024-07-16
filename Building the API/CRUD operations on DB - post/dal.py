@@ -7,7 +7,7 @@ from flask import g
 def pull_db():
     db_ = getattr(g, '_database', None)
     if db_ is None:
-        db_ = g._database = shelve.open("storage.db")
+        db_ = g._database = shelve.open("storage")
     return db_
 
 
@@ -54,7 +54,7 @@ devices = {"001": {
 }
 
 # Initialize db with some data already in it
-with shelve.open('storage.db') as db:
+with shelve.open('storage') as db:
     for key, value, in devices.items():
         db[key] = value
 

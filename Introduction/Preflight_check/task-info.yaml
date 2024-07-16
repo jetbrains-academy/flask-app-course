@@ -1,0 +1,15 @@
+type: edu
+custom_name: Preflight check
+files:
+  - name: task.py
+    visible: true
+  - name: tests/test_task.py
+    visible: false
+  - name: __init__.py
+    visible: false
+  - name: tests/__init__.py
+    visible: false
+  - name: images/airplay_off_dark.png
+    visible: false
+  - name: images/airplay_off.png
+    visible: false

@@ -1,5 +1,6 @@
 content:
-- Getting Started
-- Multi-component application
-- Python environments and pip
-- Flask REST API
+  - Getting started
+  - Preflight_check
+  - Multi-component application
+  - Python environments and pip
+  - Flask REST API

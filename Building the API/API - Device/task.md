@@ -1,5 +1,3 @@
-## API
-
 Our Flask API will provide an interface for managing a collection of devices stored within a database. 
 It will facilitate the retrieval, updating, and deletion of devices using their unique identifiers.
 We'll be building a simple API that performs basic CRUD operations on a datastore of devices. In this and the next task, we will

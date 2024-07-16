@@ -1,5 +1,3 @@
-## DAL: GET
-
 CRUD stands for Create, Read/Retrieve, Update, and Delete, and these are the four basic operations that can be performed 
 on persistence storage (database). HTTP methods can 
 work as CRUD operations. The standard ones are as follows:

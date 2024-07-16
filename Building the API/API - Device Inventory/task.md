@@ -1,4 +1,3 @@
-## API - Device Inventory Endpoint
 In this task, we're extending our API to include the `device_inventory` endpoint. Unlike the 
 previous device endpoint, this endpoint handles operations on the entire database of 
 devices rather than individual items. It is designed to handle operations that affect the 

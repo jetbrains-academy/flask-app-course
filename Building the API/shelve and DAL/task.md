@@ -1,4 +1,3 @@
-## Python shelve and DALs
 ### Shelve
 We'll use the term "database" to refer to a file on which we will perform Create, Retrieve, Update, and Delete (CRUD) operations on data elements in an arbitrary order.
 The [`shelve`](https://docs.python.org/3/library/shelve.html) module provides a very flexible database, implementing persistent storage for arbitrary Python objects — anything that the [pickle](https://docs.python.org/3/library/pickle.html#module-pickle) module can handle.

@@ -3,10 +3,10 @@ files:
   - name: dal.py
     visible: true
     placeholders:
-      - offset: 845
+      - offset: 842
         length: 53
         placeholder_text: "# TODO: return None if the id is not found in the database"
-      - offset: 914
+      - offset: 911
         length: 17
         placeholder_text: '"Return the device from the database accessed by the id"'
   - name: __init__.py

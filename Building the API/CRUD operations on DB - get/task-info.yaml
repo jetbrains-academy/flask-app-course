@@ -3,7 +3,7 @@ files:
   - name: dal.py
     visible: true
     placeholders:
-      - offset: 424
+      - offset: 421
         length: 89
         placeholder_text: "# TODO: populate the dictionary with data from shelf"
   - name: tests/test_task.py
