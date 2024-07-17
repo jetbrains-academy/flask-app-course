@@ -31,6 +31,6 @@ the image. The `ports` flag is the same as the one used in the `docker run` comm
 external Docker machine port to the internally exposed port of our containers. You'll notice 
 that we haven't added a port mapping for `invsys`. This is intentional because we want to ensure that requests 
 go through the gateway. If you want to allow direct targeting of `invsys` as well, you would 
-just need to add `ports: - "5000:5000"`.
+just need to add `ports: - "5000:5000"` to the `invsys` service description.
 
-Now, add the contents to the `docker-compose.yaml` file and run the application. Test it with Postman like you did before.
+Now, add the contents to the `docker-compose.yaml` file and run the application. Test it with HTTPie like you did before.
