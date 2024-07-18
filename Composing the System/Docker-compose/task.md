@@ -27,10 +27,20 @@ of the service is what we use to target that service in the network. Since we ar
 Invsys service as `invsys`, any requests from our application targeting `invsys` will be routed 
 to the correct IP for that service. We are using the `build` flag in each case, which instructs the 
 tool to search for the `gateway` and `invsys` subdirectories and use their Dockerfiles to build 
-the image. The `ports` flag is the same as the one used in the `docker run` command: it routes the 
+the image. 
+
+The `ports` flag is the same as the one used in the `docker run` command: it routes the 
 external Docker machine port to the internally exposed port of our containers. You'll notice 
 that we haven't added a port mapping for `invsys`. This is intentional because we want to ensure that requests 
 go through the gateway. If you want to allow direct targeting of `invsys` as well, you would 
 just need to add `ports: - "5000:5000"` to the `invsys` service description.
+
+<div class="hint" title="Secure port publishing">
+By default, when you bindings container ports to host, they become available on all network interfaces.  
+For experiments this is not critical, but when deploying real applications, 
+you should pay careful attention to which ports should be accessible from an outside world and which should not.
+
+You can read more about how to properly publish ports [here](https://docs.docker.com/network/#published-ports).
+</div>
 
 Now, add the contents to the `docker-compose.yaml` file and run the application. Test it with HTTPie like you did before.
