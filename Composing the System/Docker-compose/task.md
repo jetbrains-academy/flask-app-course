@@ -36,9 +36,9 @@ go through the gateway. If you want to allow direct targeting of `invsys` as wel
 just need to add `ports: - "5000:5000"` to the `invsys` service description.
 
 <div class="hint" title="Secure port publishing">
-By default, when you bindings container ports to host, they become available on all network interfaces.  
-For experiments this is not critical, but when deploying real applications, 
-you should pay careful attention to which ports should be accessible from an outside world and which should not.
+By default, when you bind container ports to the host, they become available on all network interfaces.  
+For experiments, this is not critical, but when deploying real applications, 
+you should pay careful attention to which ports should be accessible from the outside world and which should not.
 
 You can read more about how to properly publish ports [here](https://docs.docker.com/network/#published-ports).
 </div>
