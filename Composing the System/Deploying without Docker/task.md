@@ -1,6 +1,3 @@
-## Deploying locally without Docker
-
-
 While this course is focused on deploying with Docker, you can also deploy locally without it. 
 
 You will need to change the routes in the `gateway`:
