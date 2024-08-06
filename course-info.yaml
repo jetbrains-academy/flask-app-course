@@ -1,5 +1,5 @@
 type: marketplace
-title: Flask course
+title: Building a multicomponent Flask app
 language: English
 summary: " <p>This is a course for beginners who want to learn how to build a backend\
   \ application consisting of multiple microservices with <a href=\"https://flask.palletsprojects.com\"\
