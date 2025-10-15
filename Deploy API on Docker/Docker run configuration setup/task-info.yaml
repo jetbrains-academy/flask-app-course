@@ -20,25 +20,35 @@ files:
     visible: false
   - name: images/port_bindings_dark.png
     visible: false
+    is_binary: true
   - name: images/port_bindings.png
     visible: false
+    is_binary: true
   - name: images/add_configuration.png
     visible: false
+    is_binary: true
   - name: images/add_configuration_dark.png
     visible: false
+    is_binary: true
   - name: images/run.svg
     visible: false
   - name: images/run_dark.svg
     visible: false
   - name: images/run_myrunconfig_dark.png
     visible: false
+    is_binary: true
   - name: images/run_myrunconfig.png
     visible: false
+    is_binary: true
   - name: images/stop_container_dark.png
     visible: false
+    is_binary: true
   - name: images/stop_container.png
     visible: false
+    is_binary: true
   - name: images/delete_image.png
     visible: false
+    is_binary: true
   - name: images/delete_image_dark.png
     visible: false
+    is_binary: true

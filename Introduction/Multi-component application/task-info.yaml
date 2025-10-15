@@ -6,5 +6,7 @@ files:
     visible: false
   - name: technical_flow.png
     visible: false
+    is_binary: true
   - name: UML.png
     visible: false
+    is_binary: true

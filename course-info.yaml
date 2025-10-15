@@ -22,3 +22,9 @@ content:
   - Deploy API on Docker
   - Building the Gateway Application
   - Composing the System
+additional_files:
+  - name: common/test_with_docker_compose.py
+  - name: LICENSE
+  - name: README.md
+  - name: requirements.txt
+yaml_version: 5

@@ -5,10 +5,10 @@ files:
     placeholders:
       - offset: 844
         length: 54
-        placeholder_text: '# TODO'
+        placeholder_text: "# TODO"
       - offset: 957
         length: 48
-        placeholder_text: '# TODO'
+        placeholder_text: "# TODO"
   - name: __init__.py
     visible: false
   - name: tests/__init__.py

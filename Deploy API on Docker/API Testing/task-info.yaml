@@ -12,5 +12,7 @@ files:
     visible: true
   - name: images/httpie_post.png
     visible: false
+    is_binary: true
   - name: images/httpie_get.png
     visible: false
+    is_binary: true

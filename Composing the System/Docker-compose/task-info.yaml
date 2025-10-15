@@ -11,7 +11,7 @@ files:
     placeholders:
       - offset: 0
         length: 289
-        placeholder_text: '# Add here contents from the task description'
+        placeholder_text: "# Add here contents from the task description"
   - name: gateway/__init__.py
     visible: false
   - name: gateway/application.py
