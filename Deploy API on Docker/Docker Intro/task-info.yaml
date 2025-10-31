@@ -6,6 +6,7 @@ files:
     visible: false
   - name: images/docker.png
     visible: false
+    is_binary: true
   - name: images/edit_dark.svg
     visible: false
   - name: images/edit.svg
@@ -20,9 +21,13 @@ files:
     visible: false
   - name: images/settings_docker_dark.png
     visible: false
+    is_binary: true
   - name: images/settings_docker.png
     visible: false
+    is_binary: true
   - name: images/services.png
     visible: false
+    is_binary: true
   - name: images/services_dark.png
     visible: false
+    is_binary: true

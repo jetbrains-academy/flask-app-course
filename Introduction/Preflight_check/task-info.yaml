@@ -11,5 +11,7 @@ files:
     visible: false
   - name: images/airplay_off_dark.png
     visible: false
+    is_binary: true
   - name: images/airplay_off.png
     visible: false
+    is_binary: true

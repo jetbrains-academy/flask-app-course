@@ -5,7 +5,7 @@ files:
     placeholders:
       - offset: 0
         length: 141
-        placeholder_text: '# Add the contents of the Dockerfile from the task description'
+        placeholder_text: "# Add the contents of the Dockerfile from the task description"
   - name: requirements.txt
     visible: true
   - name: tests/test_task.py

@@ -5,7 +5,7 @@ files:
     placeholders:
       - offset: 505
         length: 59
-        placeholder_text: '# Populate the database db with data'
+        placeholder_text: "# Populate the database db with data"
   - name: __init__.py
     visible: false
   - name: tests/__init__.py

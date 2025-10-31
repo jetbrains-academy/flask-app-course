@@ -5,13 +5,13 @@ files:
     placeholders:
       - offset: 0
         length: 149
-        placeholder_text: '# Add content of Dockerfile'
+        placeholder_text: "# Add content of Dockerfile"
   - name: gateway/requirements.txt
     visible: true
     placeholders:
       - offset: 0
         length: 14
-        placeholder_text: '# Add requirements here'
+        placeholder_text: "# Add requirements here"
   - name: gateway/application.py
     visible: true
   - name: tests/test_task.py
