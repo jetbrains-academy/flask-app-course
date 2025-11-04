@@ -1,4 +1,8 @@
 import flask_unittest
+import shelve
+
+with shelve.open('storage') as db:
+    db.clear()
 
 from api import app
 
