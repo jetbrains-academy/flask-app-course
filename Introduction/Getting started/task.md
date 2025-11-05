@@ -20,3 +20,9 @@ People with some basic knowledge of Flask apps who want to learn about developin
 - Docker
 - Docker Compose
 - HTTPie
+
+### Discord
+Please join the course chat on Discord using the [link](https://discord.gg/pRbj37Ej5x).
+There, you can ask questions, interact with instructors, and connect with your fellow students.
+
+Have fun, and good luck!
