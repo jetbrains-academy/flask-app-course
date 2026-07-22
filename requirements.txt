@@ -1,5 +1,6 @@
-flask~=2.2.2
+flask>=3.1,<4
 flask-restful
+werkzeug>=3.1,<4
 # https://github.com/google-deepmind/alphafold/issues/867#issuecomment-1984260145
 requests<2.29.0
 urllib3<2.0
