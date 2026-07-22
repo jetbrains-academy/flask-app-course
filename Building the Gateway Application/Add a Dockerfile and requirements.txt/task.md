@@ -4,7 +4,7 @@ Add the files necessary to run the gateway app as a Docker container.
 <div class="hint">
 
 ```text
-FROM python:3.10
+FROM python:3.14
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
 COPY . /app

@@ -12,7 +12,7 @@ A Dockerfile is essentially a set of instructions for building an image, which i
 Let's go over this line by line:
 
 ```Dockerfile
-FROM python:3.10
+FROM python:3.14
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
 COPY . /app
@@ -21,7 +21,7 @@ EXPOSE 5000
 CMD [ "python", "api.py" ]
 ```
 
-- The line `FROM python:3.10` uses the Python 3.10 image from [Docker Hub](https://hub.docker.com/_/python) as our base image. This ensures we have Python and all its dependencies in the container.
+- The line `FROM python:3.14` uses the Python 3.14 image from [Docker Hub](https://hub.docker.com/_/python) as our base image. This ensures we have Python and all its dependencies in the container.
 - We `COPY requirements.txt /`, which makes the file available in our Docker image.
 - Then, we install it using `RUN pip install -r /requirements.txt`.
 - We then copy the rest of our source code into a subdirectory called `app` with `COPY . /app`.
