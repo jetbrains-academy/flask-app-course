@@ -5,7 +5,7 @@ summary: " <p>Build more than a Flask app — build a backend system. Create mic
   \ an API gateway, and deploy it all with Docker Compose. Perfect for beginners ready\
   \ to take the next step in backend development.</p> "
 vendor:
-  name: JetBrains
+  name: JetBrains s.r.o.
   email: support@jetbrains.com
   url: https://www.jetbrains.com/
 programming_language: Python
