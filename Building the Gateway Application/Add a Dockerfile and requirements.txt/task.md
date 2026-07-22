@@ -1,3 +1,5 @@
+Perfect, now we're ready to pack our app into a container!
+
 ### Task 
 Add the files necessary to run the gateway app as a Docker container.
 
